@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,input,ElementUI,el-input,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="做项目时，肯定会有表单验证这样的需求，但是每次多少都不太一样，本篇文章用于记录开发中我所用过的且可用的验证方法。本项目中使用ElementUI框架，ElementUI是基于Vue.js开发的UI框架，有封装好的各种组件可直接使用，并且可以自己配置主题颜色，适用于需要高效快捷完成开发工作的同学。 校验规则 用户名/姓名不限制输入字符，长度为10位可使用input的属性：maxlength 12345">
+<meta name="keywords" content="vue,input,ElementUI,el-input">
+<meta property="og:type" content="article">
+<meta property="og:title" content="表单校验正则的方法">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/表单校验正则的方法/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="做项目时，肯定会有表单验证这样的需求，但是每次多少都不太一样，本篇文章用于记录开发中我所用过的且可用的验证方法。本项目中使用ElementUI框架，ElementUI是基于Vue.js开发的UI框架，有封装好的各种组件可直接使用，并且可以自己配置主题颜色，适用于需要高效快捷完成开发工作的同学。 校验规则 用户名/姓名不限制输入字符，长度为10位可使用input的属性：maxlength 12345">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:updated_time" content="2019-08-14T03:07:25.297Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="表单校验正则的方法">
+<meta name="twitter:description" content="做项目时，肯定会有表单验证这样的需求，但是每次多少都不太一样，本篇文章用于记录开发中我所用过的且可用的验证方法。本项目中使用ElementUI框架，ElementUI是基于Vue.js开发的UI框架，有封装好的各种组件可直接使用，并且可以自己配置主题颜色，适用于需要高效快捷完成开发工作的同学。 校验规则 用户名/姓名不限制输入字符，长度为10位可使用input的属性：maxlength 12345">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/07/表单校验正则的方法/">
+
+
+
+
+
+  <title>表单校验正则的方法 | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/07/表单校验正则的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">表单校验正则的方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-07T09:52:21+08:00">
+                2019-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/methods/" itemprop="url" rel="index">
+                    <span itemprop="name">methods</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>做项目时，肯定会有表单验证这样的需求，但是每次多少都不太一样，本篇文章用于记录开发中我所用过的且可用的验证方法。本项目中使用ElementUI框架，ElementUI是基于Vue.js开发的UI框架，有封装好的各种组件可直接使用，并且可以自己配置主题颜色，适用于需要高效快捷完成开发工作的同学。</p>
+<h2 id="校验规则"><a href="#校验规则" class="headerlink" title="校验规则"></a>校验规则</h2><ol>
+<li><p>用户名/姓名<br>不限制输入字符，长度为10位<br>可使用input的属性：maxlength</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">placeholder</span>=<span class="string">"1-10个字符，允许中英文、数字或符号"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">maxlength</span>=<span class="string">"10"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">clearable</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">"params.name"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">blur</span>=<span class="string">"validateForm('name')"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"error"</span>&gt;</span>&#123;&#123; nameError &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>手机号<br>限制输入字符仅为数字且长度为11位<br>绑定input事件，最好使用oninput，@input方法不生效。在输入时判断当前输入字符是否为数字，除数字外的字符都被替换为空，并且对超出长度的字符截取。</p>
+</li>
+</ol>
+<p><strong>注：绑定事件后，maxlength不生效。</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">type</span>=<span class="string">"number"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">oninput</span>=<span class="string">"value=value.replace(/[^\d]/g,'').slice(0,11)"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">placeholder</span>=<span class="string">"请输入手机号"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">"params.phone"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">clearable</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">blur</span>=<span class="string">"validateForm('phone')"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"error"</span>&gt;</span>&#123;&#123; phoneError &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="逻辑代码"><a href="#逻辑代码" class="headerlink" title="逻辑代码"></a>逻辑代码</h2><p><strong>validateForm</strong>方法在input失去焦点时调用，即可进行数值的校验。为防止失焦校验不准确，在最后提交时，再校验一遍，也可以校验其他不需要失焦校验的情况。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      params: &#123;</span><br><span class="line">        name: <span class="string">''</span>,</span><br><span class="line">        phone: <span class="string">''</span></span><br><span class="line">      &#125;,</span><br><span class="line">      verified: <span class="literal">true</span>,</span><br><span class="line">      nameError: <span class="string">''</span>,</span><br><span class="line">      phoneError: <span class="string">''</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      <span class="comment">// 表单校验</span></span><br><span class="line">      validateForm(field) &#123;</span><br><span class="line">        <span class="comment">// 校验规则</span></span><br><span class="line">        <span class="keyword">let</span> reg = &#123;</span><br><span class="line">          phoneReg: <span class="regexp">/^([1][3-9]&#123;1&#125;)\d&#123;9&#125;$/</span>,</span><br><span class="line">          idNumberReg: <span class="regexp">/^\d&#123;18&#125;|\d&#123;17&#125;[X]$/g</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 非空字段，用于显示提示语</span></span><br><span class="line">        <span class="keyword">let</span> msgList = [</span><br><span class="line">          &#123;</span><br><span class="line">            prop: <span class="string">'name'</span>,</span><br><span class="line">            label:<span class="string">'姓名'</span></span><br><span class="line">          &#125;,&#123;</span><br><span class="line">            prop: <span class="string">'phone'</span>,</span><br><span class="line">            label:<span class="string">'手机号'</span></span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (field !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">          <span class="comment">// field不为undefined时，当前为失焦判断</span></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; msgList.length; i++) &#123;</span><br><span class="line">            <span class="keyword">let</span> item = msgList[i];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 循环匹配与当前field相等的字段</span></span><br><span class="line">            <span class="keyword">if</span> (item.prop == field) &#123;</span><br><span class="line">              <span class="keyword">if</span>(<span class="keyword">this</span>.params[field] == <span class="string">''</span>) &#123;</span><br><span class="line">                <span class="comment">// 校验不能为空，并提示</span></span><br><span class="line">                <span class="keyword">this</span>[field + <span class="string">'Error'</span>] = item.label + <span class="string">'不能为空'</span>;</span><br><span class="line">                <span class="keyword">this</span>.verified = <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">              &#125;<span class="keyword">else</span> <span class="keyword">if</span> (field !== <span class="string">'name'</span> &amp;&amp; <span class="keyword">this</span>.params[field].match(reg[field+<span class="string">'Reg'</span>]) == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">// 输入字符后进行校验，并提示</span></span><br><span class="line">                <span class="keyword">this</span>[field + <span class="string">'Error'</span>] = item.label + <span class="string">'格式错误'</span>;</span><br><span class="line">                <span class="keyword">this</span>.verified = <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">              &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 不为空且校验正确，清空提示语</span></span><br><span class="line">                <span class="keyword">this</span>[field + <span class="string">'Error'</span>] = <span class="string">''</span>;</span><br><span class="line">                <span class="keyword">this</span>.verified = <span class="literal">true</span>;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="comment">// 未传参field时，为最后提交时的校验</span></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; msgList.length; i++) &#123;</span><br><span class="line">            <span class="keyword">let</span> item = msgList[i];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 循环匹配所有字段</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.params[item.prop] == <span class="string">''</span>) &#123;</span><br><span class="line">              <span class="comment">// 校验不能为空，并提示</span></span><br><span class="line">              <span class="keyword">this</span>[item.prop + <span class="string">'Error'</span>] = item.label + <span class="string">'不能为空'</span>;</span><br><span class="line">              <span class="keyword">this</span>.verified = <span class="literal">false</span>;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (item.prop !== <span class="string">'name'</span> &amp;&amp; <span class="keyword">this</span>.params[item.prop].match(reg[item.prop+<span class="string">'Reg'</span>]) == <span class="literal">null</span>) &#123;</span><br><span class="line">              <span class="comment">// 输入字符后进行校验，并提示</span></span><br><span class="line">              <span class="keyword">this</span>[item.prop + <span class="string">'Error'</span>] = item.label + <span class="string">'格式错误'</span>;</span><br><span class="line">              <span class="keyword">this</span>.verified = <span class="literal">false</span>;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="keyword">this</span>[item.prop + <span class="string">'Error'</span>] = <span class="string">''</span>;</span><br><span class="line">              <span class="keyword">this</span>.verified = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 提交表单</span></span><br><span class="line">      submit() &#123;</span><br><span class="line">        <span class="comment">// 调用validateForm方法且不传参，进行校验</span></span><br><span class="line">        <span class="keyword">this</span>.validateForm();</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.verified) &#123;</span><br><span class="line">          <span class="comment">// 表单校验正确，提交</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/input/" rel="tag"># input</a>
+          
+            <a href="/tags/ElementUI/" rel="tag"># ElementUI</a>
+          
+            <a href="/tags/el-input/" rel="tag"># el-input</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/30/v-model限制输入正整数/" rel="next" title="input限制输入字符的方法">
+                <i class="fa fa-chevron-left"></i> input限制输入字符的方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/07/ElementUI-Upload组件上传图片/" rel="prev" title="ElementUI Upload组件上传图片">
+                ElementUI Upload组件上传图片 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#校验规则"><span class="nav-number">1.</span> <span class="nav-text">校验规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑代码"><span class="nav-number">2.</span> <span class="nav-text">逻辑代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

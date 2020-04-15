@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,ElementUI,el-upload,upload,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ElementUI组件使用真的很方便，不过因为是封装好的组件所以在项目中使用的局限性也比较大，官方提供的api用起来就有些不足。 开发背景需要把图片上传至文件系统服务器，再将返回的储存路径，通过axios请求发给后端。在以前的项目中是直接对input[type=”file”]做处理，使用的是formData作为参数传值。官方api上并没有提供非表单上传文件的方法，结合别人的思路和自己的思考，本篇文">
+<meta name="keywords" content="vue,ElementUI,el-upload,upload">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ElementUI Upload组件上传图片">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/ElementUI-Upload组件上传图片/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="ElementUI组件使用真的很方便，不过因为是封装好的组件所以在项目中使用的局限性也比较大，官方提供的api用起来就有些不足。 开发背景需要把图片上传至文件系统服务器，再将返回的储存路径，通过axios请求发给后端。在以前的项目中是直接对input[type=”file”]做处理，使用的是formData作为参数传值。官方api上并没有提供非表单上传文件的方法，结合别人的思路和自己的思考，本篇文">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:updated_time" content="2019-08-29T03:11:52.284Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ElementUI Upload组件上传图片">
+<meta name="twitter:description" content="ElementUI组件使用真的很方便，不过因为是封装好的组件所以在项目中使用的局限性也比较大，官方提供的api用起来就有些不足。 开发背景需要把图片上传至文件系统服务器，再将返回的储存路径，通过axios请求发给后端。在以前的项目中是直接对input[type=”file”]做处理，使用的是formData作为参数传值。官方api上并没有提供非表单上传文件的方法，结合别人的思路和自己的思考，本篇文">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/07/ElementUI-Upload组件上传图片/">
+
+
+
+
+
+  <title>ElementUI Upload组件上传图片 | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/07/ElementUI-Upload组件上传图片/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ElementUI Upload组件上传图片</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-07T10:28:44+08:00">
+                2019-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/methods/" itemprop="url" rel="index">
+                    <span itemprop="name">methods</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>ElementUI组件使用真的很方便，不过因为是封装好的组件所以在项目中使用的局限性也比较大，官方提供的<a href="https://element.eleme.io/#/zh-CN/component/upload" target="_blank" rel="noopener">api</a>用起来就有些不足。</p>
+<h4 id="开发背景"><a href="#开发背景" class="headerlink" title="开发背景"></a>开发背景</h4><p>需要把图片上传至文件系统服务器，再将返回的储存路径，通过axios请求发给后端。在以前的项目中是直接对input[type=”file”]做处理，使用的是<strong>formData</strong>作为参数传值。官方api上并没有提供非表单上传文件的方法，结合别人的思路和自己的思考，本篇文章对此做个总结。</p>
+<h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4><ol>
+<li>action: 为必填项，如果使用axios发送请求，可以为空</li>
+<li>ref: 获取上传文件的内容，实际项目中没用到。取值: this.$refs.uploadImage.fileList，该值与函数返回的file内的值相同</li>
+<li>multiple: 同时选择多个文件</li>
+<li>list-type: 文件列表的类型(text/picture/picture-card)</li>
+<li>accept: 限制上传文件类型</li>
+<li>limit: 限制上传文件数量</li>
+<li>auto-upload: 自动上传(默认为true)，如果使用axios发送请求，设置为false</li>
+<li>file-list: 上传的文件列表</li>
+<li>on-exceed: 图片数量超出限定大小时调用</li>
+<li>on-change: 添加、上传成功或失败时调用</li>
+<li>on-remove: 移除图片时调用</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;el-upload</span><br><span class="line">    action=<span class="string">""</span></span><br><span class="line">    ref=<span class="string">"uploadImage"</span></span><br><span class="line">    multiple</span><br><span class="line">    list-type=<span class="string">"picture-card"</span></span><br><span class="line">    accept=<span class="string">".jpg,.jpeg,.png,.pdf,.JPG,.JPEG,.PDF"</span></span><br><span class="line">    :limit=<span class="string">"20"</span></span><br><span class="line">    :auto-upload=<span class="string">"false"</span></span><br><span class="line">    :file-list=<span class="string">"imagesList"</span></span><br><span class="line">    :on-exceed=<span class="string">"handleExceed"</span></span><br><span class="line">    :on-change=<span class="string">"handleChange"</span></span><br><span class="line">    :on-remove=<span class="string">"handleRemove"</span></span><br><span class="line">  &gt;</span><br><span class="line">    &lt;i slot=<span class="string">"default"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"el-icon-plus"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">    &lt;div slot=<span class="string">"file"</span> slot-scope=<span class="string">"&#123;file&#125;"</span>&gt;</span><br><span class="line">      &lt;img</span><br><span class="line">        <span class="class"><span class="keyword">class</span></span>=<span class="string">"el-upload-list__item-thumbnail"</span></span><br><span class="line">        :src=<span class="string">"file.url"</span> alt=<span class="string">""</span></span><br><span class="line">      &gt;</span><br><span class="line">      &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"el-upload-list__item-actions"</span>&gt;</span><br><span class="line">        &lt;span</span><br><span class="line">          <span class="class"><span class="keyword">class</span></span>=<span class="string">"el-upload-list__item-delete"</span></span><br><span class="line">        &gt;</span><br><span class="line">          &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"el-icon-delete"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">        &lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>span&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div slot="tip" class="el-upload__tip"&gt;支持JPG/</span>JPEG/PNG/PDF格式，大小在<span class="number">10</span>MB内，最大上传数<span class="number">20</span>个&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>el-upload&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  export default &#123;</span></span><br><span class="line"><span class="regexp">    data() &#123;</span></span><br><span class="line"><span class="regexp">      imagesList: [],</span></span><br><span class="line"><span class="regexp">      imagesSelectList: [],</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    methods: &#123;</span></span><br><span class="line"><span class="regexp">      /</span><span class="regexp">/ 上传图片超出限定值</span></span><br><span class="line"><span class="regexp">      handleExceed(file, fileList) &#123;</span></span><br><span class="line"><span class="regexp">        this.$message.warning('所选图片数量超出最大值');</span></span><br><span class="line"><span class="regexp">      &#125;,</span></span><br><span class="line"><span class="regexp">      handleChange(file, fileList) &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 文件后缀做判断</span></span><br><span class="line"><span class="regexp">        let nameArr = file.name.split('.');</span></span><br><span class="line"><span class="regexp">        let fileType = nameArr[nameArr.length - 1];</span></span><br><span class="line"><span class="regexp">        if (fileType == 'pdf') &#123;</span></span><br><span class="line"><span class="regexp">          fileType = 'text';</span></span><br><span class="line"><span class="regexp">        &#125;else &#123;</span></span><br><span class="line"><span class="regexp">          fileType = 'img';</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 上传图片至文件服务器，再获取返回的储存路径</span></span><br><span class="line"><span class="regexp">        let formData = new FormData();</span></span><br><span class="line"><span class="regexp">        formData.append('type', fileType);</span></span><br><span class="line"><span class="regexp">        formData.append('file', file.raw)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        this.$axios.post(</span></span><br><span class="line"><span class="regexp">          '/</span>fileUpload<span class="string">',</span></span><br><span class="line"><span class="string">          formData,</span></span><br><span class="line"><span class="string">          res =&gt; &#123;</span></span><br><span class="line"><span class="string">            if (res.code == 0) &#123;</span></span><br><span class="line"><span class="string">              this.imagesSelectList.push(&#123;</span></span><br><span class="line"><span class="string">                name: file.name,</span></span><br><span class="line"><span class="string">                url: res.data.file_url</span></span><br><span class="line"><span class="string">              &#125;);</span></span><br><span class="line"><span class="string">            &#125;else &#123;</span></span><br><span class="line"><span class="string">              this.$message.warning(res.message);</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">          &#125;</span></span><br><span class="line"><span class="string">        )</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      // 移除文件</span></span><br><span class="line"><span class="string">      handleRemove(file, fileList) &#123;</span></span><br><span class="line"><span class="string">        let index = this.imagesSelectList.findIndex((item) =&gt; &#123;</span></span><br><span class="line"><span class="string">          return item.name == file.name;</span></span><br><span class="line"><span class="string">        &#125;)</span></span><br><span class="line"><span class="string">        if (index !== -1) &#123;</span></span><br><span class="line"><span class="string">          this.imagesSelectList.splice(index, 1);</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/ElementUI/" rel="tag"># ElementUI</a>
+          
+            <a href="/tags/el-upload/" rel="tag"># el-upload</a>
+          
+            <a href="/tags/upload/" rel="tag"># upload</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/07/表单校验正则的方法/" rel="next" title="表单校验正则的方法">
+                <i class="fa fa-chevron-left"></i> 表单校验正则的方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/14/学习ES6/" rel="prev" title="学习ES6">
+                学习ES6 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#开发背景"><span class="nav-number">1.</span> <span class="nav-text">开发背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数说明"><span class="nav-number">2.</span> <span class="nav-text">参数说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

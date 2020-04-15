@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="面试,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言 对我每一次的面试经历进行分析，总结出自己的不足和面试的重点。以前觉得这样做很浪费时间，但是真的在总结的时候就发现原来自己真的好多问题，希望自己可以坚持下去！  2019.08.25 北京纬创(字节跳动，驻场)问题：  vue用了多久？最近半年的工作内容？ 用了两年多；利用微服务的概念，将以前的项目进行重构，具体是将原有项目(品控管理)按照模块及功能进行拆分，拆分出来的每一块就作为微服务的模块">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试总结">
+<meta property="og:url" content="http://yoursite.com/2019/08/29/面试总结/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="前言 对我每一次的面试经历进行分析，总结出自己的不足和面试的重点。以前觉得这样做很浪费时间，但是真的在总结的时候就发现原来自己真的好多问题，希望自己可以坚持下去！  2019.08.25 北京纬创(字节跳动，驻场)问题：  vue用了多久？最近半年的工作内容？ 用了两年多；利用微服务的概念，将以前的项目进行重构，具体是将原有项目(品控管理)按照模块及功能进行拆分，拆分出来的每一块就作为微服务的模块">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:updated_time" content="2019-08-30T06:22:19.702Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试总结">
+<meta name="twitter:description" content="前言 对我每一次的面试经历进行分析，总结出自己的不足和面试的重点。以前觉得这样做很浪费时间，但是真的在总结的时候就发现原来自己真的好多问题，希望自己可以坚持下去！  2019.08.25 北京纬创(字节跳动，驻场)问题：  vue用了多久？最近半年的工作内容？ 用了两年多；利用微服务的概念，将以前的项目进行重构，具体是将原有项目(品控管理)按照模块及功能进行拆分，拆分出来的每一块就作为微服务的模块">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/29/面试总结/">
+
+
+
+
+
+  <title>面试总结 | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/面试总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-29T14:28:50+08:00">
+                2019-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>对我每一次的面试经历进行分析，总结出自己的不足和面试的重点。<br>以前觉得这样做很浪费时间，但是真的在总结的时候就发现原来自己真的好多问题，希望自己可以坚持下去！</p>
+</blockquote>
+<h2 id="2019-08-25-北京纬创-字节跳动，驻场"><a href="#2019-08-25-北京纬创-字节跳动，驻场" class="headerlink" title="2019.08.25 北京纬创(字节跳动，驻场)"></a>2019.08.25 北京纬创(字节跳动，驻场)</h2><p>问题：</p>
+<ol>
+<li><h3 id="vue用了多久？最近半年的工作内容？"><a href="#vue用了多久？最近半年的工作内容？" class="headerlink" title="vue用了多久？最近半年的工作内容？"></a>vue用了多久？最近半年的工作内容？</h3><p> 用了两年多；利用微服务的概念，将以前的项目进行重构，具体是将原有项目(品控管理)按照模块及功能进行拆分，拆分出来的每一块就作为微服务的模块之一。这样做的好处是：1.不会影响其他模块、2.可以快速迭代开发、3.项目比较大时，整个项目的打包及部署都很慢，影响后续的开发工作，而微服务是轻便快捷的；</p>
+</li>
+<li><h3 id="微服务相关的项目？在项目中负责的模块及团队规模？"><a href="#微服务相关的项目？在项目中负责的模块及团队规模？" class="headerlink" title="微服务相关的项目？在项目中负责的模块及团队规模？"></a>微服务相关的项目？在项目中负责的模块及团队规模？</h3><p> （当前简历中未注明该项目）<br> 大后台管理；主要负责其中的用户管理及角色管理模块，后期也帮其他同事做过其他模块(工队管理、项目组成员等)；</p>
+</li>
+<li><h3 id="有关vue及后台业务管理的开发经验，在项目中做的比较好的可以讲一下-主要想要快速了解我的技术能力-。"><a href="#有关vue及后台业务管理的开发经验，在项目中做的比较好的可以讲一下-主要想要快速了解我的技术能力-。" class="headerlink" title="有关vue及后台业务管理的开发经验，在项目中做的比较好的可以讲一下(主要想要快速了解我的技术能力)。"></a>有关vue及后台业务管理的开发经验，在项目中做的比较好的可以讲一下(主要想要快速了解我的技术能力)。</h3><p> （我的理解是，遇到了什么问题是怎么解决的；回答：开发时间比较紧、只做了项目迁移、产品原型不清晰，开发之前未考虑清楚，跟产品需要沟通）<br> 目前来讲主要还是使用vue，所以开发中elementUI、vue-Router、vuex用的还是比较多比较熟练的。遇到问题比较多的地方是组件的使用，或者说是在原项目中有些泛滥成灾的组件，特别是组件与组件的层层嵌套，有时候会很难去找到组件的文件。这种使用方法，违背了组件使用的初衷，所以我现在在开发时，会考虑是否需要将一个功能以组件的形式编写，还有一种情况是页面模块按照组件拆分，这个是可以是页面的代码更加清晰明确不会因为复杂的功能而使页面的代码变得冗长难读。<br> ——上面表述了我在原项目中看到的问题，我的思考，但是并未解决。<br> <strong>axios的同步请求(需要了解)：</strong><br> 之前的同事封装好了axios的请求api，但是这个有个局限性就是无法进行同步请求。如果我想在等某个请求返回值完成后，再执行下一个请求时，就要在其回调函数内调用下一个函数，如果这种情况很多时，就会变成回调地狱。所以考虑使用async和await来实现，封装api文件：</p>
+</li>
+<li><h3 id="封装组件原因、内容及他人如何使用？"><a href="#封装组件原因、内容及他人如何使用？" class="headerlink" title="封装组件原因、内容及他人如何使用？"></a>封装组件原因、内容及他人如何使用？</h3><p>组织架构的弹窗：这个弹窗是用来让用户选择其所在公司组织架构下的部门的，因为在当前后台管理项目中多个页面中都有使用且样式和功能都是一致的仅数据不同，所以将其封装为一个组件，方便别人的使用。因为这个弹窗被封装在一个单独的vue文件内，所以只要将这个文件引入相应的页面(import ‘file’ from ‘components.vue’)中，并且注册后即可使用。<br>还有些弹窗需要根据组织架构来选择其某个部门下的人员，所以在组织架构弹窗的基础上进行扩展，在选择了当前部门最后一级时，可以再去加载其部门下对应的人员。<br>这部分的难点可能是数据的回显，已选择的数据的复选框应该是勾选状态的(不可再次勾选)，并且在列表右侧一列展示出当前已选中的数据，并且可以取消选中。之所以说是难点是因为使用v-modal来绑定已选中数据的，所以接口返回的选中数据，需要与原数据的结构保持一致，这一部分需要与后端沟通，告诉他所需的字段且不可随意更改。如果接口是已经写好的，并且有多余字段的存在，可以在获取数据后进行处理，获取自己所需要的字段即可。</p>
+</li>
+<li><h3 id="vue中的set函数-this-set-在什么场景下使用？使用的具体场景是什么-在项目中，哪个功能用到这个方法-？"><a href="#vue中的set函数-this-set-在什么场景下使用？使用的具体场景是什么-在项目中，哪个功能用到这个方法-？" class="headerlink" title="vue中的set函数(this.$set)在什么场景下使用？使用的具体场景是什么(在项目中，哪个功能用到这个方法)？"></a>vue中的set函数(this.$set)在什么场景下使用？使用的具体场景是什么(在项目中，哪个功能用到这个方法)？</h3><p>(接口返回的数据，对数据进行处理；正常情况下，按照下标为每一个元素赋值时，不会生效就需要用这个方法；做微服务时有个新模块叫角色管理，获取角色列表后需要勾选中被选择的数据，因为是使用v-model来实现选中。这里面有一个字段来判断是否选中，但是返回的数据是没有的，所以自己重新处理的时候用这个方法)<br>对数组进行处理 </p>
+<blockquote>
+<p><a href="https://cn.vuejs.org/v2/api/#Vue-set" title="Vue.set( target, propertyName/index, value )" target="_blank" rel="noopener">Vue.set( target, propertyName/index, value )</a><br> <strong>参数</strong>：<br><code>{Object | Array} target</code><br><code>{string | number} propertyName/index</code><br><code>{any} value</code><br> <strong>返回值</strong>：设置的值。<br> <strong>用法</strong>：<br>   向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新属性，因为 Vue 无法探测普通的新增属性 (比如  <code>this.myObject.newProperty = &#39;hi&#39;</code>)</p>
+</blockquote>
+</li>
+<li><h3 id="自定义组件时，如何实现v-model的功能？"><a href="#自定义组件时，如何实现v-model的功能？" class="headerlink" title="自定义组件时，如何实现v-model的功能？"></a>自定义组件时，如何实现v-model的功能？</h3><p>(如果用input[text]来做，相当于给组件绑定两个事件，绑定value的值和input事件)</p>
+</li>
+<li><h3 id="权限管理做的什么？"><a href="#权限管理做的什么？" class="headerlink" title="权限管理做的什么？"></a>权限管理做的什么？</h3><p>保持登录，后端接口的session在设置特定时间后会失效，所以在登录时请求一个接口获取token，并且保存在本地</p>
+</li>
+<li><h3 id="冒泡算法是什么？如何排序？"><a href="#冒泡算法是什么？如何排序？" class="headerlink" title="冒泡算法是什么？如何排序？"></a>冒泡算法是什么？如何排序？</h3><p>(两个循环，对比大小，再放到另一个数组内)</p>
+</li>
+<li><h3 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h3></li>
+<li><h3 id="样式问题：如何画三角，并且将其中的字居中。"><a href="#样式问题：如何画三角，并且将其中的字居中。" class="headerlink" title="样式问题：如何画三角，并且将其中的字居中。"></a>样式问题：如何画三角，并且将其中的字居中。</h3><p>（定位至右上角，设置boder-right,border-top，border的值是其宽度，中间的值利用伪元素，定位到右上角，三角形的圆角：border-radius-top-right）</p>
+</li>
+<li><h3 id="性能优化："><a href="#性能优化：" class="headerlink" title="性能优化："></a>性能优化：</h3><p>(减少请求，懒加载，图片压缩，雪碧图，缓存：vue里的keep-alive)</p>
+</li>
+<li><h3 id="开发工具："><a href="#开发工具：" class="headerlink" title="开发工具："></a>开发工具：</h3><p>(编辑器：sublime、merge )<br>webpack、<a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="noopener">vue-devtools</a><br><a href="https://www.zhihu.com/question/30680852" target="_blank" rel="noopener">参考链接</a></p>
+</li>
+<li><h3 id="换工作想要提升什么？"><a href="#换工作想要提升什么？" class="headerlink" title="换工作想要提升什么？"></a>换工作想要提升什么？</h3><p>(想要学一些比较正规的开发相关的)</p>
+</li>
+<li><h3 id="是否有学习一些原理性的技术？"><a href="#是否有学习一些原理性的技术？" class="headerlink" title="是否有学习一些原理性的技术？"></a>是否有学习一些原理性的技术？</h3></li>
+<li><h3 id="文件上传了解吗"><a href="#文件上传了解吗" class="headerlink" title="文件上传了解吗?"></a>文件上传了解吗?</h3></li>
+<li><h3 id="对今天面试的评价？"><a href="#对今天面试的评价？" class="headerlink" title="对今天面试的评价？"></a>对今天面试的评价？</h3><p>(面试官：技术方面主要在使用层，原理性的知识知道的比较少，往深了问问不下去。有感觉到在看一些相关的知识，由于原有项目的原因，没有接触到比较复杂的场景，所以总体来说，是面不过的。如果公司里不具备去学习或者使用新技术的环境，可以主动带头去做一些变更，在原有公司会有提升。主要还是需要学习的)</p>
+</li>
+</ol>
+<p>自我总结：把面试中的录音听了一遍，发现了很多问题。</p>
+<ul>
+<li>在回答问题时，理解问题有困难，总是需要想一下具体问的是什么问题。</li>
+<li>有口头语，额、啊、 这个听起来特别不好。可以思考然后准确说出想说的答案，不带有‘好像’、‘应该’这些词。</li>
+<li>说话逻辑不清晰，说着说着就乱了，这点特别不好。</li>
+<li>非常没有自信心</li>
+<li>主要还是原理性的问题比较多，还是得多看面试题，多看一些原理性的东西。</li>
+<li>别着急，别对自己失望，慢慢来，好好复习，这次一定要找一家好一点的公司。</li>
+</ul>
+<h2 id="2019-08-27-电话面试"><a href="#2019-08-27-电话面试" class="headerlink" title="2019.08.27 电话面试"></a>2019.08.27 电话面试</h2><ol>
+<li><h3 id="vue的指令有哪些？-v-if、v-show、v-html、v-bind、v-on、v-for"><a href="#vue的指令有哪些？-v-if、v-show、v-html、v-bind、v-on、v-for" class="headerlink" title="vue的指令有哪些？(v-if、v-show、v-html、v-bind、v-on、v-for)"></a>vue的指令有哪些？(v-if、v-show、v-html、v-bind、v-on、v-for)</h3></li>
+<li><h3 id="v-if、v-show的区别，在哪些场景中使用？"><a href="#v-if、v-show的区别，在哪些场景中使用？" class="headerlink" title="v-if、v-show的区别，在哪些场景中使用？"></a>v-if、v-show的区别，在哪些场景中使用？</h3></li>
+<li><h3 id="v-for中key的作用"><a href="#v-for中key的作用" class="headerlink" title="v-for中key的作用"></a>v-for中key的作用</h3><a href="https://www.jianshu.com/p/32943c14ee66" target="_blank" rel="noopener">参考链接</a></li>
+<li><h3 id="scoped的作用及原理"><a href="#scoped的作用及原理" class="headerlink" title="scoped的作用及原理"></a>scoped的作用及原理</h3></li>
+<li><h3 id="在两个非父子组件间传参都有哪些方法？两个同级组件通过父级组件传参的方式。"><a href="#在两个非父子组件间传参都有哪些方法？两个同级组件通过父级组件传参的方式。" class="headerlink" title="在两个非父子组件间传参都有哪些方法？两个同级组件通过父级组件传参的方式。"></a>在两个非父子组件间传参都有哪些方法？两个同级组件通过父级组件传参的方式。</h3></li>
+<li><h3 id="ES6中，箭头函数和普通函数的区别，this的指向问题，如何改变this的指向"><a href="#ES6中，箭头函数和普通函数的区别，this的指向问题，如何改变this的指向" class="headerlink" title="ES6中，箭头函数和普通函数的区别，this的指向问题，如何改变this的指向?"></a>ES6中，箭头函数和普通函数的区别，this的指向问题，如何改变this的指向?</h3></li>
+</ol>
+<h2 id="自我总结面试题"><a href="#自我总结面试题" class="headerlink" title="自我总结面试题"></a>自我总结面试题</h2><ol>
+<li><h3 id="vue-cli本地环境API代理设置和解决跨域"><a href="#vue-cli本地环境API代理设置和解决跨域" class="headerlink" title="vue-cli本地环境API代理设置和解决跨域"></a>vue-cli本地环境API代理设置和解决跨域</h3><a href="https://segmentfault.com/a/1190000011007043" target="_blank" rel="noopener">参考链接</a></li>
+</ol>
+<h2 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h2><ol>
+<li><a href="https://github.com/paddingme/Front-end-Web-Development-Interview-Question" target="_blank" rel="noopener">前端开发面试题大收集，前端面试集锦</a></li>
+<li><a href="http://davidshariff.com/quiz/" target="_blank" rel="noopener">交互式面试题</a></li>
+</ol>
+<h2 id="在线编辑Markdown"><a href="#在线编辑Markdown" class="headerlink" title="在线编辑Markdown"></a>在线编辑Markdown</h2><ol>
+<li><a href="https://stackedit.io/app" target="_blank" rel="noopener">链接</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/14/学习ES6/" rel="next" title="学习ES6">
+                <i class="fa fa-chevron-left"></i> 学习ES6
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-08-25-北京纬创-字节跳动，驻场"><span class="nav-number">2.</span> <span class="nav-text">2019.08.25 北京纬创(字节跳动，驻场)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue用了多久？最近半年的工作内容？"><span class="nav-number">2.1.</span> <span class="nav-text">vue用了多久？最近半年的工作内容？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微服务相关的项目？在项目中负责的模块及团队规模？"><span class="nav-number">2.2.</span> <span class="nav-text">微服务相关的项目？在项目中负责的模块及团队规模？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有关vue及后台业务管理的开发经验，在项目中做的比较好的可以讲一下-主要想要快速了解我的技术能力-。"><span class="nav-number">2.3.</span> <span class="nav-text">有关vue及后台业务管理的开发经验，在项目中做的比较好的可以讲一下(主要想要快速了解我的技术能力)。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装组件原因、内容及他人如何使用？"><span class="nav-number">2.4.</span> <span class="nav-text">封装组件原因、内容及他人如何使用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue中的set函数-this-set-在什么场景下使用？使用的具体场景是什么-在项目中，哪个功能用到这个方法-？"><span class="nav-number">2.5.</span> <span class="nav-text">vue中的set函数(this.$set)在什么场景下使用？使用的具体场景是什么(在项目中，哪个功能用到这个方法)？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义组件时，如何实现v-model的功能？"><span class="nav-number">2.6.</span> <span class="nav-text">自定义组件时，如何实现v-model的功能？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权限管理做的什么？"><span class="nav-number">2.7.</span> <span class="nav-text">权限管理做的什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡算法是什么？如何排序？"><span class="nav-number">2.8.</span> <span class="nav-text">冒泡算法是什么？如何排序？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则"><span class="nav-number">2.9.</span> <span class="nav-text">正则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式问题：如何画三角，并且将其中的字居中。"><span class="nav-number">2.10.</span> <span class="nav-text">样式问题：如何画三角，并且将其中的字居中。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能优化："><span class="nav-number">2.11.</span> <span class="nav-text">性能优化：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发工具："><span class="nav-number">2.12.</span> <span class="nav-text">开发工具：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换工作想要提升什么？"><span class="nav-number">2.13.</span> <span class="nav-text">换工作想要提升什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#是否有学习一些原理性的技术？"><span class="nav-number">2.14.</span> <span class="nav-text">是否有学习一些原理性的技术？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件上传了解吗"><span class="nav-number">2.15.</span> <span class="nav-text">文件上传了解吗?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对今天面试的评价？"><span class="nav-number">2.16.</span> <span class="nav-text">对今天面试的评价？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-08-27-电话面试"><span class="nav-number">3.</span> <span class="nav-text">2019.08.27 电话面试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue的指令有哪些？-v-if、v-show、v-html、v-bind、v-on、v-for"><span class="nav-number">3.1.</span> <span class="nav-text">vue的指令有哪些？(v-if、v-show、v-html、v-bind、v-on、v-for)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if、v-show的区别，在哪些场景中使用？"><span class="nav-number">3.2.</span> <span class="nav-text">v-if、v-show的区别，在哪些场景中使用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for中key的作用"><span class="nav-number">3.3.</span> <span class="nav-text">v-for中key的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scoped的作用及原理"><span class="nav-number">3.4.</span> <span class="nav-text">scoped的作用及原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在两个非父子组件间传参都有哪些方法？两个同级组件通过父级组件传参的方式。"><span class="nav-number">3.5.</span> <span class="nav-text">在两个非父子组件间传参都有哪些方法？两个同级组件通过父级组件传参的方式。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6中，箭头函数和普通函数的区别，this的指向问题，如何改变this的指向"><span class="nav-number">3.6.</span> <span class="nav-text">ES6中，箭头函数和普通函数的区别，this的指向问题，如何改变this的指向?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自我总结面试题"><span class="nav-number">4.</span> <span class="nav-text">自我总结面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-cli本地环境API代理设置和解决跨域"><span class="nav-number">4.1.</span> <span class="nav-text">vue-cli本地环境API代理设置和解决跨域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考网站"><span class="nav-number">5.</span> <span class="nav-text">参考网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线编辑Markdown"><span class="nav-number">6.</span> <span class="nav-text">在线编辑Markdown</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
