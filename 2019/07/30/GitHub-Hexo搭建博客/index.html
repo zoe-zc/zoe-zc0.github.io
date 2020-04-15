@@ -135,12 +135,15 @@
 <meta property="og:image" content="http://yoursite.com/images/2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/3.jpg">
 <meta property="og:image" content="http://yoursite.com/images/4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/11.jpg">
+<meta property="og:image" content="http://yoursite.com/images/12.jpg">
 <meta property="og:image" content="http://yoursite.com/images/5.jpg">
 <meta property="og:image" content="http://yoursite.com/images/7.png">
 <meta property="og:image" content="http://yoursite.com/images/6.jpg">
 <meta property="og:image" content="http://yoursite.com/images/8.jpg">
+<meta property="og:image" content="http://yoursite.com/images/10.jpg">
 <meta property="og:image" content="http://yoursite.com/images/9.jpg">
-<meta property="og:updated_time" content="2020-04-15T03:13:45.333Z">
+<meta property="og:updated_time" content="2020-04-15T08:48:44.173Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub + Hexo搭建博客">
 <meta name="twitter:description" content="前言做前端开发有几年了，之前一直都是在印象笔记上做记录，可以搜索觉得也挺方便的。 最近突然觉得这样记录下来的内容太碎片化，都是一些常用的方法和解决Bug的方法，并没有对一个问题进行过深入分析和探讨，所以觉得对很多地方的理解比较片面化而且记忆也不牢固。 由此，打算做一个简单的个人博客，用于对平时工作中遇到的问题做总结记录、发表个人己见的日志。 了解GitHub Pages博客的内容属于展示性的静态页">
@@ -477,15 +480,16 @@
 
 <p> <img src="/images/4.jpg" alt></p>
 </li>
-<li><p>创建好项目后，需要绑定SSH Key</p>
+<li><p>创建好项目后，需要绑定Github的SSH Keys</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
 
-<p> 若没有.ssh目录，则生成新的SSH Key：</p>
+<p> 先进入.ssh目录，或者直接在文件管理器中打开，一般路径是：C:\Users\89513<br> <img src="/images/11.jpg" alt></p>
+<p> 若没有.ssh目录，则生成新的SSH Keys：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"your e-mail(注册Github的邮箱)"</span></span><br></pre></td></tr></table></figure>
 
-<p> <em>注意：这里的邮箱是注册Github的邮箱</em></p>
+<p> <em>注意：这里的邮箱是注册Github的邮箱，不清楚邮箱的可以在下图位置查询</em><br> <img src="/images/12.jpg" alt></p>
 </li>
-<li><p>SSH Key生成成功后，复制~/.ssh/id_rsa.pub文件的内容</p>
+<li><p>SSH Key生成成功后，复制<code>~/.ssh/id_rsa.pub</code>文件的内容(包括最后的邮箱)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 
 <p> cat+文件名：打印文件的内容</p>
@@ -499,10 +503,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
 <p> 若配置成功，则显示：<br> <img src="/images/7.png" alt></p>
-<p> 如果之前设置过SSH keys，此时在本地执行ssh语句失败时，可以重新复制本地id_rsa.pub文件的内容，并在Github上删除原来的SSH keys，添加新的SSH keys值。<br> <img src="/images/6.jpg" alt></p>
+<p> 如果之前设置过SSH keys，但在本地执行检测语句失败时，可以重新复制<code>~/.ssh/id_rsa.pub</code>文件的内容，并在Github上删除原来的SSH keys，添加新的SSH keys。<br> <img src="/images/6.jpg" alt></p>
 </li>
 <li><p>绑定GitHub，将博客发布到Github的同名repository中</p>
-<p> 打开<strong>F:/github-blog/blog</strong>文件夹下的_config.yml文件，拖动滚动条至文件最末端，找到图中位置：<br> <img src="/images/8.jpg" alt></p>
+<p> 打开<strong>F:/github-blog/blog</strong>文件夹下的_config.yml文件，拖动滚动条至文件最末端，找到图中的位置并修改：<br> <img src="/images/8.jpg" alt></p>
 <p> 改为：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:zoe-zc/zoe-zc.github.io</span><br></pre></td></tr></table></figure>
 
@@ -510,10 +514,10 @@
 </li>
 </ol>
 <p>现在可以通过访问线上域名<a href="https://zoe-zc.github.io/" target="_blank" rel="noopener">https://zoe-zc.github.io/</a>来查看自己的博客了。</p>
-<p>至此，本地博客搭建并与GitHub绑定都完成了，默认的主题实在是不喜欢，决定换成Next主题。</p>
+<p>至此，本地博客搭建并与GitHub绑定都完成了，默认的主题不太喜欢，决定换成Next主题。</p>
 <h2 id="设置Hexo的主题"><a href="#设置Hexo的主题" class="headerlink" title="设置Hexo的主题"></a>设置Hexo的主题</h2><ol>
 <li><p>下载Next主题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> F:/forMyself/blog</span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> F:/github-blog/blog</span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更改主题设置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">打开D:\Hexo下的_config.yml文件，找到theme字段，将其修改为next</span><br><span class="line"></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
@@ -563,8 +567,11 @@
 <p> 参数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-g, --generate  部署之前预先生成静态文件</span><br></pre></td></tr></table></figure>
 
-<p> 该方法最常用于完成文章后，执行命令行，同步至GitHub上</p>
+<p> 该方法最常用，在完成文章后，可将代码同步至GitHub上，就可以在线上查看博客了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+
+<p> 部署成功：<br> <img src="/images/10.jpg" alt></p>
+<p> 这一步最容易失败，具体的解决方法移步至<a href="#报错原因">报错原因</a></p>
 </li>
 <li><p>清除缓存文件 (db.json) 和已生成的静态文件 (public)<br> 在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
@@ -583,19 +590,26 @@
 </ol>
 <p><img src="/images/9.jpg" alt></p>
 <p>本文最后有介绍如何注册及绑定自己的域名，因为对服务器不熟悉，所以暂时还没有做，感兴趣的朋友可以参考一下呦！友情链接：<a href="http://www.jeyzhang.com/hexo-github-blog-building.html" target="_blank" rel="noopener">戳这里跳转</a></p>
-<h3 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h3><p>执行hexo d，最开始的报错内容：</p>
+<h3 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h3><ol>
+<li><p>执行hexo d，最开始的报错内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
 
-<p>执行命令行解决：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p> 执行命令行解决：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再次执行hexo d，又报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ERROR: Permission to zoe-zc/zoe-zc.github.io.git denied to 294401374.</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Spawn failed</span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (F:\github-blog\blog\node_modules\hexo-util\lib\spawn.js:52:19)</span><br><span class="line">    at ChildProcess.emit (events.js:198:13)</span><br><span class="line">    at ChildProcess.cp.emit (F:\github-blog\blog\node_modules\cross-spawn\lib\enoent.js:40:29)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)</span><br></pre></td></tr></table></figure>
 
-<p>再次执行hexo d，又报错：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ERROR: Permission to zoe-zc/zoe-zc.github.io.git denied to 294401374.</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Spawn failed</span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (F:\forMyself\blog\node_modules\hexo-util\lib\spawn.js:52:19)</span><br><span class="line">    at ChildProcess.emit (events.js:198:13)</span><br><span class="line">    at ChildProcess.cp.emit (F:\forMyself\blog\node_modules\cross-spawn\lib\enoent.js:40:29)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)</span><br></pre></td></tr></table></figure>
-
-<p>各种google下来也没解决，有的说删除.deploy_git文件夹，重新执行hexo d，在我这也不生效。还有说Git环境变量的问题，重新添加了也没用。后来删了项目重新安装也是不行，最后发现id_rsa.pub文件最后的邮箱不是Github的(邮箱是以前同事的名)，在本地重新生成id_rsa.pub文件。然后把GitHub上的SSH Keys删掉，添加新的SSH Keys后就好了。</p>
-<p>修改了Hexo的配置后，本地生效，hexo g -d执行后GitHub上不生效：</p>
+<p> 各种google下来也没解决，有的说删除.deploy_git文件夹，重新执行hexo d，在我这也不生效。还有说Git环境变量的问题，重新添加了也没用。后来删了项目重新安装也是不行，最后发现id_rsa.pub文件最后的邮箱不是Github的(邮箱是以前同事的名)，在本地重新生成id_rsa.pub文件。然后把GitHub上的SSH Keys删掉，添加新的SSH Keys后就好了。</p>
+</li>
+<li><p>如果上面的方法都尝试了，但还是报错的话，可以查看本地是否给git设置email和name，当email的值与Githab上SSH Keys的值不一致时，也会报权限问题的错误。<br> 特别是当Github有公司和自己两个账号时，注意检查一下email的值。如果值不对的话，可以按照下面的方法设置：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;用户名&quot;</span><br><span class="line">$ git config --global user.email  &quot;Github邮箱名&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改了Hexo的配置后，本地生效，在执行hexo d -g后线上的代码却不生效：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解决办法：</span><br><span class="line">删除public/css/main.css后，重新执行hexo g，hexo d</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
 <p>大成功~<br>&nbsp;</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>历时一天，终于配置好了属于自己的博客，下午开开心心的写了第一篇文章(也就是你看到的这篇！)。这个过程中遇到了许多问题，最主要原因是因为参考的文档太多太杂，没有从一开始就按照同一篇文章的步骤操作，导致出现了一些奇怪的问题。好在最后都顺利解决，撒花✿✿ヽ(°▽°)ノ✿</p>
 
