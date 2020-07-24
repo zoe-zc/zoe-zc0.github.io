@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ego-blog (1).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ego-blog.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Js基本语法对象对属性的操作：增、删、改、查 增：直接对对象增加属性 1obj.name = &apos;light&apos;;  删：删除对象的属性 1delete obj.name;// 结果为true  改：修改对象的属性 1obj.shape = &apos;circle&apos;;  查：查看对象的属性 1obj.name;// undefined 被删掉了    查看一个对象不存在的属性时，返回undefined 对象的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端之路的基石-JavaScript⑥">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑥/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="Js基本语法对象对属性的操作：增、删、改、查 增：直接对对象增加属性 1obj.name = &apos;light&apos;;  删：删除对象的属性 1delete obj.name;// 结果为true  改：修改对象的属性 1obj.shape = &apos;circle&apos;;  查：查看对象的属性 1obj.name;// undefined 被删掉了    查看一个对象不存在的属性时，返回undefined 对象的">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B1%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B2%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B3%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B4%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B5%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B6%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B7%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B8%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B9%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B10%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B11%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B12%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B13%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B14%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B15%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B16%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B17%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B18%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B19%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B20%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B21%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B22%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B23%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B24%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B25%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B26%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B27%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B28%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B29%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js6/Image%5B30%5D.png">
+<meta property="og:updated_time" content="2020-07-24T04:32:27.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端之路的基石-JavaScript⑥">
+<meta name="twitter:description" content="Js基本语法对象对属性的操作：增、删、改、查 增：直接对对象增加属性 1obj.name = &apos;light&apos;;  删：删除对象的属性 1delete obj.name;// 结果为true  改：修改对象的属性 1obj.shape = &apos;circle&apos;;  查：查看对象的属性 1obj.name;// undefined 被删掉了    查看一个对象不存在的属性时，返回undefined 对象的">
+<meta name="twitter:image" content="http://yoursite.com/images/20062601/js6/Image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑥/">
+
+
+
+
+
+  <title>前端之路的基石-JavaScript⑥ | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑥/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端之路的基石-JavaScript⑥</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T11:57:08+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Js基本语法"><a href="#Js基本语法" class="headerlink" title="Js基本语法"></a>Js基本语法</h2><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><h4 id="对属性的操作：增、删、改、查"><a href="#对属性的操作：增、删、改、查" class="headerlink" title="对属性的操作：增、删、改、查"></a>对属性的操作：增、删、改、查</h4><ol>
+<li><p>增：直接对对象增加属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.name = <span class="string">'light'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删：删除对象的属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> obj.name;<span class="comment">// 结果为true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>改：修改对象的属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.shape = <span class="string">'circle'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查：查看对象的属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.name;<span class="comment">// undefined 被删掉了</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>查看一个对象不存在的属性时，返回undefined</p>
+<h4 id="对象的创建方法"><a href="#对象的创建方法" class="headerlink" title="对象的创建方法"></a>对象的创建方法</h4><ol>
+<li><p>对象字面量/对象直接量：plainObjedt</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; &#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数：<br> ① 系统自带的构造函数：Object()、Array()、Number()<br> 构造方法：Object()这个函数可以批量的生产对象，生产出来的对象长得一样但彼此之间相互独立。执行new Object()方法返回一个真正的对象，就需要接收对象：var obj = new Object();与var obj = {};是一样的，只是形式不同。</p>
+<blockquote>
+<p>js的对象与java、c++类语言不同，另两个需要类作为模板来批量生成对象，相当于js中的构造函数，但是js与之不同的是在对象生成之后还可以随意的修改属性和方法、而其他两种语言是不可以修改的。所以，js更加灵活。</p>
+</blockquote>
+<p> ② 自定义<br> 结构上与函数没有任何分别，唯一区别是通过new 来生成对象。<br> 规则：构造函数在命名时，按照大驼峰式命名规则</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> person();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数内部原理： (三段式)<br> 在函数的执行语句前加上new关键字，就会产生下面的变化：<br> ① 在函数体最前面隐式的加上语句：var this = {};<br> ② 执行 this.xxx = xxx; 将函数内的实参赋值给this的属性<br> ③ 隐式的返回this<br> <img src="/images/20062601/js6/Image.png" alt></p>
+<blockquote>
+<p>当显式的在函数最后通过return返回值时，return后的值只能是原始值(字符串等)，这种情况下会忽略return后面的值，从而返回原本对象的值。如果是返回{}对象这样的值时，就会返回return后对象的内容；</p>
+</blockquote>
+<p> <img src="/images/20062601/js6/Image%5B1%5D.png" alt></p>
+</li>
+</ol>
+<p>对象创建方法总结：</p>
+<ol>
+<li>字面量</li>
+<li>构造函数</li>
+<li>函数自定义</li>
+<li>Object.create</li>
+</ol>
+<h4 id="包装类："><a href="#包装类：" class="headerlink" title="包装类："></a>包装类：</h4><p>在给原始值添加属性时，实际上原始值是不可以添加的，但是执行添加属性的语句不会报错。是因为系统隐式的通过调用原始值的对象来执行，得到结果后又将其删除，在打印添加的属性时，系统重新执行之前的隐式操作，打印值为undefined.</p>
+<ol>
+<li><p>问题一：给数字类型的变量num设置一个属性len为3，打印时是undefined的原因？<br> <img src="/images/20062601/js6/Image%5B2%5D.png" alt><br> 问题分析：<br> 当原始值调用属性时，无论赋值还是查找，首先自己没有这个属性，所以会隐式的发生以下过程。</p>
+<p> 由于num不能增加len属性，系统就会隐式的执行代码：new Number(num).len = 3;来弥补操作的不足。这步完成之后，直接通过delete方法销毁得到的结果。</p>
+<p> 在打印num.len时，因为上次执行得到的结果已经被删除了，系统会再次执行new Number(num)并访问len属性。这次的new Number(num)和上面的是不同的对象，第一次生成的对象new Number(num)已经被销毁，再次生成的就更加没有len属性，所以返回的值是undefined。</p>
+<p> <em>原始值可以操作属性，这实际上是系统隐式的执行”原始值的对象类”来完成操作的，本来没有的属性，系统隐式生成的这个过程就叫做包装类。</em></p>
+</li>
+<li><p>问题二：数组可以通过设置长度来截取数据，那么字符串是不是也可以？<br> <img src="/images/20062601/js6/Image%5B3%5D.png" alt><br> 问题解析：<br> str本身没有.length方法，所以系统会隐形的执行：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(str).length = <span class="number">2</span>; <span class="comment">// 截取字符</span></span><br><span class="line"><span class="keyword">delete</span> <span class="comment">// 截取完成后，结果被销毁了</span></span><br></pre></td></tr></table></figure>
+
+<p> 虽然系统执行了截取操作，但是执行完没有赋值给其他变量，而是销毁了。所以在打印str时，取的值还是最开始定义的str的值，而不是系统截取的值。</p>
+<p> 最后打印str.length得到4，是因为”字符串对象”本身就有一个.length属性，相当于：访问new String(str).length后，把值返回<br> <img src="/images/20062601/js6/Image%5B4%5D.png" alt></p>
+<blockquote>
+<p>Unicode编码包含ASCII编码的255位。<br> Unicode编码最开始是4位(16进制)的，后来又加了4层</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>原型是function对象的一个属性，它定义了构造函数构造出的对象的公共祖先。通过该构造函数产生的对象，可以继承该原型的属性和方法。原型也是对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数符合特点：大驼峰式，函数名首字母大写</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="comment">// 构造函数可以生成多个相似且各个独立的对象</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+
+<p><code>Person</code>代表函数体(函数引用)，函数也是一个对象，也有属性和方法。<br>Person.<strong>prototype</strong>：这是系统自带的属性，这个<code>prototype</code>就是<strong>原型</strong>。这个值在函数定义完成后就被定义好了，它是一个空对象<code>Person.prototype = {}</code>，相当于是<code>Person</code>这个构造函数构造出的对象的父级。</p>
+<p>prototype可以赋值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.name = <span class="string">"laodeng"</span>;</span><br><span class="line">person; <span class="comment">// 空对象 Person &#123;&#125;</span></span><br><span class="line">person.name; <span class="comment">// laodeng</span></span><br></pre></td></tr></table></figure>
+
+<p><em>person原本没有name的属性，但是因为在prototype上定义了，所以person就继承了父级的属性。</em><br><em>person和person1都继承自同一个构造函数的prototype，并且共享prototype的属性。</em><br>疑问：两个对象可以都修改prototype吗?一个改了另一个有影响吗？</p>
+<p><strong>原型是一个公有祖先，是该构造函数所构造出的对象的公有祖先</strong></p>
+<p>对象获取的值有自己本身的属性也有原型提供的。</p>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>利用原型特点和概念，可以提取共有属性(放在原型里执行赋值，减少函数内的赋值操作)<br><img src="/images/20062601/js6/Image%5B5%5D.png" alt></p>
+<h4 id="对象查看原型"><a href="#对象查看原型" class="headerlink" title="对象查看原型"></a>对象查看原型</h4><p>原型的增删改查：</p>
+<ol>
+<li>对象可以通过prototype查看、新增原型的属性</li>
+<li>不可以删除、修改，只有构造函数可以</li>
+</ol>
+<p>隐式属性 <code>__proto__</code>：用于存储对象的原型</p>
+<blockquote>
+<p>在开发工作中，可以通过定义<code>_private</code>这样格式的变量来告诉同事，这是属于我的私有变量，不要改动</p>
+</blockquote>
+<p><code>__proto__</code>属性的作用：把原型和构造函数联系到一起</p>
+<p><img src="/images/20062601/js6/Image%5B6%5D.png" alt><br>在控制台打印<code>otherPerson</code>这个对象的结果是一个空对象，但其包含系统自定义属性<code>__proto__</code>，这个属性实际上是由下图的隐式定义(被注释部分)而来的：<br><img src="/images/20062601/js6/Image%5B7%5D.png" alt><br>在使用new关键字来构造对象时，内部隐式的发生了“三段式”，第一步是定义一个空对象<code>this</code>。但实际上<code>this</code>并不是空值，里边的值就是<code>__proto__</code>，指向构造函数的原型(Person.prototype)。所以在对象被构造完成时，就会生成<code>__proto__</code>属性</p>
+<p>根据上述原因，构造函数构造的对象的原型是可以修改的，只需修改对象<code>__proto__</code>的指向。<br><img src="/images/20062601/js6/Image%5B8%5D.png" alt></p>
+<p><code>__proto__</code>的作用：当访问一个对象的属性时，若该对象本身没有这个值时，会根据<code>__proto__</code>指向的索引去找到这个属性。</p>
+<blockquote>
+<p>总结：<br>&emsp;<code>prototype</code> 是构造函数的属性<br>&emsp;<code>__proto__</code>  是构造函数所构造的对象的隐藏属性</p>
+</blockquote>
+<h4 id="对象查看对象的构造函数"><a href="#对象查看对象的构造函数" class="headerlink" title="对象查看对象的构造函数"></a>对象查看对象的构造函数</h4><p>constructor：构造器，会返回构造对象的构造函数<br><img src="/images/20062601/js6/Image%5B9%5D.png" alt></p>
+<p><strong>重难点</strong>：<br>Fruits.prototype.name放置的位置不同，在函数最后所打印出来的值也不同<br><img src="/images/20062601/js6/Image%5B10%5D.png" alt><br>上述代码，最后给Fruits.prototype 直接赋值一个新的对象。但此时已经执行完构造对象的方法。name的值已经定义好就是”apple”，再改变已经不生效。</p>
+<p>如果改到执行构造对象之前，结果也不同：<br><img src="/images/20062601/js6/Image%5B11%5D.png" alt></p>
+<p>上述代码，在执行构造对象的方法之前，给Fruits.prototype 直接赋值一个新的对象。name的值就是后来改的对象的值”cherry”。</p>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>在原型上加上原型再加上原型，这样的一个把原型连成链的方法，访问顺序也是依照链的顺序来访问(像作用域链一样的访问顺序，由近及远)，就叫做原型链。</p>
+<p>原型链的<strong>连接点</strong>就是每个对象的<strong><code>__proto__</code></strong>属性<br><img src="/images/20062601/js6/Image%5B12%5D.png" alt></p>
+<p>理解分析：<br>    ② 打印son.name的属性时，因为son对象本身没有name这个属性，接下来会找<code>__proto__</code>指向的原型。原型是father，因为father有name的属性，所以直接打印。<br>    ③ 打印son.lastName时，按照顺序：son自己 –&gt; 通过<code>__proto__</code>找到prototype –&gt; father –&gt; 通过<code>__proto__</code>找到prototype –&gt; grand –&gt;  通过<code>__proto__</code>找到prototype，最后在grand的prototype中找到lastName属性<br>    ④ 打印son.toString时，通过原型链最后找到grand的原型上依然没有，但这不是终点，因为grand对象还有Grand.prototype.<code>__proto__</code>，访问到Object.prototype，找到toString的方法<br>    <img src="/images/20062601/js6/Image%5B13%5D.png" alt></p>
+<p>如果打印Grand.prototype.<code>__proto__</code> 值为：Object.prototype;</p>
+<p><em>Object.prototype是所有对象的最终原型</em></p>
+<p>Object.prototype.<code>__proto__</code> = null;</p>
+<h4 id="原型链的增删改查：和原型基本一致"><a href="#原型链的增删改查：和原型基本一致" class="headerlink" title="原型链的增删改查：和原型基本一致"></a>原型链的增删改查：和原型基本一致</h4><p>查看：由近及远，按照原型链来查找<br>删除：只能原型本身可以删除自己的属性<br>修改：只能原型本身可以修改<br>增加：只能原型本身可以增加属性</p>
+<p>子级对象修改父级的prototype的值：<br><img src="/images/20062601/js6/Image%5B14%5D.png" alt></p>
+<p>这种修改方式可以成功，但是本质上是引用值fortune的修改，给自己增加了新的属性card2。</p>
+<p>如果直接携程：son.fortune.card1 = ‘123’这样的形式，父级father原型也会跟着变</p>
+<h4 id="对象声明的分析"><a href="#对象声明的分析" class="headerlink" title="对象声明的分析"></a>对象声明的分析</h4><p>声明一个对象，一般按照对象字面量的方式生成：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>上面这种方式，其实相当于系统内部执行 –&gt;new Object()</p>
+<p>所以还可以用另一种方式声明，但是不要用 0.0：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
+
+<p>这两种方式其实是一样的，在控制台打印出来的<code>__proto__</code>指向相同，都是Object.prototype。</p>
+<p>obj是通过字面量的形式生成的，访问构造器时一样返回Object构造函数：<br><img src="/images/20062601/js6/Image%5B15%5D.png" alt></p>
+<p>根据上述知识点，得出结论：<br>构造函数Person.prototype有一个默认值 {}，这个默认值就是对象字面量，对象字面量的原型就是Object.prototype</p>
+<p>原型链的对象终端：Person.prototype = {} –&gt; Object.prototype</p>
+<h4 id="绝大多数对象的最终都会继承自Object-prototype"><a href="#绝大多数对象的最终都会继承自Object-prototype" class="headerlink" title="绝大多数对象的最终都会继承自Object.prototype"></a>绝大多数对象的最终都会继承自Object.prototype</h4><p>因为下面用null来创建对象的方法没有<code>__proto__</code>属性，所以不是继承自Object.prototype</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj2 = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p>并且不能自己给这个对象添加属性，即使硬性添加了，也无法打印<br><img src="/images/20062601/js6/Image%5B16%5D.png" alt></p>
+<h4 id="Object-creat-prototype-：用于创建对象"><a href="#Object-creat-prototype-：用于创建对象" class="headerlink" title="Object.creat(prototype)：用于创建对象"></a>Object.creat(prototype)：用于创建对象</h4><p>参数：prototype必填项，并且只能是对象的原型(数据类型可以是：object、arr)和null<br>另一个参数：definedProperty，控制对象是否有可配置性</p>
+<blockquote>
+<p>一旦经过 var  操作的属性，目前针对window对象，这种属性就是不可配置的属性。不可配置的属性，无法用delete方法删除。</p>
+</blockquote>
+<p><img src="/images/20062601/js6/Image%5B17%5D.png" alt><br>obj1里的原型就是obj，Obj1.<code>__proto__</code>: demo.prototype</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(<span class="literal">null</span>);<span class="comment">// 空对象，没有`__proto__`，也就是没原型。</span></span><br><span class="line">obj.toString();<span class="comment">// 打印error，obj.toString is not a function</span></span><br></pre></td></tr></table></figure>
+
+<p>obj对象没有toString方法，所以打印时报错。但是它依然是对象，可以添加属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.name = <span class="string">"sunny"</span>;<span class="comment">// 打印obj，Object &#123;name: sunny&#125;，展开依然没有`__proto__`.如下图：</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20062601/js6/Image%5B18%5D.png" alt></p>
+<p>手动给obj添加<code>__proto__</code>属性：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj2.<span class="string">`__proto__`</span> = &#123;<span class="attr">age</span>: <span class="number">18</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj2);<span class="comment">// 结果见下图</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20062601/js6/Image%5B19%5D.png" alt></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(obj2.age);<span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>打印结果是undefined，说明手动给一个空对象添加<code>__proto__</code>属性和值是没有用的，系统不会读取。原型是系统内部隐式的存在，不能人为操作。可以修改，但是不能自己去创建。</p>
+<h4 id="细说toString-方法"><a href="#细说toString-方法" class="headerlink" title="细说toString()方法"></a>细说toString()方法</h4><p>数字等可以调用toString()方法，因为它们能经过包装类去一层层的向上访问，包装类能包装起来是个对象，对象最终链的原型的终端就是Object.prototype，调用就是Object.prototype上的toString方法。</p>
+<p>undefined、null 是原始值，没有原型。不是对象，也不能经过包装类，所以不能调用toString()方法。<br>只有undefined、null还有通过Object.create(null)创建的对象没有原型，也就不能调用toString()方法。</p>
+<p>问题：那么toString是什么呢？使用时有哪些注意问题？<br>toString就是将变量都变为字符串类型的方法。</p>
+<ol>
+<li><p>数字必须存为一个变量，不能直接写成 123.toString() 的形式。因为数字后的点被当成了小数点，而数学符号优先级高于对象调用。所以系统认为这是一个浮点数，小数点后应该跟数字，所以跟了字母会认为是语法错误。</p>
+<p> 例如：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123.</span>toString();</span><br><span class="line"><span class="keyword">var</span> num = <span class="number">123</span>; num.toString();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数字调用的toString()方法，需要先经过包装类包装newNumber(数字).toString()。</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">123</span>;</span><br><span class="line">num.toString(); --&gt; <span class="keyword">new</span> <span class="built_in">Number</span>(num).toString();</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Number</span>(num)的toString()方法，来自于<span class="built_in">Number</span>对象的原型上重写的方法。</span><br><span class="line"><span class="built_in">Number</span>.prototype.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Number.prototype.`__proto__` = Object.prototype;</span></span><br></pre></td></tr></table></figure>
+
+<p> 根据上面的代码，看出来这是个原型链，所以就会按照由近及远的规则来找。Number在找toString方法时在自己的原型上找到了，所以不会再去向上找了。</p>
+<blockquote>
+<p>重写：原型上是有该方法的，但是对象自身又重新写了同一个名字但不同功能的方法。叫做同一个名字的函数的不同重写方式。主要应用于后端的静态语言(java、c++)的重写，一个类里面有很多的方法，这些方法的名字、返回值、类型、形参列表都不一样，这个叫做真正的重写。</p>
+</blockquote>
+<blockquote>
+<p>像下面的方式就是js内方法的重写：<br> Number的toString()方法定义于它自身的原型链：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.prototype.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>Number本身也有原型，那么它也有Object.prototype上的toString方法：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.prototype.<span class="string">`__proto__`</span> = <span class="built_in">Object</span>.prototype;</span><br><span class="line"><span class="built_in">Object</span>.prototype.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p> <strong>重写，总得来说就是写出一个同样的名但是不同功能的方法。</strong></p>
+<p> 在系统内将Number、Array、Boolean、String的方法都重写了，所以原始值在调用toString()时，调用的都是重写的方法，而不是Object.prototype上的方法<br> <img src="/images/20062601/js6/Image%5B20%5D.png" alt></p>
+</li>
+<li><p>对象调用的toString()方法，会返回[object Object]，这是因为对象的原型终端就是Object.prototype</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj4 = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj4.toString());<span class="comment">// [object Object]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>document.write在页面输出时，会先执行toString方法<br><img src="/images/20062601/js6/Image%5B21%5D.png" alt></p>
+</li>
+<li><p>JavaScript的小bug<br> 无法解决的bug，是JavaScript精度不准的问题。<br> 由于一点点偏差造成的，而这个偏差甚至可以忽略不计，但是结果影响却很大。</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">0.14</span> * <span class="number">100</span>);<span class="comment">// 14.000000000000002</span></span><br></pre></td></tr></table></figure>
+
+<p> JavaScript应该避免小数操作，即使要操作小数的话，也应该通过Math的方法：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.floor(); 向下取整</span><br><span class="line"><span class="built_in">Math</span>.ceil();   向上取整</span><br><span class="line"><span class="built_in">Math</span>.ceil();   随机数：<span class="number">0</span><span class="number">-1</span>开区间</span><br></pre></td></tr></table></figure>
+
+<p> <img src="/images/20062601/js6/Image%5B22%5D.png" alt></p>
+<p> 计算浮点数时按照一个规则：先计算再取整。</p>
+</li>
+<li><p>JavaScript只能操作小数点后15位，小数点前16-17位？<br> 这是遗留下的bug，现在已经被修复了。<br> <strong>JavaScript可以操作小数点后的无数位，因为现在用科学技术法来表示。</strong><br> <img src="/images/20062601/js6/Image%5B23%5D.png" alt></p>
+<p> 科学计数法：2.2e-17，意思是2.2*10的-17次方<br> <img src="/images/20062601/js6/Image%5B24%5D.png" alt></p>
+<p> 上面的情况就不可以正常计算</p>
+<p> 小数点前17位相加时，最后一位被砍掉了，所以JavaScript可以操作小数点前的16位。<br> <img src="/images/20062601/js6/Image%5B25%5D.png" alt></p>
+<p> <strong>JavaScript可以正常计算的小数的取值范围：[16, 16]</strong></p>
+</li>
+</ol>
+<h3 id="call-apply"><a href="#call-apply" class="headerlink" title="call / apply"></a>call / apply</h3><h3 id="作用：改变this指向"><a href="#作用：改变this指向" class="headerlink" title="作用：改变this指向"></a>作用：改变this指向</h3><ol>
+<li><p><strong>任何一个方法都可以执行.call方法</strong>，例如：<br> PersonFive();  –&gt;  PersonFive.call();</p>
+<p> 执行构造函数PersonFive时，内部转化成了PersonFive.call()执行，这才是一个方法(函数)真实的执行方式。这两种写法是上一样的</p>
+<p> 函数也是同理：<br> <img src="/images/20062601/js6/Image%5B26%5D.png" alt></p>
+<p> 在执行PersonFive.call()时，将对象obj作为参数传进去。call就会引导着PersonFive发生变化。会<strong>将构造函数PersonFive内所有预设的this全部变成obj。</strong></p>
+<p> <strong>在执行构造函数时，如果不通过new关键字来执行，那么this指向的是window(默认)</strong>。通过new来生成对象时，指向的是构造函数的原型。</p>
+<p> 在执行构造函数时，如果通过call方法来执行，并向函数传一个空对象obj。那么构造函数PersonFive在执行时内部的this就不再是默认值window了，而是指定好的那个值(传进去的对象)</p>
+<p> PersonFive内的this此时指向obj：<br> <img src="/images/20062601/js6/Image%5B27%5D.png" alt></p>
+<p> 执行时传参， 第一位是指定的对象(改变this的指向)，第二位开始是与形参对应的实参：<br> <img src="/images/20062601/js6/Image%5B28%5D.png" alt></p>
+<p> call的根本作用就是借用其他函数的方法来改变this指向，再通过所传参数生成自己的对象。借用他人方法实现自己的功能。</p>
+</li>
+<li><p><strong>避免重复编写相同代码：</strong><br> 企业开发时，调用其他人写好的模块生成自己的功能<br> <img src="/images/20062601/js6/Image%5B29%5D.png" alt></p>
+</li>
+</ol>
+<h4 id="区别：后面传的参数形式不同"><a href="#区别：后面传的参数形式不同" class="headerlink" title="区别：后面传的参数形式不同"></a>区别：后面传的参数形式不同</h4><ol>
+<li>call 除了第一位的对象，剩下的参数需要把实参按照形参的个数传进去</li>
+<li>apply 第一位也是对象，只能传一个实参，并且只能是数组形式(传一个arguments)<br><img src="/images/20062601/js6/Image%5B30%5D.png" alt></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript⑤/" rel="next" title="前端之路的基石-JavaScript⑤">
+                <i class="fa fa-chevron-left"></i> 前端之路的基石-JavaScript⑤
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript⑦/" rel="prev" title="前端之路的基石-JavaScript⑦">
+                前端之路的基石-JavaScript⑦ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Js基本语法"><span class="nav-number">1.</span> <span class="nav-text">Js基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">1.1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对属性的操作：增、删、改、查"><span class="nav-number">1.1.1.</span> <span class="nav-text">对属性的操作：增、删、改、查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的创建方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">对象的创建方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包装类："><span class="nav-number">1.1.3.</span> <span class="nav-text">包装类：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型"><span class="nav-number">1.2.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用"><span class="nav-number">1.2.2.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象查看原型"><span class="nav-number">1.2.3.</span> <span class="nav-text">对象查看原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象查看对象的构造函数"><span class="nav-number">1.2.4.</span> <span class="nav-text">对象查看对象的构造函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型链"><span class="nav-number">1.3.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型链的增删改查：和原型基本一致"><span class="nav-number">1.3.2.</span> <span class="nav-text">原型链的增删改查：和原型基本一致</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象声明的分析"><span class="nav-number">1.3.3.</span> <span class="nav-text">对象声明的分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绝大多数对象的最终都会继承自Object-prototype"><span class="nav-number">1.3.4.</span> <span class="nav-text">绝大多数对象的最终都会继承自Object.prototype</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-creat-prototype-：用于创建对象"><span class="nav-number">1.3.5.</span> <span class="nav-text">Object.creat(prototype)：用于创建对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#细说toString-方法"><span class="nav-number">1.3.6.</span> <span class="nav-text">细说toString()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call-apply"><span class="nav-number">1.4.</span> <span class="nav-text">call / apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用：改变this指向"><span class="nav-number">1.5.</span> <span class="nav-text">作用：改变this指向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#区别：后面传的参数形式不同"><span class="nav-number">1.5.1.</span> <span class="nav-text">区别：后面传的参数形式不同</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

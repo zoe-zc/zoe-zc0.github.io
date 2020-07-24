@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN.yml">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ego-blog (1).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ego-blog.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Js基本语法DOM定义DOM叫做 (Document Object Model)文档对象模型 DOM定义了表示和修改文档所需的方法。DOM对象即为宿主对象，由浏览器厂商定义，用来操作html和xml功能的一类对象的集合。也有人称DOM是对HTML以及XML的标准编程接口。 DOM提供了一系列的方法，这些方法可以操作html和xml，但是不可以操作CSS。注：任何方法都无法操作CSS  XML是什么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端之路的基石-JavaScript⑨">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑨/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="Js基本语法DOM定义DOM叫做 (Document Object Model)文档对象模型 DOM定义了表示和修改文档所需的方法。DOM对象即为宿主对象，由浏览器厂商定义，用来操作html和xml功能的一类对象的集合。也有人称DOM是对HTML以及XML的标准编程接口。 DOM提供了一系列的方法，这些方法可以操作html和xml，但是不可以操作CSS。注：任何方法都无法操作CSS  XML是什么">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js9/Image.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js9/Image%5B1%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js9/Image%5B2%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js9/Image%5B3%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js9/Image%5B4%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js9/Image%5B5%5D.png">
+<meta property="og:updated_time" content="2020-07-04T11:54:11.351Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端之路的基石-JavaScript⑨">
+<meta name="twitter:description" content="Js基本语法DOM定义DOM叫做 (Document Object Model)文档对象模型 DOM定义了表示和修改文档所需的方法。DOM对象即为宿主对象，由浏览器厂商定义，用来操作html和xml功能的一类对象的集合。也有人称DOM是对HTML以及XML的标准编程接口。 DOM提供了一系列的方法，这些方法可以操作html和xml，但是不可以操作CSS。注：任何方法都无法操作CSS  XML是什么">
+<meta name="twitter:image" content="http://yoursite.com/images/20062601/js9/Image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑨/"/>
+
+
+
+
+
+  <title>前端之路的基石-JavaScript⑨ | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑨/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端之路的基石-JavaScript⑨</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T13:55:20+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Js基本语法"><a href="#Js基本语法" class="headerlink" title="Js基本语法"></a>Js基本语法</h2><h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p><span style="color: #f90d85">DOM</span>叫做 (<span style="color: #f90d85">Document Object Model</span>)文档对象模型</p>
+<p><span style="color: #f90d85">DOM定义了表示和修改文档所需的方法。DOM对象即为宿主对象，由浏览器厂商定义，用来操作html和xml功能的一类对象的集合。也有人称DOM是对HTML以及XML的标准编程接口。</span></p>
+<p>DOM提供了一系列的方法，这些方法可以操作html和xml，但是不可以操作CSS。<br><span style="color: #b3b0b0;font-size: 14px">注：任何方法都无法操作CSS</span></p>
+<blockquote>
+<p>XML是什么？<br>XML和HTML本质上是同一个东西，XML是HTML最早的一个版本，先有的XML(也是脚本类的)，后来有了XHTML，最后有了HTML。XML最近这几年已经不用了，与HTML最大的区别是XML内的标签可以自定义。这个标签只能用作一种数据格式，</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// XML写成下面的格式就可以用来表示对象</span><br><span class="line"><span class="tag">&lt;<span class="name">student</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>老邓<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>100<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><span style="color: #b3b0b0;font-size: 14px">student表示一个对象，标签内表示它的属性。这种具有属性的标签在HTML内是没有意义的，只表示一个行级元素，但是在数据的意义上，这种格式可以表示一个数据的集合，具有两个属性，在数据角度是有意义的。<br>在最开始的时候，所使用的的数据库，它的基本格式就是基于XML。<br>但是现在XML已经不再使用了，因为它被json所替代了，现在传输的格式都是JSON，以前传输的都是XML。</span></p>
+<p>HTML和XML基本一致，只是HTML不能够自定义标签。</p>
+<blockquote>
+<p>什么是编程接口？<br>已知的方法与需要操作对象的连接点，就叫做接口。通过接口就可以来操作这些对象，编程接口就是一个实现途径。</p>
+</blockquote>
+<p>DOM不能改变CSS样式表的内容，但是可以通过间接的方式改变HTML的行间样式来改变它。 实际是操作了HTML的元素，直接给元素添加了一些信息，而这些信息就是CSS的样式，通过这样间接的 添加/修改 行间样式的方式来改变的，没有改变CSS样式表。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DOM不能操作CSS样式表</span></span><br><span class="line"><span class="comment">// 但是可以操作HTML的元素的行间样式</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</span><br><span class="line">    div.style.width = <span class="string">"100px"</span>;</span><br><span class="line">    div.style.height = <span class="string">"100px"</span>;</span><br><span class="line">    div.style.backgroundColor = <span class="string">"red"</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="DOM基本操作"><a href="#DOM基本操作" class="headerlink" title="DOM基本操作"></a>DOM基本操作</h3><h4 id="节点的查看方法"><a href="#节点的查看方法" class="headerlink" title="节点的查看方法"></a>节点的查看方法</h4><ol>
+<li>查看元素节点</li>
+</ol>
+<ul>
+<li><p>document 是一个对象具有很多的方法，代表整个文档的js显示形式<br>  html标签只能代表文档的核心部分</p>
+</li>
+<li><p>document.getElementById()–&gt;元素id在IE8以下的浏览器，不区分id大小写，而且也返回匹配name属性的元素</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"only"</span>&gt;<span class="number">123</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;div name="only"&gt;123&lt;/</span>div&gt;<span class="comment">// 针对IE8一下浏览器</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'only'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div);<span class="comment">// &lt;div id="only"&gt;123&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>document.getElementsByTagName() –&gt; 通过标签名获取元素</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div);<span class="comment">// HTMLCollection [div#only, only: div#only]</span></span><br></pre></td></tr></table></figure>
+
+<p>  1.得到的是一个类数组，无法调用数组的方法，但可以通过数组下标来获取元素<br>  2.最通用的方法，所有浏览器都支持并且没有兼容问题，IE4都可以正常使用<br>  3.参数是*时，可以选择所有的标签</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> all = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'*'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(all);<span class="comment">// &lt;html&gt;&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>document.getElementsByName() –&gt; 需注意只有部分标签name可生效（表单、表单元素、img、iframe）</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementsByName(<span class="string">'fruit'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div2);<span class="comment">// NodeList [input]</span></span><br><span class="line"><span class="keyword">var</span> div3 = <span class="built_in">document</span>.getElementsByName(<span class="string">'abc'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div3);<span class="comment">// NodeList [div]</span></span><br><span class="line"><span class="keyword">var</span> div4 = <span class="built_in">document</span>.getElementsByName(<span class="string">'p'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div4);<span class="comment">// NodeList [p]</span></span><br></pre></td></tr></table></figure>
+
+<p>  1.原本是只又表单内的标签具有name属性，用来传输数据<br>  2.<strong>现代浏览器所有的标签都支持通过name属性查找，但是之前版本的浏览器不支持</strong></p>
+</li>
+<li><p>document.getElementsByClassName() –&gt; 通过类名来获取元素<br>  缺点：IE8及IE8以下的IE版本中没有这个方法；可以多个class一起</p>
+</li>
+<li><p>document.querySelector() –&gt; css选择器，在IE7及以下版本中没有</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div4 = <span class="built_in">document</span>.querySelector(<span class="string">'div p span strong.demo'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div4);<span class="comment">// &lt;strong class="demo"&gt;213&lt;/strong&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>document.querySelectorAll() –&gt; css选择器，在IE7及以下版本中没有</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div4 = <span class="built_in">document</span>.querySelectorAll(<span class="string">'div p span strong.demo'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div4);<span class="comment">// NodeList [strong.demo]</span></span><br></pre></td></tr></table></figure>
+
+<p>  致命缺点：querySelector和querySelectorAll方法不是实时更新的，这两种方法选择的其实是元素的副本。如果想要讲元素的副本保存的话可以用这个方法，否则不建议。</p>
+</li>
+</ul>
+<p>可以一次获取多个元素的方法，在获取元素后会封装到一个类数组内，所有的元素按照类数组的索引位进行排序。</p>
+<p>想要选择出类数组内的一个元素时，可以通过下标的方式来获取。这样获取到的元素就被选到javascript中，就可以操作它了。这个元素其实就是一个对象，叫做DOM对象，跟对象的操作都是一样的，可以增删改查。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取元素</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(div);<span class="comment">// &lt;div&gt;&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>给选择到的元素添加属性：<br>style：行间样式，跟css中的属性名用法基本一致，只是原本连接单词的符号”-“不能再使用，需要将属性写成小驼峰的格式。不能用”-“的原因是：在js中，不能用该符号当做属性名。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加属性</span></span><br><span class="line">div.style.width = <span class="string">"100px"</span>;</span><br><span class="line">div.style.height = <span class="string">"100px"</span>;</span><br><span class="line">div.style.backgroundColor = <span class="string">"red"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>有了DOM后，就可以动态的操作了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 交互</span></span><br><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">div.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    count ++;</span><br><span class="line">    <span class="keyword">if</span>(count % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.style.backgroundColor = <span class="string">"green"</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.style.backgroundColor = <span class="string">"red"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>选择方法除了ById是选择一个以外，其他方法选择出的是一个类数组。</p>
+<p>实现选项卡切换功能</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">.wrapper div &#123;</span><br><span class="line">    display: none;</span><br><span class="line">    width: <span class="number">200</span>px;</span><br><span class="line">    height: <span class="number">200</span>px;</span><br><span class="line">    border: <span class="number">1</span>px solid red;</span><br><span class="line">&#125;</span><br><span class="line">.active &#123;</span><br><span class="line">    background: darksalmon;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="wrapper"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button class="active"&gt;111&lt;/</span>button&gt;</span><br><span class="line">    &lt;button&gt;<span class="number">222</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button&gt;333&lt;/</span>button&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"content"</span> style=<span class="string">"display: block;"</span>&gt;成哥帅&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="content"&gt;邓哥...&lt;/</span>div&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"content"</span>&gt;成哥很帅&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line"><span class="comment">// 选项卡</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</span><br><span class="line"><span class="keyword">var</span> wrapper = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'content'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btn.length; i ++) &#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 在绑定函数后，函数不被执行，所以i也不会被传到函数内</span></span><br><span class="line">        <span class="comment">// 执行事件时，在GO里得到i是3</span></span><br><span class="line">        btn[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; btn.length; j ++) &#123;</span><br><span class="line">                btn[j].className = <span class="string">""</span>;</span><br><span class="line">                wrapper[j].style.display = <span class="string">"none"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// btn[i].className = "active";// error</span></span><br><span class="line">            <span class="keyword">this</span>.className = <span class="string">"active"</span>;</span><br><span class="line">            wrapper[i].style.display = <span class="string">"block"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;(i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>遍历节点树<br> 任何一个浏览器都支持这个方法</p>
+<ul>
+<li><p>parentNode 父节点（最顶端的parentNode为#document）<br>  一个元素只有一个父级</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> parent = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'demo'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(parent.parentNode);<span class="comment">// &lt;span&gt;...&lt;/span&gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(parent.parentNode.parentNode.parentNode.</span><br><span class="line">parentNode.parentNode.parentNode);<span class="comment">// #document</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>childNodes</strong><br>  一个元素会有多个子级，其中包含文本节点、元素节点、注释节点等</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    <span class="number">123</span>weopriuqwoepriu</span><br><span class="line">    &lt;!-- <span class="keyword">this</span> is comment --&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        &lt;span&gt;</span><br><span class="line">            &lt;strong <span class="class"><span class="keyword">class</span></span>=<span class="string">"demo"</span>&gt;<span class="number">213</span>&lt;<span class="regexp">/strong&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>span&gt;</span><br><span class="line">    &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line"><span class="comment">// 子节点</span></span><br><span class="line"><span class="keyword">var</span> child = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">2</span>];</span><br><span class="line"><span class="built_in">console</span>.log(child.childNodes);<span class="comment">// 5个节点</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>firstChild 第一个子节点</p>
+</li>
+<li><p>lastChild 最后一个子节点</p>
+</li>
+<li><p>nextSibling 后一个兄弟节点</p>
+</li>
+<li><p>previousSibling 前一个兄弟节点</p>
+</li>
+</ul>
+</li>
+<li><p>基于元素节点树的遍历<br> 除了children方法外，其他方法IE9及IE9以下都不兼容</p>
+<ul>
+<li>parentElement 返回当前元素的父元素节点（IE9及IE9以下不兼容）<br>  最顶端的parentElement为html元素节点，document不是元素节点</li>
+<li>children 只返回当前元素的元素子节点</li>
+<li>node.childElementCount === node.children.length 当前元素节点的子元素节点个数（IE9及IE9以下不兼容）</li>
+<li>firstElementChild 返回的是第一个元素节点（IE9及IE9以下不兼容）</li>
+<li>lastElementChild 返回的是最后一个元素节点（IE9及IE9以下不兼容）</li>
+<li>nextElementSibling / previousElementSibling 返回后一个 / 前一个兄弟元素节点（IE9及IE9以下不兼容）</li>
+</ul>
+</li>
+<li><p>节点的类型：</p>
+<ul>
+<li>元素节点：1</li>
+<li>属性节点：2</li>
+<li>文本节点：3</li>
+<li>注释节点：8</li>
+<li>documen：9</li>
+<li>DocumentFragment：11</li>
+</ul>
+</li>
+<li><p>节点的四个属性</p>
+<ul>
+<li>nodeName 元素的标签名，以大写形式表示，只读，字符串格式</li>
+<li>nodeValue Text节点或comment节点的文本内容，可读写<br>  元素没有节点值，返回值为null</li>
+<li>nodeType 该节点的类型，只读（参考4.节点的类型）通过这个属性可以知道元素节点的类型</li>
+<li>attributes Element节点的属性集合</li>
+</ul>
+</li>
+<li><p>判断一个元素是否有子节点Node.hasChildNodes(); 返回布尔值</p>
+</li>
+</ol>
+<p>凡是提及IE不兼容，都是指代的IE9及IE9以下的浏览器，当时的浏览器只兼容一小部分。因为在IE10以后，它已经不是市场上占有率最大的浏览器了，从这个版本开始，IE开始全方位的支持W3C的标准，直到现在谷歌是市场占有率最大的浏览器。</p>
+<p>IE6是历史上最特殊的浏览器，现在已经几乎被淘汰了。但是现在最难搞的是IE8浏览器，问题很多，它的bug一般都是流程化的bug。</p>
+<h3 id="DOM结构树"><a href="#DOM结构树" class="headerlink" title="DOM结构树"></a>DOM结构树</h3><p>表示是一系列的继承关系<br><img src="/images/20062601/js9/Image.png" alt></p>
+<ol>
+<li><p>Document</p>
+<ul>
+<li><p>HTMLDocument</p>
+<blockquote>
+<p>上图中的Document与document之间的联系是什么？<br>答：document代表整个文档，Document是一个特殊的构造函数(首字母大写)，特殊点在于不可以通过new关键字来调用这个函数，这个方法是系统的预留方法。</p>
+</blockquote>
+<blockquote>
+<p>既然不可以主动去调用这个方法，那么Document的用途是什么呢？<br>答：在构造函数上有一个属性叫做原型，可以被构造函数生产出来的对象所继承。在Document的原型上修改或添加属性，document也可以获取到最新的值，但是Document不是document的直接构造函数，而是HTMLDocument所构造的。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.__proto__ = HTMLDocument.prototype;</span><br><span class="line">HTMLDocument.__proto__ = Document.prototype;</span><br></pre></td></tr></table></figure>
+
+<p>由上面的代码可得出：这是一个逐级继承的关系，最后形成了一条原型链。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span> --&gt; HTMLDocument.prototype --&gt; Document.prototype</span><br></pre></td></tr></table></figure>
+
+<p>并且他们之间遵循就近原则。</p>
+</li>
+<li><p>XMLDocument<br>实际上Document的分支上应该包括HTMLDocument和XMLDocument.但是由于XMLDocument现在不再使用，所以可以忽略。</p>
+<p>所以Document内的方法是HTMLDocument和XMLDocument都可以使用的。</p>
+</li>
+</ul>
+</li>
+<li><p>CharacterData</p>
+<ul>
+<li>Text 文本节点的方法是直接继承自Text.prototype</li>
+<li>Comment 注释节点的方法是直接继承自Comment.prototype<br>一层一层向上找，一层一层的向上继承，最后形成了一条原型链</li>
+</ul>
+</li>
+<li><p>Element</p>
+<ul>
+<li><p>HTMLElement</p>
+<ul>
+<li>HTMLHeadElement</li>
+<li>HTMLBodyElement</li>
+<li>HTMLTitleElement</li>
+<li>HTMLParagraphElement</li>
+<li>HTMLInputElement</li>
+<li>HTMLTableElement</li>
+<li>…etc.<br>上述对象代表的都是HTML文件内的标签对象，所使用的标签也都是首先继承自上述的标签对象<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTMLBodyElement.prototype.acb = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">var</span> body = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(body.acb);<span class="comment">// abc</span></span><br><span class="line"><span class="keyword">var</span> head = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(head.acb);<span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>XMLElement</p>
+</li>
+</ul>
+</li>
+<li><p>Node，也是构造函数，是DOM结构树最顶端的对象。但<strong>Object.prototype是DOM元素原型的终端</strong>。<br> 可以使用toString()方法：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.toString();<span class="comment">// [object HTMLBodyElement]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="DOM基本操作-1"><a href="#DOM基本操作-1" class="headerlink" title="DOM基本操作"></a>DOM基本操作</h3><ol>
+<li><p>getElementById方法定义在Document.prototype上，即Element节点上不能使用<br> 所有的HTMLDocument的元素都可以用，即document</p>
+</li>
+<li><p>getElementsByName方法定义在HTMLDocument.prototype上，即非html中的document不能使用(如xml document, Element)</p>
+</li>
+<li><p>getElementsByTagName方法定义在Document.protype和Element.prototype上</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div7 = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> span = div7.getElementsByTagName(<span class="string">'span'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(span);<span class="comment">// &lt;span&gt;&lt;/span&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HTMLDocument.prototype定义了一些常用的属性，body,head分别指代HTML文档中的<body><head><meta name="generator" content="Hexo 3.9.0">标签<br> <span style="color: #b3b0b0;font-size: 14px">这样就可以直接使用，而不用再通过获取元素的方法了：</span></head></body></p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    <span class="built_in">document</span>.body --&gt; <span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line">    document.head --&gt; &lt;head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Document.prototype上定义了documentElement属性，指点文档的根元素，在HTML文档中，它总是指代<html>元素</html></p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">    <span class="built_in">document</span>.documentElement --&gt; <span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>getElementsByClassName、querySelector、querySelectorAll在Document.prototype, Element.prototype类中均有定义</p>
+</li>
+</ol>
+<h3 id="DOM基本操作-–-增删改替"><a href="#DOM基本操作-–-增删改替" class="headerlink" title="DOM基本操作 – 增删改替"></a>DOM基本操作 – 增删改替</h3><ol>
+<li><p>增加节点</p>
+<ul>
+<li><p><strong>document.createElement();</strong> 创建元素节点<br>  创建完成后需要加入到body标签内</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div8 = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">div8.innerHTML = <span class="string">'123'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(div8);<span class="comment">// &lt;div&gt;123&lt;/div&gt;</span></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(div8);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>document.createTextNode(); 创建文本节点</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="built_in">document</span>.createTextNode(<span class="string">'邓宝宝'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>document.createComment(); 创建注释节点</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="built_in">document</span>.createComment(<span class="string">'This is a comment!'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>document.createDocumentFragment(); 创建文档碎片节点</p>
+</li>
+</ul>
+</li>
+<li><p>插入</p>
+<ul>
+<li>PARENTNODE.appendChild(); 任何一个元素节点都有这个方法<br>  ① 这个方法可以理解为push，将创建的元素插入到元素的最后<br>  ② 插入已存在元素时，是剪切操作，将已存在的元素剪切并粘贴至所选择元素内的末尾</li>
+<li>PARENTNODE.insertBefore(a, b);<br>  ① 需要两个参数，在 b 之前插入元素 a，返回插入值 a<br>  ② 即使是执行了两次，也只会插入一次，因为是剪切操作。</li>
+</ul>
+</li>
+<li><p>删除</p>
+<ul>
+<li>paren.removeChild(); 是剪切操作</li>
+<li>child.remove(); 是销毁操作</li>
+</ul>
+</li>
+<li><p>替换</p>
+<ul>
+<li>parent.replaceChild(new, origin) 原本的origin是被剪切掉了<br>  用 new 替换 origin 的内容</li>
+</ul>
+</li>
+</ol>
+<h3 id="Element-节点的一些属性"><a href="#Element-节点的一些属性" class="headerlink" title="Element 节点的一些属性"></a>Element 节点的一些属性</h3><ol>
+<li><p><strong>innerHTML</strong><br> ① 改变元素的 html 内容，可以进行读写</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">span.innerHTML = <span class="string">'123'</span>;</span><br><span class="line">span.innerHTML += <span class="string">"456"</span>;<span class="comment">// 追加赋值</span></span><br></pre></td></tr></table></figure>
+
+<p> ② 可以写入html结构的字符串</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    span.innerHTML = <span class="string">"&lt;span style='background: red;</span></span><br><span class="line"><span class="string">font-size: 20px'&gt;123&lt;/span&gt;"</span>;</span><br></pre></td></tr></table></figure>
+
+<p> <img src="/images/20062601/js9/Image%5B1%5D.png" alt><br> 代码结果：<br> <img src="/images/20062601/js9/Image%5B2%5D.png" alt></p>
+</li>
+<li><p>innerText（旧版本火狐不兼容）/ textContent（火狐支持，但是老版本IE不好使）<br> 读取 / 修改元素的文本内容，在赋值时如果元素内有标签元素会被覆盖，仅建议修改文本赋值。<br> 原本代码：<br> <img src="/images/20062601/js9/Image%5B3%5D.png" alt><br> 修改innerText后：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">span.innerText = <span class="string">"789"</span>;</span><br></pre></td></tr></table></figure>
+
+<p> <img src="/images/20062601/js9/Image%5B4%5D.png" alt></p>
+</li>
+</ol>
+<h3 id="Element-节点的一些方法"><a href="#Element-节点的一些方法" class="headerlink" title="Element 节点的一些方法"></a>Element 节点的一些方法</h3><ol>
+<li>setAttribute(prop, value);<br> 给html设置一些行间样式</li>
+<li>getAttribute(prop); <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">span.setAttribute(<span class="string">'class'</span>, <span class="string">'demo2'</span>);</span><br><span class="line">span.getAttribute(<span class="string">'class'</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>如果修改元素的class名，直接通过className来读写。</p>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><p><img src="/images/20062601/js9/Image%5B5%5D.png" alt></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一题：在b之后插入a</span></span><br><span class="line">Element.prototype.**insertAfter **= <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sib = <span class="keyword">this</span>.nextElementSibling;</span><br><span class="line">    <span class="keyword">if</span>(sib) &#123;</span><br><span class="line">        <span class="comment">// 在b的下一个节点前插入a</span></span><br><span class="line">        sib.insertBefore(a, b);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 当b是最后一个元素节点</span></span><br><span class="line">        <span class="keyword">this</span>.appendChild(a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line">newDiv.insertAfter(span2, span1);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二题：子节点 逆序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseChildren</span>(<span class="params">parent</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nodes = parent.childNodes,</span><br><span class="line">        len = nodes.length;</span><br><span class="line">    <span class="comment">// for(var i = len - 1; i &gt; 0; i --) &#123;</span></span><br><span class="line">    <span class="comment">//     parent.appendChild(nodes[i - 1]);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="keyword">while</span>(len) &#123;</span><br><span class="line">        parent.appendChild(nodes[len - <span class="number">1</span>]);</span><br><span class="line">        len --;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">reverseChildren(newDiv);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript⑧/" rel="next" title="前端之路的基石-JavaScript⑧">
+                <i class="fa fa-chevron-left"></i> 前端之路的基石-JavaScript⑧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript⑩/" rel="prev" title="前端之路的基石-JavaScript⑩">
+                前端之路的基石-JavaScript⑩ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva"
+                alt="zoe" />
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Js基本语法"><span class="nav-number">1.</span> <span class="nav-text">Js基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">1.1.</span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM基本操作"><span class="nav-number">1.2.</span> <span class="nav-text">DOM基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#节点的查看方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">节点的查看方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM结构树"><span class="nav-number">1.3.</span> <span class="nav-text">DOM结构树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM基本操作-1"><span class="nav-number">1.4.</span> <span class="nav-text">DOM基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM基本操作-–-增删改替"><span class="nav-number">1.5.</span> <span class="nav-text">DOM基本操作 – 增删改替</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Element-节点的一些属性"><span class="nav-number">1.6.</span> <span class="nav-text">Element 节点的一些属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Element-节点的一些方法"><span class="nav-number">1.7.</span> <span class="nav-text">Element 节点的一些方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面试题"><span class="nav-number">1.8.</span> <span class="nav-text">面试题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ego-blog (1).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ego-blog.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Js基本语法日期对象 Date()日期对象是系统提供的，只需要调用即可JS包括CSS、HTML都有自己的API文档，记录一些基础的功能和属性，作为一个字典来查阅。 Date() 返回日期的字符串 Date 对象属性 constructorconstructor是对象的属性，prototype是构造函数的属性。  Date 对象方法 – 查看时间1var date = new Date(); //">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端之路的基石-JavaScript⑩">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑩/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="Js基本语法日期对象 Date()日期对象是系统提供的，只需要调用即可JS包括CSS、HTML都有自己的API文档，记录一些基础的功能和属性，作为一个字典来查阅。 Date() 返回日期的字符串 Date 对象属性 constructorconstructor是对象的属性，prototype是构造函数的属性。  Date 对象方法 – 查看时间1var date = new Date(); //">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js10/Image.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js10/Image%5B1%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js10/Image%5B2%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js10/Image%5B3%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js10/Image%5B4%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js10/Image%5B5%5D.png">
+<meta property="og:updated_time" content="2020-07-04T12:43:50.074Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端之路的基石-JavaScript⑩">
+<meta name="twitter:description" content="Js基本语法日期对象 Date()日期对象是系统提供的，只需要调用即可JS包括CSS、HTML都有自己的API文档，记录一些基础的功能和属性，作为一个字典来查阅。 Date() 返回日期的字符串 Date 对象属性 constructorconstructor是对象的属性，prototype是构造函数的属性。  Date 对象方法 – 查看时间1var date = new Date(); //">
+<meta name="twitter:image" content="http://yoursite.com/images/20062601/js10/Image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑩/">
+
+
+
+
+
+  <title>前端之路的基石-JavaScript⑩ | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑩/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端之路的基石-JavaScript⑩</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T14:54:24+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Js基本语法"><a href="#Js基本语法" class="headerlink" title="Js基本语法"></a>Js基本语法</h2><h3 id="日期对象-Date"><a href="#日期对象-Date" class="headerlink" title="日期对象 Date()"></a>日期对象 Date()</h3><p>日期对象是系统提供的，只需要调用即可<br><span style="color: #b3b0b0;font-size: 14px">JS包括CSS、HTML都有自己的API文档，记录一些基础的功能和属性，作为一个字典来查阅。</span></p>
+<p>Date() 返回日期的字符串</p>
+<h4 id="Date-对象属性"><a href="#Date-对象属性" class="headerlink" title="Date 对象属性"></a>Date 对象属性</h4><ol>
+<li>constructor<br><span style="color: #b3b0b0;font-size: 14px">constructor是对象的属性，prototype是构造函数的属性。</span></li>
+</ol>
+<h4 id="Date-对象方法-–-查看时间"><a href="#Date-对象方法-–-查看时间" class="headerlink" title="Date 对象方法 – 查看时间"></a>Date 对象方法 – 查看时间</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">// 记录date被赋值时当时的那一秒的值</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>date.getDate() 返回当前月的某一天（1-31）</p>
+</li>
+<li><p>date.getDay() 返回当前周的第几天，从周日开始算（0-6）</p>
+</li>
+<li><p>date.getMonth() 返回当前是第几个月（0-11）</p>
+</li>
+<li><p>date.getFullYear() 返回以四位数字返回当前年份<br> getYear() 不再使用，原始获取年的方法</p>
+<p> <span style="color: #b3b0b0;font-size: 14px">后来才出现的getFullYear方法，JS是1996年随着navigator诞生的，最开始电脑出现后，日期是按照六位制设计的：前两位表示年，中间代表月，后两位是日。后期发展到金融系统、政府都使用计算机后，涉及到了很多金融问题和数据问题。至2000年时后无法正常进位，计算出现了错误。这个错误计算机2000年问题，又叫做“千年虫” ，后来年的就变为了四位表示方法。”万年虫”，哈哈哈哈哈</span></p>
+</li>
+<li><p>date.getHours() 返回对象的小时</p>
+</li>
+<li><p>date.getMinutes() 返回对象的分钟</p>
+</li>
+<li><p>date.getSeconds() 返回对象的秒钟</p>
+</li>
+<li><p>date.getMilliseconds() 返回对象的毫秒（0-999）</p>
+</li>
+<li><p>date.getTime() 返回自1970.01.01 00:00:00 至今的毫秒数，叫做获取<strong>时间戳</strong><br> 时间戳：就相当于一个时间轨道，在其中的某个点打了一个印记，记录下了这个时刻。时间戳往往作为唯一标识来使用，在通过Ajax传递数据时，想要多次调用同一个接口不引发浏览器的缓存机制，就利用时间戳来实现的。每次请求时的时间节点都不一样，那么请求得到的结果也不同。</p>
+<p> <span style="color: #b3b0b0;font-size: 14px">年份的定义：是因为认为的定义了一个公元年，将这个年份叫作纪元，表示纪元初始的意思。将某一年设置为纪元年，在这一年之前的叫做公元前XX年，这一年之后的叫做公元后XX年，这样是为了便于统计年份。</span></p>
+<p> <span style="color: #b3b0b0;font-size: 14px">由于计算机诞生的时间比较晚，计算机的时间没有办法按照人类的来定，所以人类就给计算机设置了一个纪元年，也叫作零点年，是计算机开始的时间。这个时间被叫做纪元时间。</span></p>
+<p> <span style="color: #b3b0b0;font-size: 14px">现在互联网时间的计数方式：本地的时间会向一个服务器基站发起请求，上服务器基站里获取统一的最后一个电脑的时间。这台电脑是如何计算时间的呢，电脑无法知道当前时间，但是可以感知时间的变化，它始终都可以知道，它距离纪元时间大概有多少毫秒，再根据这个毫秒数进行计算现在距离纪元时间有多少年月日时分秒，再将格式转换为现在的时间格式，这个计算机始终都在通过这个毫秒数来计算的，通过这种动态的计算来返回时间，所有的分机向主机发送信号来获取它的时间。由此，所有的计算机、手机等设备的时间都是统一的。</span></p>
+<p> 时间戳的作用：可以用来求时间差，从而确定时间间隔</p>
+<p> <img src="/images/20062601/js10/Image.png" alt></p>
+<p> 在进行开发时，通过时间差来判断这段代码的运行时间，从而来评定程序的效率，这种方法就是进行时间的优化。通过优化代码的方式来让程序的效率更高，运行时间最短。</p>
+</li>
+</ol>
+<h4 id="Date-对象方法-–-设置时间"><a href="#Date-对象方法-–-设置时间" class="headerlink" title="Date 对象方法 – 设置时间"></a>Date 对象方法 – 设置时间</h4><p>一般用于给应用设置倒计时。</p>
+<h4 id="Date-对象方法-–-字符串方法"><a href="#Date-对象方法-–-字符串方法" class="headerlink" title="Date 对象方法 – 字符串方法"></a>Date 对象方法 – 字符串方法</h4><ol>
+<li><p>date.toString()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date.toString();<span class="comment">// 相当于直接打印date的值</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>date.toTimeString()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date.toTimeString();<span class="comment">// 打印出当前的时分秒和时区</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="js定时器"><a href="#js定时器" class="headerlink" title="js定时器"></a>js定时器</h3><h4 id="setInterval-匿名函数，间隔时间毫秒-定时循环器，每隔间隔时间执行函数"><a href="#setInterval-匿名函数，间隔时间毫秒-定时循环器，每隔间隔时间执行函数" class="headerlink" title="setInterval(匿名函数，间隔时间毫秒); 定时循环器，每隔间隔时间执行函数"></a>setInterval(匿名函数，间隔时间毫秒); 定时循环器，每隔间隔时间执行函数</h4><p>参数不一定非要是匿名函数，也可以写一些js语句，也可以执行，但是不推荐使用.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="string">"console.log('b')"</span>, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<p>setInterval被定义在window上，返回一个数字类型的值作为唯一标识。有了这个唯一标识，就可以将定时器清除了。</p>
+<p>结论：定时器都是不准的<br><span style="color: #b3b0b0;font-size: 14px">不准的一部分原因： js有个js引擎，js引擎后面有个任务队列，它会把任务按照时间片去分解，把很多任务的片段排列好再放在队列里，队列依次向执行js引擎内输送。引擎是单线程的，同一时间只能执行一个片段，这样依次向里输送才能够执行任务。</span><br><span style="color: #b3b0b0;font-size: 14px">setInterval这个方法只能是每隔特定的时间，把待执行代码放在队列后面，具体什么时间执行是没办法保证的。这是它不准的其中一点，但是它不只是慢的问题，打印出的值有时多有时少，如果对数据结构有些了解的话，setInterval的排列机制是基于<a href="http://www.baidu.com/link?url=WIzkuHAotbcMsykZU84pKsjShCkYQNsl6C7Bry0O1AQ4TqLRUB14fVBAkUAiHJFt" target="_blank" rel="noopener">红黑树</a></span></p>
+<h4 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout();"></a>setTimeout();</h4><p>延迟定时器，隔了间隔时间后执行且只执行一次，返回定时器的唯一标识<br>注意：当setInterval和setTimeout同时执行时，标识会依次增加，不会相同的</p>
+<h4 id="clearInterval"><a href="#clearInterval" class="headerlink" title="clearInterval();"></a>clearInterval();</h4><p>清除setInterval的定时器，参数是定时器返回的标识数</p>
+<h4 id="clearTimeout"><a href="#clearTimeout" class="headerlink" title="clearTimeout();"></a>clearTimeout();</h4><p>间隔时间不能被后来改变。<br>上面的方法都是window上的方法，所以内部的this指向的是window.</p>
+<p>—————————–重难点分割线——————————</p>
+<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><h3 id="查看滚动条的滚动距离"><a href="#查看滚动条的滚动距离" class="headerlink" title="查看滚动条的滚动距离"></a>查看滚动条的滚动距离</h3><p>滚动距离：在第一屏的基础上又增加了一定像素的屏幕</p>
+<ol>
+<li><p>window.pageXOffset/pageYOffset 求滚动条滚动距离<br> IE8及IE8以下不兼容(IE9是过度版本，部分兼容)</p>
+</li>
+<li><p>document.body.scrollLeft / scrollTop</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.documentElement.scrollLeft / scrollTop</span><br></pre></td></tr></table></figure>
+
+<p> 这两种方法用来解决IE不兼容问题，但是这里存在一个兼容性混乱的问题，导致IE的各个版本所支持的方法不相同。</p>
+<p> 有一个规则：在任何一个浏览器上document.body.scrollXXX方法有值的话，另一个方法一定是0。这两个值是互相冲突的，不可能存在同时有值的情况。<br> 所以计算这个值的方法就是将两个值相加即可。</p>
+<p> 上面的这几种方法chrome都兼容。</p>
+</li>
+<li><p>封装兼容性方法，可以求出当前滚动条滚动的距离</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 兼容 滚动距离</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScrollOffset</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 返回 x,y</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.pageXOffset) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            x: <span class="built_in">window</span>.pageXOffset,</span><br><span class="line">            y: <span class="built_in">window</span>.pageYOffset</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            x: <span class="built_in">document</span>.body.scrollLeft + <span class="built_in">document</span>.documentElement.scrollLeft,</span><br><span class="line">            y: <span class="built_in">document</span>.body.scrollTop + <span class="built_in">document</span>.documentElement.scrollTop</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>在函数内，需要return一个对象类型的值时，对象的括号必须跟着return，否则系统会直接在return后加上分号，无法将对象返回。</strong></p>
+<h3 id="查看视口的尺寸"><a href="#查看视口的尺寸" class="headerlink" title="查看视口的尺寸"></a>查看视口的尺寸</h3><p>可视区窗口：就是HTML文档部分可以看到的部分</p>
+<ol>
+<li><p>window.innerWidth / innerHeight<br> IE8及IE8以下不兼容<br> <span style="color: #b3b0b0;font-size: 14px">像素是相对单位，在不同的屏幕上大小不一，但是占用的像素是一样的。</span><br> <span style="color: #b3b0b0;font-size: 14px">一般情况下，浏览器的 window.innerWidth 这个值都是1440，原来的浏览器是960</span></p>
+</li>
+<li><p>document.documentElement.clientWidth / clientHeight<br> IE8及其以下兼容，但在标准模式下，任意浏览器都兼容</p>
+</li>
+<li><p>document.body.clientWidth / clientHeight<br> IE8及其以下兼容，但适用于怪异模式(非标准模式)下的浏览器</p>
+<p> <span style="color: #b3b0b0;font-size: 14px">怪异模式：老版本的IE浏览器，它的每个版本之间都是有些差异的，会摒弃之前的一些东西，增加一些新的内容。所以浏览器不同版本之间的语法规则和所容纳的规范都不可能一样。在旧版本浏览器存在时，开发了一个项目，遵循的规则都是就旧浏览器的规则，之后出现了新版本，很多人都用新版本来浏览之前写的网站项目，这样的话就会产生冲突，网站没办法兼容新版本的一部分语法。那么想要解决这些问题，唯一的解决办法就是重写，这样会非常浪费效率。</span></p>
+<p> <span style="color: #b3b0b0;font-size: 14px">后来大家就研究出了一个模式，即使是新版本浏览器(例如IE7)也可以访问给老版本浏览器(例如IE6)写的代码，它依然是可以按照IE6的规则去渲染这个页面。就是忽略了IE7版本的功能，将版本退回了IE6来正常识别这个页面。后来就是研究出了一个规则，让浏览器除了标准的渲染模式以外，还要有一种渲染模式叫做怪异模式。这个怪异模式的唯一一点用途就是”向后兼容”，这样就兼容了之前的语法规则。</span></p>
+<p> <span style="color: #b3b0b0;font-size: 14px">渲染：浏览器识别这个语法，并且将它绘制成页面</span></p>
+<p> 浏览器的渲染模式：<br> ① 标准模式<br> ② 怪异/混杂模式开启：去掉头部的<!DOCTYPE html></p>
+<pre><code>DOCUTYPE: Document Type  Declaration文档类型，也叫DTD。目前是HTML5，写作：&lt;!DOCTYPE html&gt;</code></pre><p> 一旦启用了怪异模式，它所启用的语法就不是最新的语法，而是试图去兼容之前的语法。每个浏览器兼容的内容都不同，比如最新的谷歌浏览器可以向前兼容五个版本。</p>
+<p> document.compatMode：用来判断是标准模式还是怪异模式</p>
+<blockquote>
+<p>返回 CSS1Compat 表示”标准模式”<br>返回 BackCompat 表示”怪异模式”，向后兼容</p>
+</blockquote>
+</li>
+<li><p>封装兼容方法，返回浏览器视口尺寸</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 兼容 可视窗口尺寸</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getViewportOffset</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.innerWidth) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            w : <span class="built_in">window</span>.innerWidth,</span><br><span class="line">            h : <span class="built_in">window</span>.innerHeight,</span><br><span class="line">            type : <span class="string">'normal'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 兼容IE等不支持的浏览器</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">document</span>.compatMode == <span class="string">"BackCompat"</span>) &#123;</span><br><span class="line">            <span class="comment">// 怪异模式</span></span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                w : <span class="built_in">document</span>.body.clientWidth,</span><br><span class="line">                h : <span class="built_in">document</span>.body.clientHeight,</span><br><span class="line">                type : <span class="string">'BackCompat'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 标准模式</span></span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                w : <span class="built_in">document</span>.documentElement.clientWidth,</span><br><span class="line">                h : <span class="built_in">document</span>.documentElement.clientHeight,</span><br><span class="line">                type : <span class="string">'CSS1Compat'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getViewportOffset());</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="查看元素的几何尺寸"><a href="#查看元素的几何尺寸" class="headerlink" title="查看元素的几何尺寸"></a>查看元素的几何尺寸</h3><ol>
+<li><p>domEle.getBoundingClientRect();<br> 优点：兼容性很好<br> 缺点：返回的结果并不是”实时的”。获取到了值后即使元素发生改变，返回值也不变</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">demo.getBoundingClientRect();</span><br></pre></td></tr></table></figure>
+
+<p> <img src="/images/20062601/js10/Image%5B1%5D.png" alt></p>
+<p> 该方法返回一个对象ClientRect，对象里面有width、height、left、top、right、bottom等属性。left、top代表该元素左上角的X和Y坐标，right、bottom代表元素右下角的X和Y坐标。</p>
+<p> height和width属性，老版本IE并未实现，可以通过获取right-left，bottom-top的值来获取这两个值。</p>
+</li>
+<li><p>dom.offsetWidth、dom.offsetHeight<br> <strong>返回的是盒模型(content +padding + border)的大小，不包括margin</strong></p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取元素的宽高  正常元素 加了border   加了padding</span></span><br><span class="line">demo.offsetWidth;<span class="comment">// 100    102          302</span></span><br><span class="line">demo.offsetHeight;<span class="comment">//100    102          302</span></span><br></pre></td></tr></table></figure>
+
+<p> 如果想要元素实际的大小(content)，可以通过间接访问css的方法：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">demo.style.width;<span class="comment">// 仅能获取元素上style内的属性</span></span><br></pre></td></tr></table></figure>
+
+<p> 因为得到的宽高跟domEle.getBoundingClientRect()这个方法是一样的，所以可以将其替换，这个方法更加方便。</p>
+</li>
+<li><p>dom.offsetLeft、dom.offsetTop<br> 忽略自身是否是定位元素，返回的值是与有定位的父级之间的距离<br> 总结：对于无定位父级的元素，返回相对文档的坐标。对于有定位父级的元素，返回相对于最近的有定位的父级的坐标</p>
+<p> 多边形、多角形的距离是根据原来的元素的位置来确定的。</p>
+</li>
+<li><p>dom.offsetParent<br> 返回最近的有定位的父级，如果没有，返回body节点<br> body是父级的顶点，document.body.offsetParent;// body是顶点，返回null</p>
+</li>
+</ol>
+<h3 id="让滚动条滚动"><a href="#让滚动条滚动" class="headerlink" title="让滚动条滚动"></a>让滚动条滚动</h3><p>window上存在下面的几种方法：</p>
+<ol>
+<li><p>scroll(x, y)  scrollTo() 滚动值某个点<br> x，y代表横向和纵向滚动到的位置，所以同一个语句多次执行也只执行一次</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.scroll(<span class="number">0</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+
+<p> 这两种方法用法都是一样，推荐使用第一个。</p>
+</li>
+<li><p>scrollBy() 累加滚动距离<br> x，y代表每次执行的距离，多次执行就会累加距离</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.scroll(<span class="number">0</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+
+<p> 值为负数时，向反方向移动。</p>
+</li>
+</ol>
+<p>—————————–重难点分割线 end——————————</p>
+<h2 id="脚本化CSS"><a href="#脚本化CSS" class="headerlink" title="脚本化CSS"></a>脚本化CSS</h2><p>脚本化：控制</p>
+<h3 id="读写元素css属性：dom间接控制css属性"><a href="#读写元素css属性：dom间接控制css属性" class="headerlink" title="读写元素css属性：dom间接控制css属性"></a><strong>读写元素css属性</strong>：dom间接控制css属性</h3><ol>
+<li><p>dom.style.prop<br> style属性普遍存在于任何dom元素上，仅该方法可以写入属性的值</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(div.style);<span class="comment">// 打印的值是下图</span></span><br></pre></td></tr></table></figure>
+
+<p> <img src="/images/20062601/js10/Image%5B2%5D.png" alt><br> ① CSSStyleDeclaration 叫做样式表，返回的是一个dom元素的所有css属性，这个值是一个类数组，有索引类的属性和正常类的属性，并且还有length属性。在dom元素上设置了值的属性才会有值并且按照数组的形式展示<br> ② 特点：</p>
+<ul>
+<li><p>可读写<strong>行间样式</strong>，间接改变CSS，修改后页面样式立刻生效 类数组本身其实是个对象，对象是可读写、可修改的。</p>
+</li>
+<li><p>没有兼容性问题，碰到float这样的保留字属性，前面应加css 直接写float也是可以的，但是W3C标准里建议写成eg: float –&gt; cssFloat的格式 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div.style.cssFloat = <span class="string">"right"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复合属性必须拆解，组合单词变成小驼峰式写法<br><span style="color: #b3b0b0;font-size: 14px">复合属性以前是不可以的，但是现在可以。例如border可以拆解为 border-width border-style border-color<br>js内的变量的命名规则：只能是数字、下划线、字母、$符号</span></p>
+</li>
+<li><p>写入的值必须是字符串格式</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="查询计算样式"><a href="#查询计算样式" class="headerlink" title="查询计算样式"></a>查询计算样式</h3><ol>
+<li><p>window.getComputedStyle( ele, null );</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.getComputedStyle(div[<span class="number">0</span>], <span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p> <img src="/images/20062601/js10/Image%5B3%5D.png" alt><br> ① 也是类数组，上一个方法中没有设置值的属性的值为””，而该方法中未设置值的属性也有默认值。<br> ② 获取的是当前元素所展示的一切CSS属性的显示值 <span style="color: #b3b0b0;font-size: 14px">同一个元素的属性设置了多个值时，根据权重，仅展示最后生效的那个值</span></p>
+</li>
+<li><p>特点：<br> 计算样式只读，无法修改<br> <img src="/images/20062601/js10/Image%5B4%5D.png" alt></p>
+<p> 返回的计算样式的值都是绝对值，没有相对单位 例如：颜色会转化为rgb的形式</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.getComputedStyle(div[<span class="number">1</span>], <span class="literal">null</span>).backgroundColor;</span><br><span class="line">打印：rgb(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p> IE8及IE8以下不兼容</p>
+</li>
+<li><p>99.999%都不会的知识点</p>
+<blockquote>
+<p>这个方法的第二个参数为什么是null?<br>答：第二个参数可以用来获取伪元素的样式表，但仅限于获取，没有赋值方法</p>
+</blockquote>
+<blockquote>
+<p>获取一个伪元素的width属性，再赋值给其他元素。js没有方法是用来获取伪元素的，而且伪元素本身就是可以设置但是不可以获取的存在。后来通过侯老师的帮助，知道了 getComputedStyle 方法的第二个参数可以获取伪元素的样式表，才成功解决这个问题。非常厉害！</p>
+</blockquote>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div::after &#123;</span><br><span class="line">    content: <span class="string">""</span>;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    width: <span class="number">50</span>px;</span><br><span class="line">    height: <span class="number">50</span>px;</span><br><span class="line">    background-color: yellow;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.getComputedStyle(div[<span class="number">0</span>], <span class="string">"after"</span>).width;<span class="comment">// 50px;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="查询样式-主要针对IE不兼容个问题"><a href="#查询样式-主要针对IE不兼容个问题" class="headerlink" title="查询样式 (主要针对IE不兼容个问题)"></a>查询样式 (主要针对IE不兼容个问题)</h3><ol>
+<li><p>ele.currentStyle.prop<br> 跟 window.getComputedStyle( ele, null ); 方法是一样的用法和意义</p>
+<p> 计算样式只读<br> 返回的计算样式的值不是经过转换的绝对值  例如单位em、百分数等就是原来的值，根据权重，不经转化的最终展示出来的值<br> IE独有的属性，其他浏览器使用会报错</p>
+</li>
+</ol>
+<h3 id="封装兼容性方法-getStyle"><a href="#封装兼容性方法-getStyle" class="headerlink" title="封装兼容性方法 getStyle"></a>封装兼容性方法 getStyle</h3><p>意义：通过dom.style.prop方法获取的属性，仅限于行间样式，并不好用，可以用于赋值操作。通过获取元素的最终样式的值，才有意义。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 兼容 元素最终样式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStyle</span>(<span class="params">elem, prop</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.getComputedStyle) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">window</span>.getComputedStyle(elem, <span class="literal">null</span>)[prop];</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> elem.currentStyle[prop];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="额外知识点"><a href="#额外知识点" class="headerlink" title="额外知识点"></a>额外知识点</h3><ol>
+<li><p>伪元素的操作需求<br> 需要修改伪元素的样式时，可以先设置不同的class名的伪元素，通过修改元素的className来实现修改伪元素的样式。</p>
+<p> 同理，在更改元素的样式时，不使用dom.style.prop的方法来修改，而是通过修改className来修改元素的样式。</p>
+<p> 这样做的<strong>优势</strong>：</p>
+<ul>
+<li><p>提升效率<br>如果操作DOM是JS要和HTML搭建一个桥梁，每一次操作就是一个来回，消耗效率。从代码上来看，这样减少了操作次数，也就是相应的提升了效率<br><img src="/images/20062601/js10/Image%5B5%5D.png" alt></p>
+</li>
+<li><p>好维护<br>如果想要增加样式，直接在JS内修改的话就需要依次操作每个属性，不好维护还麻烦。如果通过CSS来设置好元素的状态，直接通过切换className来切换元素的当前状态即可，叫做修改状态位。</p>
+</li>
+</ul>
+<p> <strong>短板</strong>：只能修改静态的效果，如果是动态的元素，就需要通过dom.style.prop的方法来修改了。</p>
+</li>
+<li><p>父级是定位元素，子级的属性left、top不设置值时，它的默认值是auto，不是0。<br> 不是0的原因：如果是0的话，它应该处于文档的最开始(0, 0)的位置，但是定位元素会跟随它的定位父级共同移动。</p>
+<p> 所以一般都需要设置一个值，为0；</p>
+</li>
+</ol>
+<!-- 相信成哥~ -->
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript⑨/" rel="next" title="前端之路的基石-JavaScript⑨">
+                <i class="fa fa-chevron-left"></i> 前端之路的基石-JavaScript⑨
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript事件/" rel="prev" title="前端之路的基石-JavaScript事件">
+                前端之路的基石-JavaScript事件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Js基本语法"><span class="nav-number">1.</span> <span class="nav-text">Js基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日期对象-Date"><span class="nav-number">1.1.</span> <span class="nav-text">日期对象 Date()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Date-对象属性"><span class="nav-number">1.1.1.</span> <span class="nav-text">Date 对象属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Date-对象方法-–-查看时间"><span class="nav-number">1.1.2.</span> <span class="nav-text">Date 对象方法 – 查看时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Date-对象方法-–-设置时间"><span class="nav-number">1.1.3.</span> <span class="nav-text">Date 对象方法 – 设置时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Date-对象方法-–-字符串方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">Date 对象方法 – 字符串方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js定时器"><span class="nav-number">1.2.</span> <span class="nav-text">js定时器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#setInterval-匿名函数，间隔时间毫秒-定时循环器，每隔间隔时间执行函数"><span class="nav-number">1.2.1.</span> <span class="nav-text">setInterval(匿名函数，间隔时间毫秒); 定时循环器，每隔间隔时间执行函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setTimeout"><span class="nav-number">1.2.2.</span> <span class="nav-text">setTimeout();</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clearInterval"><span class="nav-number">1.2.3.</span> <span class="nav-text">clearInterval();</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clearTimeout"><span class="nav-number">1.2.4.</span> <span class="nav-text">clearTimeout();</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BOM"><span class="nav-number">2.</span> <span class="nav-text">BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看滚动条的滚动距离"><span class="nav-number">2.1.</span> <span class="nav-text">查看滚动条的滚动距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看视口的尺寸"><span class="nav-number">2.2.</span> <span class="nav-text">查看视口的尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看元素的几何尺寸"><span class="nav-number">2.3.</span> <span class="nav-text">查看元素的几何尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让滚动条滚动"><span class="nav-number">2.4.</span> <span class="nav-text">让滚动条滚动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本化CSS"><span class="nav-number">3.</span> <span class="nav-text">脚本化CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读写元素css属性：dom间接控制css属性"><span class="nav-number">3.1.</span> <span class="nav-text">读写元素css属性：dom间接控制css属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询计算样式"><span class="nav-number">3.2.</span> <span class="nav-text">查询计算样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询样式-主要针对IE不兼容个问题"><span class="nav-number">3.3.</span> <span class="nav-text">查询样式 (主要针对IE不兼容个问题)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装兼容性方法-getStyle"><span class="nav-number">3.4.</span> <span class="nav-text">封装兼容性方法 getStyle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#额外知识点"><span class="nav-number">3.5.</span> <span class="nav-text">额外知识点</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

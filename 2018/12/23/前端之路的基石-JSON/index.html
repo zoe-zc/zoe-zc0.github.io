@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ego-blog (1).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ego-blog.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JSON定义JSON是一种传输数据的格式（以对象为样板，本质上就是对象，但用途有区别，对象就是本地用的，json是用来传输的） 是一种前后端进行交互的一种手段，发送和接受的数据格式应该都是可互相识别和使用的。最开始的时候是以xml这个格式的语言来传送数据的，xml和html相同点是都是脚本语言，区别在于xml可以自定义标签，利用这一特点，可以将标签写成数据的格式。 上图实际就是模拟对象的格式，后来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端之路的基石-JSON">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/前端之路的基石-JSON/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="JSON定义JSON是一种传输数据的格式（以对象为样板，本质上就是对象，但用途有区别，对象就是本地用的，json是用来传输的） 是一种前后端进行交互的一种手段，发送和接受的数据格式应该都是可互相识别和使用的。最开始的时候是以xml这个格式的语言来传送数据的，xml和html相同点是都是脚本语言，区别在于xml可以自定义标签，利用这一特点，可以将标签写成数据的格式。 上图实际就是模拟对象的格式，后来">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://yoursite.com/images/20062601/JSON/Image.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/JSON/Image%5B1%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/JSON/Image%5B2%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/JSON/Image%5B3%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/JSON/Image%5B4%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/JSON/Image%5B5%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/JSON/Image%5B6%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/JSON/Image%5B7%5D.png">
+<meta property="og:updated_time" content="2020-07-07T11:10:29.354Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端之路的基石-JSON">
+<meta name="twitter:description" content="JSON定义JSON是一种传输数据的格式（以对象为样板，本质上就是对象，但用途有区别，对象就是本地用的，json是用来传输的） 是一种前后端进行交互的一种手段，发送和接受的数据格式应该都是可互相识别和使用的。最开始的时候是以xml这个格式的语言来传送数据的，xml和html相同点是都是脚本语言，区别在于xml可以自定义标签，利用这一特点，可以将标签写成数据的格式。 上图实际就是模拟对象的格式，后来">
+<meta name="twitter:image" content="http://yoursite.com/images/20062601/JSON/Image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/前端之路的基石-JSON/">
+
+
+
+
+
+  <title>前端之路的基石-JSON | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/前端之路的基石-JSON/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端之路的基石-JSON</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T15:54:59+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>JSON是一种传输数据的格式（以对象为样板，本质上就是对象，但用途有区别，对象就是本地用的，json是用来传输的）</p>
+<p>是一种前后端进行交互的一种手段，发送和接受的数据格式应该都是可互相识别和使用的。<br>最开始的时候是以xml这个格式的语言来传送数据的，xml和html相同点是都是脚本语言，区别在于xml可以自定义标签，利用这一特点，可以将标签写成数据的格式。</p>
+<p><img src="/images/20062601/JSON/Image.png" alt><br>上图实际就是模拟对象的格式，后来就用对象来传递数据，叫做json。</p>
+<p>json与对象人为规定的明显区别，属性名要加上双引号。</p>
+<p>传输数据时，无法直接传递一个对象，这个是无法识别的。前后端传递的是二进制文本格式的值，其实就是JSON格式的字符串(字符串内是json)。<br><img src="/images/20062601/JSON/Image%5B1%5D.png" alt><br>后端获取到字符串的json后再通过特殊的语法将其解析为正常的json格式，拿到数据。</p>
+<h3 id="JSON-parse-string-–-gt-json"><a href="#JSON-parse-string-–-gt-json" class="headerlink" title="JSON.parse(); string –&gt; json"></a>JSON.parse(); string –&gt; json</h3><p>JSON是一种静态类，类似Math可以直接调用它的方法</p>
+<h3 id="JSON-stringify-json-–-gt-string"><a href="#JSON-stringify-json-–-gt-string" class="headerlink" title="JSON.stringify(); json –&gt; string"></a>JSON.stringify(); json –&gt; string</h3><h2 id="异步加载JS"><a href="#异步加载JS" class="headerlink" title="异步加载JS"></a>异步加载JS</h2><p>要知道一个方法为什么是这样的，以及为什么这样用</p>
+<h3 id="关于页面"><a href="#关于页面" class="headerlink" title="关于页面"></a>关于页面</h3><p>html、css、js它们符合一些特定的格式，在一个html页面上并写了一些css代码，最后会将页面展示出来，此时页面已经绘制完成。</p>
+<p>绘制：浏览器的渲染引擎，以一个像素(1px)为单位一行一行的绘制页面，就像3D打印一样，一层一层的执行</p>
+<blockquote>
+<p>那么页面的html和css是怎么联系在一起，怎么执行的呢？<br>答：浏览器的内核是不认识html元素和css样式的，内核会对页面进行检索，首先先一行一行的识别html代码，然后将这些元素挂在一个树上，形成树形结构。也就是识别html代码的每一个节点放在树形结构对应的位置上，根据节点的排列方式来绘制出一个dom节点的属性结构，就叫做<strong>domTree</strong></p>
+</blockquote>
+<h4 id="domTree"><a href="#domTree" class="headerlink" title="domTree"></a>domTree</h4><p>绘制出的dom树符合“深度优先”的原则。</p>
+<p>深度优先：形成树的过程，不是按照平级的结构来识别的，而是识别到一个dom节点有子元素的话，就会看识别子元素，不会去管兄弟元素。一条枝干走到头后，再去看其他枝干。</p>
+<p><img src="/images/20062601/JSON/Image%5B2%5D.png" alt></p>
+<p>生成dom树的过程，叫做dom节点的解析，就是只要识别了当前的标签是什么即可，不需要等到它的内容加载完成。例如在解析到img标签时，浏览器将它挂载在dom树上可以同时让它下载内容。</p>
+<p>因为上述原因，可得dom树的完成代表着所有节点的解析完毕，不代表所有节点加载完毕。这是一个异步(同时)发生的过程。</p>
+<h4 id="cssTree"><a href="#cssTree" class="headerlink" title="cssTree"></a>cssTree</h4><p>根据css样式，生成跟dom节点对应的树，叫做css树。原则也是“深度优先”</p>
+<h4 id="rendertTree"><a href="#rendertTree" class="headerlink" title="rendertTree"></a>rendertTree</h4><p>dom树在生成之后会一直处于等待状态，直到css树生成之后合并，生成rendertTree渲染树。当renderTree生成了之后，浏览器的渲染引擎才会按照renderTree的内容开始绘制页面。</p>
+<p>在绘制页面的过程中，js可以动态的改变dom结构和间接的影响css的内容。由于renderTree是页面绘制的最后依据，如果改变了当前的dom结构(删除、增加节点)，renderTree就需要重新构建，此时整个页面就会重新绘制，从代码的第一行开始直到最后，这样会浪费效率。这里就涉及到了dom优化的问题，避免dom节点的添加和删除等操作。</p>
+<h4 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h4><p>renderTree的重建，叫做<strong>reflow重构</strong>(重排)，这个在dom操作里是效率最低的。</p>
+<p>触发重构的方式：<br>    1. dom节点的增加和删除<br>    2. dom节点的宽高变化（一个元素改变了大小，会影响后面元素的位置，所以会造成重新渲染的问题）、位置变化(display属性的值：none变成block)<br>    3. offsetWidth和offsetHeight（调用这个方法时，计算节点的宽高会遵循一个原则：浏览器会将renderTree重新构建一遍，再重新渲染页面，这样才能实时的保证计算出的结果是实时的）<br>    (还有其他方法，暂且了解这些)</p>
+<h4 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h4><p>改变元素的css样式就会造成<strong>repaint重绘</strong>， 浪费的效率少</p>
+<p>改变元素的一些除了宽高位置的属性时，会重绘，不会造成页面重构。</p>
+<h2 id="异步加载JS-1"><a href="#异步加载JS-1" class="headerlink" title="异步加载JS"></a>异步加载JS</h2><h3 id="异步加载"><a href="#异步加载" class="headerlink" title="异步加载"></a>异步加载</h3><p>js是同步加载的，可以阻断html和css的加载线，只有Js执行完了才会继续向下执行。</p>
+<p>js无法和html、css同步执行的原因是，js可以修改html、css。如果同步的话，还没加载就已经被修改了。</p>
+<p>js是单线程的原因也是因为可以修改html、css，如果是多线程的话，一个线程增加，一个线程删除，那么就无法确定执行的线程了。</p>
+<h3 id="js加载的缺点"><a href="#js加载的缺点" class="headerlink" title="js加载的缺点"></a>js加载的缺点</h3><p>加载工具方法没必要阻塞文档，过多的加载js会影响页面效率，一旦网速不好，那么整个网站将等待js加载而不进行后续渲染等工作</p>
+<h3 id="有些工具方法需要按需加载，用到再加载，不用不加载。"><a href="#有些工具方法需要按需加载，用到再加载，不用不加载。" class="headerlink" title="有些工具方法需要按需加载，用到再加载，不用不加载。"></a>有些工具方法需要按需加载，用到再加载，不用不加载。</h3><p>有一些script文件是一个工具包，工具包内都是function方法，不调用的时候不执行，也不会影响页面，这样的工具包是希望被并行的加载进来的。如果页面的js都是同步的，会阻塞后续页面的，当有很多个这样的js工具包时，如果有一个js工具包出现了1k（一个数据量）的误差的话，也就说有一个数据量没有下载成功，网络阻塞了，后面的所有文件都下载不了了，那么整个页面就故障了。</p>
+<p>网页在刚打开时会有一段时间的留白，这个时间加载都是js文件，当js文件没下载完成时，后续的页面文件都处于等待的状态，只有js文件都下载成功后，后续页面才会同时下载html和css，并且绘制页面。</p>
+<h3 id="javascript-异步加载的三种方案"><a href="#javascript-异步加载的三种方案" class="headerlink" title="javascript 异步加载的三种方案"></a>javascript 异步加载的三种方案</h3><ol>
+<li>defer 异步加载，可以和html和css一起下载，但要等到dom文档全部解析完才会被执行。只有IE9以下能用，也可以将代码写到内部。 <!-- 异步写法： -->
+ 内部写代码：<br> <img src="/images/20062601/JSON/Image%5B3%5D.png" alt></li>
+<li>async 异步加载，加载完就执行(执行是异步执行)，async 只能加载外部脚本，不能把js写在script标签里。W3C标准方法，IE9以上等现代浏览器都可以用。<br> 异步写法：<br> <img src="/images/20062601/JSON/Image%5B4%5D.png" alt><br> ajax：读法(阿贾克斯)<br> <img src="/images/20062601/JSON/Image%5B5%5D.png" alt></li>
+</ol>
+<p>上面两种方法1、2在执行时也不阻塞页面<br>兼容性问题：不可以写两个并列的标签，因为执行顺序不同，不可控。</p>
+<ol start="3">
+<li><p>创建script，插入到DOM中，加载完毕后callBack。<br> 优点：可以异步执行、可以按需加载、兼容性好(W3C标准)<br> <img src="/images/20062601/JSON/Image%5B6%5D.png" alt></p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">** demo.js **</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    script.src = <span class="string">"demo.js"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 直接调用时会报错，因为js文件还没加载完成</span></span><br><span class="line">    test();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> load方法，可以解决js文件还未下载完成就执行的问题：<br> 兼容问题：IE的script标签没有load事件</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">** demo.js **</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    script.src = <span class="string">"demo.js"</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 调用load方法，可以在加载完成时触发</span></span><br><span class="line">    <span class="comment">// 兼容Sarafi Chrome FireFox Opera，除了IE</span></span><br><span class="line">    script.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        test();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line">    <span class="comment">// 直接调用时会报错，因为js文件还没加载完成</span></span><br><span class="line">    <span class="comment">// test(); 报错not defined</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> 解决IE不兼容问题：readyState 状态码，最开始的默认值是”loading”，跟着script标签加载进度动态改变这个值，如果加载完成的话会将值改成”complete”或着”loaded”。</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    script.src = <span class="string">"demo.js"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 兼容IE</span></span><br><span class="line">    script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(script.readyState == <span class="string">'complete'</span> || script.readyState == <span class="string">'loaded'</span>) &#123;</span><br><span class="line">            test();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> <span style="color: #b3b0b0;font-size: 14px">事件处理函数：也叫作 callback 回调函数，当满足一定条件才执行的函数。</span></p>
+<p> 异步加载的兼容写法：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(script.readyState) &#123;</span><br><span class="line">        <span class="comment">// 兼容IE</span></span><br><span class="line">        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(script.readyState == <span class="string">'complete'</span> || script.readyState == <span class="string">'loaded'</span>) &#123;</span><br><span class="line">                callback();</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            callback();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 先绑定事件，再加载文件</span></span><br><span class="line">    <span class="comment">// 放在绑定事件之后再赋值，是为了防止当加载过快而不经过上面的判断的情况</span></span><br><span class="line">    script.src = url;</span><br><span class="line">    <span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 如果在这里直接调用的话，先预编译函数再执行函数，这时传的test参数还未下载成功，</span></span><br><span class="line"><span class="comment">// 所以会报错 not defined</span></span><br><span class="line"><span class="comment">// loadScript('demo.js', test);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确调用写法：将要执行的函数放在匿名函数内，不会解析内部所以不会报错</span></span><br><span class="line">loadScript(<span class="string">'demo.js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 在执行时调用匿名函数时，才会调用test方法</span></span><br><span class="line">    test();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p> 上面调用函数的写法写的非常麻烦，最后的写法应该：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">** demo.js **</span><br><span class="line"><span class="keyword">var</span> tools = &#123;</span><br><span class="line">    test: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'test'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ... 函数 loadScript ...</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(script.readyState) &#123;</span><br><span class="line">        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(script.readyState == <span class="string">'complete'</span> || script.readyState == <span class="string">'loaded'</span>) &#123;</span><br><span class="line">                <span class="comment">// callback();</span></span><br><span class="line">                tools[callback]();<span class="comment">// 按需加载按需调用</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// callback();</span></span><br><span class="line">            tools[callback]();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    script.src = url;</span><br><span class="line">    <span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用方法，最终正确写法</span></span><br><span class="line">loadScript(<span class="string">'demo.js'</span>, <span class="string">"test"</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="js加载时间线"><a href="#js加载时间线" class="headerlink" title="js加载时间线"></a>js加载时间线</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>是一个理论依据，根据浏览器出生的那一刻开始，记录的一系列浏览器按顺序执行的操作。</p>
+<p><span style="color: #b3b0b0;font-size: 14px">浏览器在运行一个页面时会初始化js的功能，在完成初始化的那一刻，就开始记载这一系列浏览器接下来要发生的过程。js加载时间线就是用来形容这一过程的执行顺序。</span></p>
+<ol>
+<li><p>创建Document对象(document)，开始解析web页面。解析HTML元素和他们的文本内容后添加Element对象和Text节点到文档中。这个阶段document.readyState = “loading”。</p>
+</li>
+<li><p>遇到link引入的外部css，创建新的线程加载，并继续解析文档。</p>
+</li>
+<li><p>遇到script标签加载外部js，并且没有设置async、defer(同步加载)，浏览器加载，并阻塞整个页面，等待js加载完成并执行该脚本，然后继续解析文档。</p>
+</li>
+<li><p>遇到script标签加载外部js，并且设置有async、defer(异步加载)，浏览器创建新的线程加载，并继续解析文档(不会阻塞文档解析)。对于async属性的脚本，脚本加载完成后立即执行(defer属性的脚本，要等到解析完成才执行)（异步加载的js，<strong>禁止使用document.write()</strong>方法）<br> <span style="color: #b3b0b0;font-size: 14px">document.write(); 将括号内的内容写入文档内。如果在文档解析完成前执行，会将之前文档流的内容清除，并代替写入括号内的值。</span><br> a. 直接执行：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"width:100px;height:100px;background-color:red;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="comment">// 直接执行，在标签后插入</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">'a'</span>);</span><br></pre></td></tr></table></figure>
+
+<p> 结果：<br> <img src="/images/20062601/JSON/Image%5B7%5D.png" alt></p>
+<p> 解析顺序：先解析HTML文档 –&gt; CSS文档 –&gt; renderTree构建完成但是还没开始完全的绘制文档，只是将元素的宽高和位置定好了。这时执行document.write()操作时，会将其内容当做文档流输出到页面里面去。</p>
+<p> b. 文档渲染完成后执行：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">'a'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 解析顺序：此时的document.write()具有消除文档流的作用，所以将元素清除后，将它的内容插入页面</p>
+</li>
+<li><p>遇到img标签等，先正常解析dom结构，然后浏览器异步加载src，并继续解析文档。</p>
+</li>
+<li><p>当文档解析完成(此时domTree刚刚建立完)，document.readyState = “interactive”(interactive 活跃的)。</p>
+</li>
+<li><p>文档解析完成后(实际是与第6步同时发生的)，所有设置有defer(defer 推迟)的脚本会按照(出生)顺序执行。（注意与async的不同，但同样禁止使用document.write()方法）</p>
+</li>
+<li><p>document对象触发DOMContentLoaded事件，这也标志着程序执行从”同步脚本”执行阶段(脚本同步执行会堵塞程序)，转化为事件驱动阶段(浏览器可以监听事件)。<br> 只有文档解析完成后，浏览器可以识别事件，可以正常的执行</p>
+</li>
+<li><p>当所有async的脚本加载完成并执行后、img等加载完成后(此时页面内所有的内容下载并执行完毕)，document.readyState = “complete”，window对象触发load事件。</p>
+</li>
+<li><p>从此，以异步响应方式处理用户输入、网络事件等。</p>
+</li>
+</ol>
+<p>总结来说：</p>
+<ol>
+<li>创建时间线(步骤1)</li>
+<li>文档解析完(步骤2、3、4、5)</li>
+<li>文档解析完并且加载完执行完了(9)</li>
+</ol>
+<p>script标签也是dom节点，只有当所有dom节点解析完成之后才算解析完成，readyState的值才会变，所以下面第一个值打印出的结果是 loading</p>
+<p>window.onload事件是全部文档都加载完成后触发，所以下面第二个值打印出的结果是 complete</p>
+<p>onreadystatechange事件是在document.readyState这个值发生改变时被触发。所以下面第三个值打印出的结果是 interactive 和 complete。loading是初始值不被打印</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">document</span>.readyState);<span class="comment">// loading</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">document</span>.readyState);<span class="comment">// complete</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">document</span>.readyState);<span class="comment">// interactive complete</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><span style="color: #b3b0b0;font-size: 14px">事件的名字都是小写，这是跟属性之间的区别。</span></p>
+<p>onreadystatechange：当dom解析完再执行，script标签的位置也不是必须写在页尾了(但是仍然建议写在页尾，这样效率最快)。在仅支持addEventListener这种方法调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a'</span>);</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+<p>DOMContentLoaded与window.onload方法的区别：DOMContentLoaded更快，当文档解析完就会执行。不需要等到所有内容都下载完再执行，这样非常浪费效率，并且如果使用window.onload时，有一张图片未加载成功，都不会继续向下执行代码，会影响整个页面。</p>
+<p>jQuery中的$(doucment).ready(function(){})方法依据的原理就是DOMContentLoaded和 onreadystatechange。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript事件/" rel="next" title="前端之路的基石-JavaScript事件">
+                <i class="fa fa-chevron-left"></i> 前端之路的基石-JavaScript事件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-正则表达式/" rel="prev" title="前端之路的基石-正则表达式">
+                前端之路的基石-正则表达式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">1.</span> <span class="nav-text">JSON</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-parse-string-–-gt-json"><span class="nav-number">1.2.</span> <span class="nav-text">JSON.parse(); string –&gt; json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-stringify-json-–-gt-string"><span class="nav-number">1.3.</span> <span class="nav-text">JSON.stringify(); json –&gt; string</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步加载JS"><span class="nav-number">2.</span> <span class="nav-text">异步加载JS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于页面"><span class="nav-number">2.1.</span> <span class="nav-text">关于页面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#domTree"><span class="nav-number">2.1.1.</span> <span class="nav-text">domTree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cssTree"><span class="nav-number">2.1.2.</span> <span class="nav-text">cssTree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rendertTree"><span class="nav-number">2.1.3.</span> <span class="nav-text">rendertTree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重构"><span class="nav-number">2.1.4.</span> <span class="nav-text">重构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重绘"><span class="nav-number">2.1.5.</span> <span class="nav-text">重绘</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步加载JS-1"><span class="nav-number">3.</span> <span class="nav-text">异步加载JS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#异步加载"><span class="nav-number">3.1.</span> <span class="nav-text">异步加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js加载的缺点"><span class="nav-number">3.2.</span> <span class="nav-text">js加载的缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有些工具方法需要按需加载，用到再加载，不用不加载。"><span class="nav-number">3.3.</span> <span class="nav-text">有些工具方法需要按需加载，用到再加载，不用不加载。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript-异步加载的三种方案"><span class="nav-number">3.4.</span> <span class="nav-text">javascript 异步加载的三种方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js加载时间线"><span class="nav-number">4.</span> <span class="nav-text">js加载时间线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">4.1.</span> <span class="nav-text">作用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

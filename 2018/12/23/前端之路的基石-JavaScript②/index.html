@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ego-blog (1).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ego-blog.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JavaScript(ECMAScript)、DOM、BOM统称为JavaScript三大部分 JavaScript引入 页面级jsscript标签也有用做存储数据的作用，设置type=”text/tpl”后，script标签内就只能装代码但不能运行。但是可以将数据取出  引入外部js文件在.html文件同级文件夹下，新建一个后缀名为.js的文件，在.html标签内通过link标签引入.js文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端之路的基石-JavaScript②">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript②/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="JavaScript(ECMAScript)、DOM、BOM统称为JavaScript三大部分 JavaScript引入 页面级jsscript标签也有用做存储数据的作用，设置type=”text/tpl”后，script标签内就只能装代码但不能运行。但是可以将数据取出  引入外部js文件在.html文件同级文件夹下，新建一个后缀名为.js的文件，在.html标签内通过link标签引入.js文件">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B1%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B2%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B3%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B4%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B5%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B6%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B7%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B8%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B9%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B10%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B11%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B12%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B13%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B14%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B15%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B16%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B17%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B18%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B19%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B20%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B21%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B22%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B23%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B24%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B25%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js2/Image%5B26%5D.png">
+<meta property="og:updated_time" content="2020-06-28T11:18:42.801Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端之路的基石-JavaScript②">
+<meta name="twitter:description" content="JavaScript(ECMAScript)、DOM、BOM统称为JavaScript三大部分 JavaScript引入 页面级jsscript标签也有用做存储数据的作用，设置type=”text/tpl”后，script标签内就只能装代码但不能运行。但是可以将数据取出  引入外部js文件在.html文件同级文件夹下，新建一个后缀名为.js的文件，在.html标签内通过link标签引入.js文件">
+<meta name="twitter:image" content="http://yoursite.com/images/20062601/js2/Image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript②/">
+
+
+
+
+
+  <title>前端之路的基石-JavaScript② | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript②/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端之路的基石-JavaScript②</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T10:40:06+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>JavaScript(ECMAScript)、DOM、BOM统称为JavaScript三大部分</p>
+<h2 id="JavaScript引入"><a href="#JavaScript引入" class="headerlink" title="JavaScript引入"></a>JavaScript引入</h2><ol>
+<li><p>页面级js<br><img src="/images/20062601/js2/Image.png" alt><br>script标签也有用做存储数据的作用，设置type=”text/tpl”后，script标签内就只能装代码但不能运行。但是可以将数据取出</p>
+</li>
+<li><p>引入外部js文件<br>在<code>.html</code>文件同级文件夹下，新建一个后缀名为<code>.js</code>的文件，在<code>.html</code>标签内通过<code>link</code>标签引入<code>.js</code>文件</p>
+<blockquote>
+<p>关于后缀名：JavaScript外部文件的后缀名实际上应该是javascript，但是由于当时使用的是奔腾四处理器系统windows98，奠定了程序的基础，windows98要求文件后缀名最多三位，由于历史遗留问题至今还在，所以html文件的后缀写成<code>.htm</code>也是可以运行的，所以javascript就被简写成<code>.js</code></p>
+</blockquote>
+</li>
+</ol>
+<p><img src="/images/20062601/js2/Image%5B1%5D.png" alt></p>
+<p>为符合web标准，结构、样式、行为相分离， 通常会采用外部引入的方式</p>
+<blockquote>
+<p>问：是否可以引入js文件，还在script标签内写代码？<br>不可以，只有外部文件的内容生效</p>
+</blockquote>
+<h2 id="Js基本语法"><a href="#Js基本语法" class="headerlink" title="Js基本语法"></a>Js基本语法</h2><p>编程语言的特点：有变量、有函数、有数据结构并且可以进行基本运算</p>
+<p>JavaScript是编程语言</p>
+<p>HTML、CSS不是编程语言，只是计算机语言的一个小门类</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>1.储存数据<br>2.以便于后续使用</p>
+<blockquote>
+<p>var：variable，用来声明变量</p>
+</blockquote>
+<p>举例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br></pre></td></tr></table></figure>
+
+<p>这个过程可以比作：向系统申请了一个变量的空间，这个空间叫做<code>a</code>，这个过程就叫变量声明(variable declaration)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+
+<p>声明完成后，再向<code>a</code>赋值100，注：这里的”=”不是等号，而是赋值符号</p>
+<p>上述例子，可以简写：（这里包含两个过程）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+
+<p>注意：<br>&emsp;① 声明多个变量时，需要使用单一var模式，即每个变量都换行展示且用逗号”,”分隔<br><img src="/images/20062601/js2/Image%5B2%5D.png" alt></p>
+<p>&emsp;② 同一个变量名可以重复声明不会报错，但最新声明的变量会覆盖初始声明变量的值，所以不要重复声明<br>&emsp;&emsp;命名规则：<br><img src="/images/20062601/js2/Image%5B3%5D.png" alt><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;关键字：在系统中有特殊语法含义的字。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;保留字：在未来可能会有特殊含义的字。<br><img src="/images/20062601/js2/Image%5B4%5D.png" alt><br><img src="/images/20062601/js2/Image%5B5%5D.png" alt></p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p>赋值和运算的关系：先将等号右边的式子运算完再赋值给等号左边的值，运算大于赋值的优先级</p>
+<p>计算机的运算与数学运算相似，数学运算实质是仿生计算机运算的</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> c;</span><br><span class="line">c = a + b; <span class="comment">// 30</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>JavaScript是动态语言(分为动态语言和静态语言)，动态语言基本上都是解释性语言，解释性语言基本上都是脚本语言</p>
+<p>解释性语言的特点：声明变量的关键字只有一个，不需要像其他语言一样需要int、float、char、string等关键字。原因是解释性语言在执行时是解释一行执行一行，到当前行时现解释现执行，不用通篇编译</p>
+<p>在声明所有类型的变量时都可以用关键字var来声明，由值来决定数据类型，不需要关注数据类型，并且不同类型的变量可以相互转化，表明解释性语言更加灵活</p>
+<ol>
+<li>原始值(栈数据 stack栈)：Number、Boolean、String、Undefined、Null<br> <strong>数字类型</strong>：浮点型(非整型 intiger)<br> <strong>布尔类型</strong>：表示逻辑的词，true和false<br> <strong>字符串类型</strong>：双引号””或单引号’’包含字符<br> <strong>Undefined类型</strong>：未定义的，表示一个变量经过声明没赋值<code>var a;</code><br> <strong>Null类型</strong>：空值，表示占位。程序中的方法不能直接被删除，就可以用一个空值null来覆盖，以便于后续的利用</li>
+</ol>
+<blockquote>
+<p>不可改变的原始值<br>&emsp;&emsp;电脑(计算机)是因为数字0而被发明的，数字是由阿拉伯人发明的，所以叫做阿拉伯数字。但其实最早是印度人发明的数字，在九世纪的时候，阿拉伯人把印度人给灭了(经历了好几轮灭族)，发现了印度人发明的数字，发现用法很简单，后来阿拉伯人给这个数字加上了加减乘除的运算，从欧洲到亚洲流传开来后就叫做阿拉伯数字<br>&emsp;&emsp;有了数字0后，计算机就诞生了，计算机的语言用01来表示，八位的01010101组成一个字<br>&emsp;&emsp;一个叫做布尔的人发明了逻辑，两个对立逻辑：对的ture和错的false，将逻辑进行了引申，将ture当成了1，把false当成了0，真和假变成了0和1，然后计算机形成了基础的语言</p>
+</blockquote>
+<ol start="2">
+<li>引用值(堆数据 heap堆)：Array、Object、Function、Data、RegExp<br> <strong>数组类型</strong>：[1, 2, 3, false, “abc”]<br> <strong>对象类型</strong>：{name: ‘zc’, age: 18}<br> <strong>函数类型</strong>：function(){}<br> <strong>数据类型</strong>：Data<br> <strong>正则</strong>：/^\d+$/g</li>
+</ol>
+<blockquote>
+<p>原始值和引用值的赋值方法(形式)不同，一个变量的类型由值决定<br>&emsp;&emsp;原始值：将一个值放到另一个值里去，改了第一个值，第二个值不变。<br>&emsp;&emsp;引用值：将一个值放到另一个值里去，改了第一个值，第二个值也跟着变了。</p>
+</blockquote>
+<p>储存位置不同：在计算机中，原始值储存在栈stack中，引用值储存在堆heap中</p>
+<p><strong>原始值</strong>：在声明变量 <code>a</code> 时(var a;)，是向系统申请了一个叫 <code>a</code> 的空间(也可以理解为房间)，在栈stack的 <code>a</code> 空间内存入数值10(var a = 10)；再声明变量 <code>b</code> ( var b;)，又向系统申请一个叫做 <code>b</code> 的空间，将 <code>a</code> 赋值给 <code>b</code> (var b = a;)，这个赋值过程，实际上是将栈stack中 <code>a</code> 的值10先取出，复制(copy)出来再赋值给 <code>b</code> ，所以当给 <code>a</code> 重新赋值20时， <code>b</code> 的值不变依然是10<br><img src="/images/20062601/js2/Image%5B6%5D.png" alt><br>&emsp;&emsp;上述情况，关于 <code>a</code> 的重新赋值的问题，如下图解释：<br>&emsp;&emsp;并非是直接在num空间内直接修改数据，而是在栈内重新存入一个新的值，并将新空间叫做<br>num，而之前的数据依然存在，只是空间的名字被抹去，无法再直接使用，直到空间数据满了，被二次利用时，才会用更新的数据来替代<br><img src="/images/20062601/js2/Image%5B7%5D.png" alt></p>
+<p><strong>引用值</strong>：在声明数组变量 <code>arr</code> 时(var arr;)，是向系统申请了一个叫做 <code>arr</code> 的空间，在堆(heap)中存入数组 <code>[1, 2]</code> (var arr = [1, 2];)，并将堆中存储数值的位置存入栈(stack) <code>arr</code><br>中；再声明数组变量 <code>arr1</code> (var arr1;)，又向系统申请了一个叫做 <code>arr1</code> 的空间，并将 <code>arr</code> 赋值给 <code>arr1</code> (var arr1 = arr;)，这个赋值过程，实际上是将 <code>arr</code> 储存在堆中的值的地址取出，复制(copy)出来再赋值给 <code>arr1</code> ，也就是 <code>arr</code> 和 <code>arr1</code> 共用同一个地址，都指向同一个堆的值。向 <code>arr</code> 添加一个新值3(arr.push(3);)，此时修改的是原数组，所以 <code>arr1</code> 的值也跟着变为[1, 2, 3]<br><img src="/images/20062601/js2/Image%5B8%5D.png" alt></p>
+<p>&emsp;&emsp;关于引用值，还有另外一种情况：<br>&emsp;&emsp;当给 <code>arr</code> 重新赋值[1, 3]时，实际上是向系统申请了一个新的空间，并将[1, 3]存入新的空间内，再将 <code>arr</code> 的值变为新空间的地址 <code>heap1002</code> ，所以 <code>arr1</code> 的值不变。<br><img src="/images/20062601/js2/Image%5B9%5D.png" alt></p>
+<blockquote>
+<p>电子设备(相机、内存卡等)的内存数据被删除时，实际上只是删除了数据与名称间的关系，无法直接再获取数据，但是之前得数据还存在。即使删除了数据，但是内存格中依然存在数据，用专门的设备就能将原来的名字、标号、指针将数据还原回来。所以删除数据，实际上就是将名字删除了，但是内容还在。如果想彻底的删除掉内存中的数据，可以将所有内容删除后，重新再将内存填满，这叫做二次覆盖</p>
+</blockquote>
+<h4 id="基本语法-1"><a href="#基本语法-1" class="headerlink" title="基本语法"></a>基本语法</h4><ol>
+<li><p>语句后面需要用分号”;”结束(分隔)<br> 不需要加分号的语句：函数、for循环、if判断</p>
+</li>
+<li><p>js语法错误会引发后续代码终止，但不会影响其他js代码块<br> 错误：<br>&emsp;&emsp;①低级错误(语法解析错误)：浏览器在渲染之前，会通篇查看页面是否有语法错误，若有错则页面报错，且不会执行渲染操作(一行都不执行)<br><img src="/images/20062601/js2/Image%5B10%5D.png" alt><br>&emsp;&emsp;②逻辑错误(标准错误，情有可原)：当浏览器渲染至错误行时，报错后的代码不会执行<br><img src="/images/20062601/js2/Image%5B11%5D.png" alt><br>&emsp;&emsp;要点：无论哪种错误，一个代码块的错误都不会影响到另一个代码块的执行<br>&emsp;&emsp;低级错误：<br><img src="/images/20062601/js2/Image%5B12%5D.png" alt><img src="/images/20062601/js2/Image%5B13%5D.png" alt><br>&emsp;&emsp;逻辑错误：<br><img src="/images/20062601/js2/Image%5B14%5D.png" alt><img src="/images/20062601/js2/Image%5B15%5D.png" alt></p>
+</li>
+<li><p>书写格式规范，”= + / -“等符号的两侧都需要加空格</p>
+</li>
+</ol>
+<h4 id="js运算符-–-运算操作符"><a href="#js运算符-–-运算操作符" class="headerlink" title="js运算符 – 运算操作符"></a>js运算符 – 运算操作符</h4><ol>
+<li><p>关于 “+”<br>① 数学运算、字符串连接<br>② 任何数据类型加字符串都等于字符串</p>
+<p> <strong>赋值顺序：自右向左，可以连续赋值</strong><br> <strong>运算顺序：自左向右，先乘除后加减</strong><br> 先计算后赋值</p>
+</li>
+<li><p>“-“、”*”、”/“、”% 取余”、”=”、”()”<br>注意点：<br>&emsp;&emsp;0不能除以0，但是0/0也不会报错，会返回NaN(Not A Number 非数，是一种数据类型)<br>&emsp;&emsp;1/0 ==&gt; Infinity(正无穷)<br>&emsp;&emsp;-1/0 ==&gt; -Infinity(负无穷)</p>
+</li>
+<li><p>优先级”=”最弱，”()”最高</p>
+</li>
+<li><p>“++”、”–”、”+=”、”-=”、”/=”、”*=”、”%=”<br>&emsp;&emsp;”++ / –”：自身加 / 减1，再赋值给自身<br><img src="/images/20062601/js2/Image%5B16%5D.png" alt><br><img src="/images/20062601/js2/Image%5B17%5D.png" alt></p>
+</li>
+</ol>
+<h4 id="js运算符-–-比较运算符"><a href="#js运算符-–-比较运算符" class="headerlink" title="js运算符 – 比较运算符"></a>js运算符 – 比较运算符</h4><p>“&gt;”、”&lt;”、”==”、”&gt;=”、”&lt;=”、”!=”</p>
+<p>比较运算符的结果是Boolean<br>字符串，比较的是阿斯克码(asc)的顺序，每个字符对应着阿斯克码0-127，<br>Infinity == Infinity // true<br><strong>NaN不等于任何值，包括自己</strong></p>
+<h4 id="逻辑运算符-–-“-amp-amp-”、”-”、”！”"><a href="#逻辑运算符-–-“-amp-amp-”、”-”、”！”" class="headerlink" title="逻辑运算符 – “&amp;&amp;”、”||”、”！”"></a>逻辑运算符 – “&amp;&amp;”、”||”、”！”</h4><p><em>undefined、null、NaN、””、0、false</em> ==&gt; false（转换为Boolean）</p>
+<p>&emsp;&emsp;”&amp;&amp;”：先看运算符前第一个表达式转换为Boolean值是否为真，如果结果为真再看下一个表达式转化为Boolean值的结果，如果当前表达式为false，则直接返回当前表示；如果前面的表达式都为真，则返回最后一个表达式的值。遇到false就返回<br>&emsp;&emsp;&emsp;&emsp;&emsp;”全真才为真，有一个假就是假” ==&gt; 实际是将返回结果转化为布尔值<br>&emsp;&emsp;&emsp;&emsp;&emsp;总结：从第一个表达式开始，为真就依次向后找，直至遇到false的表达式后返回结果，或者直到最后一个表示时，直接返回表达式的结果</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;短路语句：有中断的作用， 如果前一个表达式是真，才能执行下一个。if的简写形式<br>&emsp;&emsp;&emsp;&emsp;&emsp;用法：在获取数据data后，需要判断data内的数据是否可用，通过”&amp;&amp;”运算符执行一个语句，判断data是否可用<br>例如：<img src="/images/20062601/js2/Image%5B18%5D.png" alt></p>
+<p>&emsp;&emsp;单独”&amp;”，无意义。可作为”与运算”：二进制，相同为1，不同为0<br>&emsp;&emsp;1 &amp; 3; // 1</p>
+<p>&emsp;&emsp;”||”：遇到true(真)就返回，遇到false就继续向后找，直到找到为true的结果。如果前边的表达式都为false，则直接返回最后一个的值<br>&emsp;&emsp;&emsp;&emsp;&emsp;”全假才为假，有一个真就是真” ==&gt; 指返回结果的Boolean</p>
+<p>&emsp;&emsp;”&amp;&amp;”与”||”互为对立。<br>&emsp;&emsp;”!”：将表达式转化为Boolean后再取反<br>&emsp;&emsp;”!!”：取反再取反变Boolean值</p>
+<h4 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h4><ol>
+<li>if、eles if<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 条件成立(true)时，执行语句</span></span><br><span class="line"><span class="keyword">if</span>( 条件 ) &#123;</span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><img src="/images/20062601/js2/Image%5B19%5D.png" alt></p>
+<p>&emsp;&emsp;当多个条件是互斥(条件之间没有重叠部分)时，可以使用else if</p>
+<p>&emsp;&emsp;if 与 “&amp;&amp;”的转换<br><img src="/images/20062601/js2/Image%5B20%5D.png" alt></p>
+<ol start="2">
+<li>for循环<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(声明变量; 循环条件; 变量增量) &#123;</span><br><span class="line">    <span class="comment">// 执行循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>&emsp;&emsp;在循环时执行顺序：<br><img src="/images/20062601/js2/Image%5B21%5D.png" alt><br>&emsp;&emsp;重复执行(2)(3)步骤，直到条件(2)不成立时，结束循环<br>&emsp;&emsp;示例代码：<br><img src="/images/20062601/js2/Image%5B22%5D.png" alt><br>&emsp;&emsp;得到结果：打印十个a</p>
+<p>&emsp;&emsp;<strong>for循环其他形式的写法</strong>：<br>&emsp;&emsp;&emsp;&emsp;① 在循环外声明变量，在循环体内进行变量增加<br><img src="/images/20062601/js2/Image%5B23%5D.png" alt><br>&emsp;&emsp;&emsp;&emsp;② for循环内什么条件都不写<br><img src="/images/20062601/js2/Image%5B24%5D.png" alt><br>&emsp;&emsp;&emsp;&emsp;③ for循环内只写一句<br><img src="/images/20062601/js2/Image%5B25%5D.png" alt></p>
+<ol start="3">
+<li>while循环<br>注意：当条件为1(true)时，就会never-ending loop（死循环）<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 初始变量值;</span><br><span class="line"><span class="keyword">while</span>(条件) &#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><img src="/images/20062601/js2/Image%5B26%5D.png" alt></p>
+<ol start="4">
+<li>do…while循环<br>无论条件是否成立，都先执行循环体(几乎不用)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 声明变量;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125; <span class="keyword">while</span> (i &lt; <span class="number">0</span>)</span><br><span class="line">![](<span class="regexp">/images/</span><span class="number">20062601</span>/js2/Image[<span class="number">27</span>].png)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<ol>
+<li>n可输入：var n<br>= parseInt(window.prompt(‘input’));(弹出式输入框)\</li>
+<li>阶乘：<br> 5! = 5 * 4 * 3 * 2 * 1;\</li>
+<li>斐波那契数列：当前位等于前两位的和，求第四位的值需要知道二三位的数值\</li>
+<li>由于js的数字类型是浮点数，在1/3时，得到的是小数。所以也会有整除却无法得到整数的情况\</li>
+<li>质数：又叫素数，只能被1和它本身整除的数(更准确的解释是：从1一直除到它本身，能被两个数整除。所以1不是素数，也不是合数。从2开始)</li>
+</ol>
+</blockquote>
+<h4 id="条件语句补充"><a href="#条件语句补充" class="headerlink" title="条件语句补充"></a>条件语句补充</h4><ol>
+<li><p><strong>switch case</strong> 条件判断语句</p>
+<p> <em>条件可以是任何类型的数据</em></p>
+<p> 从上之下，当遇到case值与条件值相等时，就执行当前case内的语句，并且会再向下继续执行，直到执行完最后一个，在每个case的执行语句后加上break就可以终止判断</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(条件) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"a"</span>:</span><br><span class="line">        <span class="comment">// 条件为 1 时，执行语句</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="comment">// 条件为 2 时，执行语句</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="comment">//  以上条件都不满足时，执行语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>break</strong> 终止循环，并且必须写在循环内</p>
+</li>
+<li><p><strong>continue</strong> 中止本次循环，进行下一次循环</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript①/" rel="next" title="前端之路的基石-JavaScript①">
+                <i class="fa fa-chevron-left"></i> 前端之路的基石-JavaScript①
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript③/" rel="prev" title="前端之路的基石-JavaScript③">
+                前端之路的基石-JavaScript③ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript引入"><span class="nav-number">1.</span> <span class="nav-text">JavaScript引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Js基本语法"><span class="nav-number">2.</span> <span class="nav-text">Js基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法"><span class="nav-number">2.2.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">2.2.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本语法-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js运算符-–-运算操作符"><span class="nav-number">2.2.3.</span> <span class="nav-text">js运算符 – 运算操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js运算符-–-比较运算符"><span class="nav-number">2.2.4.</span> <span class="nav-text">js运算符 – 比较运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑运算符-–-“-amp-amp-”、”-”、”！”"><span class="nav-number">2.2.5.</span> <span class="nav-text">逻辑运算符 – “&amp;&amp;”、”||”、”！”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件语句"><span class="nav-number">2.2.6.</span> <span class="nav-text">条件语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件语句补充"><span class="nav-number">2.2.7.</span> <span class="nav-text">条件语句补充</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

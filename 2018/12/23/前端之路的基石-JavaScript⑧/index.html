@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ego-blog (1).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ego-blog.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Js基本语法数组其实就是特殊的对象  定义  数组字面量(推荐!) 1var arr = [ ];  构造方法定义数组，这个构造方法是系统提供的js内所有的数组方法都来源于Array.prototype 1var arr = new Array( );  区别：1.如果只传一个值的话，会当做稀松数组，值都是undefined，相当于创建了一个空数组&amp;emsp;&amp;emsp;&amp;emsp;2.传的值只能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端之路的基石-JavaScript⑧">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑧/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="Js基本语法数组其实就是特殊的对象  定义  数组字面量(推荐!) 1var arr = [ ];  构造方法定义数组，这个构造方法是系统提供的js内所有的数组方法都来源于Array.prototype 1var arr = new Array( );  区别：1.如果只传一个值的话，会当做稀松数组，值都是undefined，相当于创建了一个空数组&amp;emsp;&amp;emsp;&amp;emsp;2.传的值只能">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js8/Image.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js8/Image%5B1%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js8/Image%5B2%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js8/Image%5B3%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js8/Image%5B4%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js8/Image%5B5%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js8/Image%5B6%5D.png">
+<meta property="og:updated_time" content="2020-07-04T10:56:50.821Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端之路的基石-JavaScript⑧">
+<meta name="twitter:description" content="Js基本语法数组其实就是特殊的对象  定义  数组字面量(推荐!) 1var arr = [ ];  构造方法定义数组，这个构造方法是系统提供的js内所有的数组方法都来源于Array.prototype 1var arr = new Array( );  区别：1.如果只传一个值的话，会当做稀松数组，值都是undefined，相当于创建了一个空数组&amp;emsp;&amp;emsp;&amp;emsp;2.传的值只能">
+<meta name="twitter:image" content="http://yoursite.com/images/20062601/js8/Image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑧/">
+
+
+
+
+
+  <title>前端之路的基石-JavaScript⑧ | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑧/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端之路的基石-JavaScript⑧</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T13:02:56+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Js基本语法"><a href="#Js基本语法" class="headerlink" title="Js基本语法"></a>Js基本语法</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>其实就是特殊的对象</p>
+<ol>
+<li><p>定义</p>
+<ul>
+<li><p><strong>数组字面量(推荐!)</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ ];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造方法定义数组，这个构造方法是系统提供的<br><span style="color: #b3b0b0;font-size: 14px">js内所有的数组方法都来源于Array.prototype</span></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>( );</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>区别：1.如果只传一个值的话，会当做稀松数组，值都是undefined，相当于创建了一个空数组<br>&emsp;&emsp;&emsp;2.传的值只能是整数，不能是小数，会报错。</p>
+</li>
+</ul>
+</li>
+<li><p>读取和数写<br> 在javascript内，数组的方法基本不会报错，因为数组基于对象的，是特殊的对象</p>
+<p> 在打印不存在的数组位数时，会返回undefined，相当于在对象中访问一个不存在的属性，返回undefined一样</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr[num]; <span class="comment">// 不可以溢出读 结果是undefinde 但是不会报错</span></span><br><span class="line">arr[num] = xxx; <span class="comment">// 可以溢出写 可以给不存在的位数赋值</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组常用的方法<br> 实际上是 <code>es3.0</code> 的方法，不传参数不报错</p>
+<ul>
+<li><p>改变原数组(只有这7个)<br>  <strong>push</strong>：向数组的<strong>最后一位</strong><span style="color: #f90d85">添加</span>数据，可同时添加多个参数，添加成功后返回数组长度<br>  <strong>pop</strong>：把数组的<strong>最后一位</strong><span style="color: #0fd494">剪切</span>出去，不需要传参，返回剪切位的值<br>  <strong>unshift</strong>：向数组的<strong>第一位</strong><span style="color: #f90d85">添加</span>数据，可同时添加多个参数，并且在添加成功后返回数组长度<br>  <strong>shift</strong>：把数组的<strong>第一位</strong><span style="color: #0fd494">剪切</span>出去，不需要传参，返回剪切位的值<br>  <strong>sort</strong>：按照ASCII码给数组<strong>排序</strong>，返回排序后的数组，参数可以写一个回调函数</p>
+<pre><code>匿名函数：
+    1. 必须有两个形参
+    2. 规则：看函数的返回值，当返回值为负数时，那么前面的数放在前面；
+        当返回值为正数时，那么后面的数在前；
+        返回值为0时，位置不动
+    比较规则就是：冒泡排序，传入两个数值，通过自定义的规则来判断返回值。</code></pre><p>  <img src="/images/20062601/js8/Image.png" alt><br>  <strong>reverse</strong>：<strong>逆转</strong>数组内的顺序，返回逆转后的数组<br>  <strong>splice</strong>：参数表示(开始位数，截取的长度，在切口处添加新的数据(可以添加无穷个))。返回截取到的数组</p>
+</li>
+<li><p>不改变原数组<br>  <strong>concat</strong>：连接两个数组，参数可以是数组和数字，返回拼接后的数组<br>  <strong>join</strong>：按照参数将数组连接为字符串，参数必须是字符串，不建议写数字，参数不写默认为”,”<br>  <strong>split</strong>：将字符串按照参数拆分为数组，参数必填，且为字符串，与join用法互逆<br>  <strong>toString</strong>：将数组变成字符串，返回逗号连接的字符串形式，Array重写的方法<br>  <strong>slice</strong>：类似splice，</p>
+<pre><code>参数：（开始位数下标，截取结束位数下标）
+只有一个参数时，是从参数位开始至结尾。
+没有参数时，就截取整个数组。主要用于将一个类数组转化为数组</code></pre><p>一般的数组方法都可以传负数的参，负数的参数实现的方法：<br>例如：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">splice = <span class="function"><span class="keyword">function</span> (<span class="params">position, length, newStr</span>) </span>&#123;</span><br><span class="line">    positon += position &gt; <span class="number">0</span> ? <span class="number">0</span> : <span class="keyword">this</span>.length;</span><br><span class="line">    <span class="comment">// -1 + 4 = 3; 从数组下标是3的位置开始</span></span><br><span class="line">    <span class="keyword">if</span>(position &gt;= <span class="number">0</span> || position &lt; <span class="keyword">this</span>.length) &#123;<span class="comment">//继续执行&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="类数组"><a href="#类数组" class="headerlink" title="类数组"></a>类数组</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>看起来像数组，也可以当做数组来用，但是就不是数组，所以数组的方法都不能用</p>
+<h4 id="类数组的组成"><a href="#类数组的组成" class="headerlink" title="类数组的组成"></a>类数组的组成</h4><p>属性要为索引属性，也就是数字，必须有length属性，最好加上push方法</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
+<li>可以利用属性名模拟数组的特性</li>
+<li>可以动态的增长length属性</li>
+<li>如果强行让类数组调用push方法，则会根据length属性值的位置进行属性的扩充</li>
+</ol>
+<p><strong>没有length属性，不能叫做类数组。</strong><br><img src="/images/20062601/js8/Image%5B1%5D.png" alt></p>
+<p>类数组是对象，但是可以当做数组来用。数组的方法需要主动添加才能用，</p>
+<p>高级编程：DOM里可以生成数组的方法都是类数组</p>
+<h4 id="练习代码"><a href="#练习代码" class="headerlink" title="练习代码"></a>练习代码</h4><p><img src="/images/20062601/js8/Image%5B2%5D.png" alt><br><img src="/images/20062601/js8/Image%5B3%5D.png" alt><br><img src="/images/20062601/js8/Image%5B4%5D.png" alt></p>
+<h3 id="try…catch…"><a href="#try…catch…" class="headerlink" title="try…catch…"></a>try…catch…</h3><p>作用： 在企业开发中，用来防止报错的。<br>当页面中的一行代码出错时，就会阻止继续执行后面的代码。为了解决这个问题，就用到try catch方法</p>
+<p>在try内发生错误，不会执行try里面错误后面的代码，而是直接忽略后跳转到catch方法内，catch会捕捉错误并且将错误信息封装到一个对象内返回，再继续执行try catch外面的代码。<br>try内没有错误时，代码就正常执行。不会进到catch内，所以也不会执行catch的方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a'</span>);<span class="comment">// a</span></span><br><span class="line">    <span class="built_in">console</span>.log(b);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'c'</span>);</span><br><span class="line">&#125;<span class="keyword">catch</span>(e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.name + <span class="string">":"</span> + e.message);</span><br><span class="line">    <span class="comment">// ReferenceError: b is not defined</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'d'</span>);<span class="comment">// d</span></span><br></pre></td></tr></table></figure>
+
+<p>Error.name的六种值对应的信息(报错信息)：</p>
+<ul>
+<li>EvalError：eval()的使用与定义不一致</li>
+<li>RangeError：数值越界</li>
+<li>ReferenceError：非法或不能识别的引用数值（未定义就使用）</li>
+<li>SyntaxError：发生语法解析错误</li>
+<li>TyperError：操作数类型错误</li>
+<li>URIError：URI处理函数使用不当（地址处理错误）</li>
+</ul>
+<h3 id="es5严格模式"><a href="#es5严格模式" class="headerlink" title="es5严格模式"></a>es5严格模式</h3><p>es3.0和es5.0是现在的通用模式，一个版本升级时，会摒弃一些老的语法，增加一些新的语法。这样就会产生一样的语法得到不一样执行结果的问题，这个被称为冲突。</p>
+<p>浏览器目前是基于es3.0原有的和es5.0的新增方法执行的，遇到两个版本都冲突的地方时，规则是执行3.0的方法。</p>
+<p>es3.0和es5.0产生冲突的部分，想要通过es5.0来解决的办法：<strong>es5.0严格模式</strong></p>
+<p>启动es5.0：<span style="color: #f90d85">“use strict”</span> 写在页面逻辑的最顶端，也可以写在局部(函数内)</p>
+<h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p><span style="color: #f90d85">不再兼容es3.0的一些不规则语法，使用全新的es5.0规则</span></p>
+<h4 id="两种用法"><a href="#两种用法" class="headerlink" title="两种用法"></a>两种用法</h4><ol>
+<li><span style="color: #f90d85">全局严格模式</span></li>
+<li><span style="color: #f90d85">局部函数内严格模式：推荐！</span></li>
+</ol>
+<p>启动方式是字符串的原因：浏览器不同、浏览器的版本不同，如果直接调用函数来执行的话，低版本的浏览器不支持es5.0，没有这个调用方法，那么就会报错。字符串可以看做一个表达式，无法识别时，不会报错。主要就是为了向后兼容，老版本浏览器不会报错，新浏览器可以识别。</p>
+<p><span style="color: #f90d85">就是一行字符串，不会对不兼容严格模式的浏览器产生影响。</span></p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>严格模式虽然限制了代码的灵活性，但同时也减少了代码出错的概率，有利于编程</p>
+<h4 id="es5-0严格模式不支持的语句"><a href="#es5-0严格模式不支持的语句" class="headerlink" title="es5.0严格模式不支持的语句"></a>es5.0严格模式不支持的语句</h4><ol>
+<li><p><span style="color: #f90d85">不允许用with</span><br> with内的代码可以被执行，当with内传的参是一个对象时，就会改变当前with内的代码的作用域链的最顶端(最近的AO)变成这个对象参数。</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    name: <span class="string">"obj"</span>,</span><br><span class="line">    age: <span class="number">321</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"window"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> age = <span class="number">123</span>;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">"scope"</span>;</span><br><span class="line">    <span class="comment">// 先找obj1里的值</span></span><br><span class="line">    <span class="keyword">with</span>(obj1) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(name);<span class="comment">// obj</span></span><br><span class="line">        <span class="built_in">console</span>.log(age);<span class="comment">// 321</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">test2();</span><br></pre></td></tr></table></figure>
+
+<p> 作用：简化代码<br> 缺点：修改作用域链的话，系统内核会消耗大量的效率来更改，会把程序变得非常的慢。</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 命名空间的使用 with</span></span><br><span class="line"><span class="keyword">with</span>(<span class="built_in">document</span>) &#123;</span><br><span class="line">    <span class="comment">// document.write</span></span><br><span class="line">    <span class="comment">// 会去对应的执行期上下文找到write的方法</span></span><br><span class="line">    write(<span class="string">'a'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span style="color: #f90d85">不可以使用 arguments.callee、function.caller</span></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// es5.0函数内严格模式的启动</span></span><br><span class="line">    <span class="string">"use strict"</span>;</span><br><span class="line">    <span class="comment">// console.log(arguments.callee);// error 不能使用</span></span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// es3.0规则</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee);<span class="comment">// test1</span></span><br><span class="line">&#125;</span><br><span class="line">test1();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span style="color: #f90d85">变量赋值前必须声明</span></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">strictFun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="string">"use strict"</span>;</span><br><span class="line">    <span class="comment">// 变量未定义会报错</span></span><br><span class="line">    <span class="comment">// a = 1;// error: a is not defined</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">// 1</span></span><br><span class="line">&#125;</span><br><span class="line">strictFun();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span style="color: #f90d85">局部的this必须被赋值(Person.call(null/undefined))，赋值什么就是什么</span><br> es3.0，在预编译过程中 this 指向 window<br> es5.0，在预编译过程中 this 如果不被赋值的话，为undefined</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">strictFun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="string">"use strict"</span>;</span><br><span class="line">    <span class="comment">// this必须被赋值</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">// undefined</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">aboutThis</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">new</span> aboutThis();<span class="comment">// aboutThis&#123;&#125; --&gt; 该对象的constructor</span></span><br><span class="line">    aboutThis.call(&#123;&#125;);<span class="comment">// &#123;&#125;</span></span><br><span class="line">    aboutThis.call(<span class="number">123</span>);<span class="comment">// 123</span></span><br><span class="line">&#125;</span><br><span class="line">strictFun();</span><br></pre></td></tr></table></figure>
+
+<p> <span style="color: #b3b0b0">通过new执行构造函数后，打印当前this得到的结果是该对象的构造函数。在控制台打印出来的格式是：构造函数的名字 + 对象的标准形式{ }</span><br> <img src="/images/20062601/js8/Image%5B5%5D.png" alt></p>
+<p> 在全局打印this时，指向是window，这个值不能发生改变</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">// window</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拒绝重复属性和参数，但是不会报错<br> 在es3.0中，重复的参数是不报错的，取值时是取最后的值<br> 在es5.0中，函数传递重复的形参时，会报错</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test3</span>(<span class="params">name, name</span>) </span>&#123;</span><br><span class="line"><span class="comment">// 只传一个实参时，值为undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(name);<span class="comment">// 2</span></span><br><span class="line">&#125;</span><br><span class="line">test3(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p> <img src="/images/20062601/js8/Image%5B6%5D.png" alt><br> 在es3.0中，重复的属性不报错，取值会取最后那个属性的值<br> 在es5.0中，对象内有重复的属性时，不会报错，取值取最后一个</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name : <span class="string">'123'</span>,</span><br><span class="line">    name : <span class="string">'234'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name);<span class="comment">// 234</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="eval"><a href="#eval" class="headerlink" title="eval()"></a>eval()</h4><ol>
+<li>将字符串当做代码来执行</li>
+<li>通用的语法规定中，es3.0都不能使用eval()，不能用的原因的是可以改变作用域（eval()是魔鬼）<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">eval</span>(<span class="string">'console.log(a)'</span>);<span class="comment">// 0</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript⑦/" rel="next" title="前端之路的基石-JavaScript⑦">
+                <i class="fa fa-chevron-left"></i> 前端之路的基石-JavaScript⑦
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript⑨/" rel="prev" title="前端之路的基石-JavaScript⑨">
+                前端之路的基石-JavaScript⑨ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Js基本语法"><span class="nav-number">1.</span> <span class="nav-text">Js基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">1.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类数组"><span class="nav-number">1.2.</span> <span class="nav-text">类数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类数组的组成"><span class="nav-number">1.2.2.</span> <span class="nav-text">类数组的组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">1.2.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#练习代码"><span class="nav-number">1.2.4.</span> <span class="nav-text">练习代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#try…catch…"><span class="nav-number">1.3.</span> <span class="nav-text">try…catch…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#es5严格模式"><span class="nav-number">1.4.</span> <span class="nav-text">es5严格模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两种用法"><span class="nav-number">1.4.2.</span> <span class="nav-text">两种用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用"><span class="nav-number">1.4.3.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#es5-0严格模式不支持的语句"><span class="nav-number">1.4.4.</span> <span class="nav-text">es5.0严格模式不支持的语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eval"><span class="nav-number">1.4.5.</span> <span class="nav-text">eval()</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

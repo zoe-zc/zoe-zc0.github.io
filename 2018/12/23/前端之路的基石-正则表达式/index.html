@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ego-blog (1).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ego-blog.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="转义字符转义字符串 符号“\”后的那个字符会失去原来的意义，变成字符。 转义符号在字符串中不会被打印出来 转义符号可以转义自己本身1234var str = &quot;sld\&quot;kfj&quot;;console.log(str); // sld&quot;kfjstr = &quot;sld\\kfj&quot;;console.log(str); // sld\kfj    特殊字符 符号“\”与特定的字母相组合时，会变成特殊字符（注意：d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端之路的基石-正则表达式">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/前端之路的基石-正则表达式/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="转义字符转义字符串 符号“\”后的那个字符会失去原来的意义，变成字符。 转义符号在字符串中不会被打印出来 转义符号可以转义自己本身1234var str = &quot;sld\&quot;kfj&quot;;console.log(str); // sld&quot;kfjstr = &quot;sld\\kfj&quot;;console.log(str); // sld\kfj    特殊字符 符号“\”与特定的字母相组合时，会变成特殊字符（注意：d">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://yoursite.com/images/20062601/RegExp/Image.png">
+<meta property="og:updated_time" content="2020-07-07T11:54:57.066Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端之路的基石-正则表达式">
+<meta name="twitter:description" content="转义字符转义字符串 符号“\”后的那个字符会失去原来的意义，变成字符。 转义符号在字符串中不会被打印出来 转义符号可以转义自己本身1234var str = &quot;sld\&quot;kfj&quot;;console.log(str); // sld&quot;kfjstr = &quot;sld\\kfj&quot;;console.log(str); // sld\kfj    特殊字符 符号“\”与特定的字母相组合时，会变成特殊字符（注意：d">
+<meta name="twitter:image" content="http://yoursite.com/images/20062601/RegExp/Image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/前端之路的基石-正则表达式/">
+
+
+
+
+
+  <title>前端之路的基石-正则表达式 | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/前端之路的基石-正则表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端之路的基石-正则表达式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T16:32:42+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><h3 id="转义字符串"><a href="#转义字符串" class="headerlink" title="转义字符串"></a>转义字符串</h3><ul>
+<li>符号“\”后的那个字符会失去原来的意义，变成字符。</li>
+<li>转义符号在字符串中不会被打印出来</li>
+<li>转义符号可以转义自己本身<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"sld\"kfj"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// sld"kfj</span></span><br><span class="line">str = <span class="string">"sld\\kfj"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// sld\kfj</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><ul>
+<li>符号“\”与特定的字母相组合时，会变成特殊字符（注意：doucment.write()写入文档不生效，而是变成文字分隔符）</li>
+<li>\n是换行符、\r是行结束  在底层的操作系统内，回车是由”\r\n”组成的。Linex系统内只有”\n”</li>
+<li>\t是table的缩写，表示缩进符 键盘上的tab键也是table的缩写，表示缩进制表符。一般情况下，一个缩进表示四个空格<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">"sld\r\nkfj"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// sld</span></span><br><span class="line">                  <span class="comment">// kfj</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(str);<span class="comment">// sld kfj</span></span><br><span class="line"></span><br><span class="line">str = <span class="string">"sld\tkfj"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// "sld   kfj"</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h3><ul>
+<li><p>意义：在编程上让字符串换行，使代码变得可维护。\n 是针对结果进行换行，没有意义</p>
+</li>
+<li><p>系统规定，字符串不可以多行显示，否则会报语法错误</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.innerHTML = <span class="string">"</span></span><br><span class="line"><span class="string">    &lt;div&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;span&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>  报错：<img src="/images/20062601/RegExp/Image.png" alt></p>
+</li>
+<li><p>在文本形式的换行字符的行末尾添加换行符“\”，可以使行尾的文本形式的回车转义掉，不再有回车的功能，这样就可以使字符串代码换行展示，并且不报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newStr = innerHTML = <span class="string">"\</span></span><br><span class="line"><span class="string">    &lt;div&gt;&lt;/div&gt;\</span></span><br><span class="line"><span class="string">    &lt;span&gt;&lt;/span&gt;\</span></span><br><span class="line"><span class="string">"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newStr);</span><br><span class="line"><span class="comment">// 结果："            &lt;div&gt;&lt;/div&gt;            &lt;span&gt;&lt;/span&gt;        "</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他办法：字符串拼接的形式，通过“+”来连接每行的字符，这样写比较low</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newStr = innerHTML =</span><br><span class="line">    <span class="string">"&lt;div&gt;&lt;/div&gt;"</span> +</span><br><span class="line">    <span class="string">"&lt;span&gt;&lt;/span&gt;"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newStr);<span class="comment">// &lt;div&gt;&lt;/div&gt;&lt;span&gt;&lt;/span&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="正则表达式-RegExp"><a href="#正则表达式-RegExp" class="headerlink" title="正则表达式 RegExp"></a>正则表达式 RegExp</h2><h3 id="正则表达式的作用"><a href="#正则表达式的作用" class="headerlink" title="正则表达式的作用"></a>正则表达式的作用</h3><p>匹配特殊字符或有特殊搭配原则的字符的最佳选择</p>
+<p>每门语言都有正则表达式，用法几乎都是相同的。但是js提供了一些独有的方法用于正则。</p>
+<h3 id="创建方式"><a href="#创建方式" class="headerlink" title="创建方式"></a>创建方式</h3><h4 id="字面量-（推荐！）"><a href="#字面量-（推荐！）" class="headerlink" title="字面量 （推荐！）"></a>字面量 （推荐！）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/abc/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'abcd'</span>));<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>正则表达式的属性：<br> ① i：ignoreCase 忽略大小写<br> ② g：global 全局匹配（将所有匹配的值都返回）<br> ③ m：多行匹配</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/abc/i</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'ABCD'</span>));<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 默认匹配方式：匹配第一个</span></span><br><span class="line"><span class="keyword">var</span> matchReg = <span class="regexp">/asdf/</span>;</span><br><span class="line"><span class="keyword">var</span> matchStr = <span class="string">'asdfasdfasdfasdfasdfasdfasdf'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(matchStr.match(matchReg));<span class="comment">// ["asdf", index: 0, input: "asdfasdfasdfasdfasdfasdfasdf", groups: undefined]</span></span><br><span class="line"><span class="comment">// 全部匹配</span></span><br><span class="line"><span class="keyword">var</span> matchReg1 = <span class="regexp">/asdf/g</span>;</span><br><span class="line"><span class="keyword">var</span> matchStr1 = <span class="string">'asdfasdfasdfasdfasdfasdfasdf'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(matchStr1.match(matchReg1));<span class="comment">// ["asdf", "asdf", "asdf", "asdf", "asdf", "asdf", "asdf"]</span></span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// m：可以匹配到换行的字符</span></span><br><span class="line"><span class="keyword">var</span> mReg = <span class="regexp">/^a/gm</span>;<span class="comment">// 匹配到所有开头的'a'</span></span><br><span class="line"><span class="keyword">var</span> mStr = <span class="string">'ababababab\nabab'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(mStr.match(mReg));<span class="comment">// ["a", "a"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>正则表达式的方法：匹配字符<br> ① test：布尔值，返回是否有与正则表达式校验相匹配的字符串</p>
+</li>
+<li><p>字符串的方法；匹配字符<br> ① match：数组，默认只返回第一个符合的片段</p>
+</li>
+</ol>
+<h4 id="new-RegExp-规则，属性"><a href="#new-RegExp-规则，属性" class="headerlink" title="new RegExp(规则，属性)"></a>new RegExp(规则，属性)</h4><p>规则：字符串类型、也可以是已有的规则(字面量类型的)<br>属性：”i”、”g”、”m”等字符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/abc/i</span>;</span><br><span class="line"><span class="keyword">var</span> newReg = <span class="built_in">RegExp</span>(reg);</span><br><span class="line"><span class="built_in">console</span>.log(reg);<span class="comment">// /abc/i</span></span><br><span class="line"><span class="built_in">console</span>.log(newReg);<span class="comment">// /abc/i</span></span><br><span class="line"><span class="comment">// 这里的newReg和reg打印出来是同样的值、但两个不同的对象</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="两种方法的区别"><a href="#两种方法的区别" class="headerlink" title="两种方法的区别"></a>两种方法的区别</h4><ol>
+<li><p>正常状态：通过 new 关键字生成的正则表达式，虽然是通过字面量生成的，但是字面量之间互不影响</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/abc/i</span>;</span><br><span class="line"><span class="keyword">var</span> newReg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(reg);</span><br><span class="line">reg.abc = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newReg.abc);<span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非正常状态：不通过 new 关键字生成的正则表达式，实际上与字面量表达式指向相同的地址，他们之间会相互影响（一般不用，用了的话成哥说可以赞美他）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newReg1 = <span class="built_in">RegExp</span>(reg);</span><br><span class="line">reg.abc = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newReg1.abc);<span class="comment">// 123</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><h4 id="一个字符代表一位，内容就是取值范围"><a href="#一个字符代表一位，内容就是取值范围" class="headerlink" title="[ ] 一个字符代表一位，内容就是取值范围"></a>[ ] 一个字符代表一位，内容就是取值范围</h4><ol>
+<li>0-9：表示数字从0到9</li>
+<li>a-z：表示小写字母a到z</li>
+<li>A-Z：表示大写字母A到Z</li>
+<li>A-z：表示从大写字母A到小写字母z，根据ASCII码</li>
+<li>[^]：符号^放在中括号[ ]内时，表示非。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg2 = <span class="regexp">/[ab][cd][d]/g</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">"abcd"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str2.match(reg2));<span class="comment">// ["bcd"]</span></span><br><span class="line"><span class="keyword">var</span> reg3 = <span class="regexp">/[0-9A-Za-z][cd][d]/g</span>;</span><br><span class="line"><span class="keyword">var</span> str3 = <span class="string">"ab1cd"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str3.match(reg3));<span class="comment">// ["1cd"]</span></span><br><span class="line"><span class="keyword">var</span> reg4 = <span class="regexp">/[^a][^b]/g</span>;</span><br><span class="line"><span class="keyword">var</span> str4 = <span class="string">"ab1cd"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str4.match(reg4));<span class="comment">// ["b1", "cd"]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="：括号-内的值表示特定的字符区间"><a href="#：括号-内的值表示特定的字符区间" class="headerlink" title="( )：括号( )内的值表示特定的字符区间"></a>( )：括号( )内的值表示特定的字符区间</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg5 = <span class="regexp">/(abc|bcd)[0-9]/g</span>;</span><br><span class="line"><span class="keyword">var</span> str5 = <span class="string">"bcd2"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str5.match(reg5));<span class="comment">// ["bcd2"]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>实际上与表达式是一样的用途，但是使用时更加简洁<br><span style="color: #b3b0b0;font-size: 14px">特点：效率恐怖，代码风骚，哈哈哈哈哈</span></p>
+<ul>
+<li><p>\w word字母字符，代表一位字符，完全等于<strong>[0-9A-z_]</strong></p>
+</li>
+<li><p>\W 是\w的补集，<strong>[^\w]</strong></p>
+</li>
+<li><p>\d [0-9]</p>
+</li>
+<li><p>\D [^0-9]</p>
+</li>
+<li><p>在表达式内也可以写元字符</p>
+</li>
+<li><p>\s 包含空格在内的所有空白字符，共六个（\n 换行符、\f 换页符、\r 回车符、\t 制表符、\v 垂直制表符）</p>
+</li>
+<li><p>空格在正则表达式内就写” “空格来表示</p>
+</li>
+<li><p>\S [^\s]</p>
+</li>
+<li><p>\b 单词边界</p>
+</li>
+<li><p>\B 非单词边界</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var reg6 = /\bcde\B/g;</span><br><span class="line">var str6 = &quot;abc cdefgh&quot;;</span><br><span class="line">console.log(str6.match(reg6));// [&quot;cde&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>\t 只能匹配\t这样写法的字符，直接给字符串缩进的写法会报错</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg7 = <span class="regexp">/\tcde/g</span>;</span><br><span class="line"><span class="keyword">var</span> str7 = <span class="string">"abc    cdefgh"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str7.match(reg7));<span class="comment">// null</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg7 = <span class="regexp">/\tcde/g</span>;</span><br><span class="line"><span class="keyword">var</span> str7 = <span class="string">"abc\tcdefgh"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str7.match(reg7));<span class="comment">// [" cde"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>\t 换行符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg8 = <span class="regexp">/\ncde/g</span>;</span><br><span class="line"><span class="keyword">var</span> str8 = <span class="string">"abc\ncdefgh"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str8.match(reg8));<span class="comment">// ["↵cde"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>十六进制</p>
+<ol>
+<li><p>\uxxxx 十六进制的四位数的Unicode编码，包含汉字在内的一切字符<br> 例如：<code>\u0000</code><br> 和ASCII码作用相同，一个unicode编码对应一个字符，只是ASCII码可以对应一些特殊字符</p>
+</li>
+<li><p>\uxxxxxx 十六进制的六位数<br> 区间：它的每一位进制都具有特定的区间，前两位代表层级数，后四位代表unicode编码的范围<br> 例如：<br> \u010000 - \u01ffff 第一层<br> \u100000 - \u10ffff 第十六层</p>
+<p> 若取值区间取为：[\u0000 - \uffff] 可以取一切字符，代表all<br> 其他方法：[\s\S]、[\d\D] 原有和的补集再加上自己，也代表all</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// unicode转码</span></span><br><span class="line"><span class="keyword">var</span> reg9 = <span class="regexp">/\u8001\u9093\u8eab\u4f53\u597d/g</span>;</span><br><span class="line"><span class="keyword">var</span> str9 = <span class="string">"老邓身体好"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str9.match(reg9));<span class="comment">// ["老邓身体好"]</span></span><br><span class="line"><span class="comment">// 表示一个范围</span></span><br><span class="line"><span class="keyword">var</span> reg10 = <span class="regexp">/[\u3000-\ua000]/g</span>;</span><br><span class="line"><span class="keyword">var</span> str10 = <span class="string">"老邓身体好"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str10.match(reg10));<span class="comment">// ["老", "邓", "身", "体", "好"]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>字符”.”：查找单个字符，除了换行和行结束符，全等于[^\r\n]</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg11 = <span class="regexp">/./g</span>;</span><br><span class="line"><span class="keyword">var</span> str11 = <span class="string">"老邓身体好"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str11.match(reg11));<span class="comment">// ["老", "邓", "身", "体", "好"]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><p>量词：代表数量的词，个数<br>表示匹配字符的个数：n * 个数</p>
+<ul>
+<li><p>n+ 从1到正无穷 {1，infinity}</p>
+</li>
+<li><p>n*  从0到正无穷 {0，infinity}<br>  匹配原则：</p>
+<ol>
+<li>贪婪匹配原则：尽可能的多匹配，最后考虑0的情况<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> regExp = <span class="regexp">/\w+/g</span>;</span><br><span class="line"><span class="keyword">var</span> regExpStr = <span class="string">"abc"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(regExpStr.match(regExp));<span class="comment">// ["abc"]</span></span><br><span class="line"><span class="keyword">var</span> regExp1 = <span class="regexp">/\w*/g</span>;</span><br><span class="line"><span class="keyword">var</span> regExpStr1 = <span class="string">"abc;"</span>;</span><br><span class="line"><span class="comment">// 结果是三个值原因：取到第一个值后，由于是全局匹配，所以并没有结束匹配，而是在逻辑上还有一段距离。当*是0时，匹配到的就是空，所以会匹配出空字符串</span></span><br><span class="line"><span class="built_in">console</span>.log(regExpStr1.match(regExp1));<span class="comment">// ["abc", "", ""]</span></span><br><span class="line"><span class="keyword">var</span> regExp2 = <span class="regexp">/\d*/g</span>;</span><br><span class="line"><span class="keyword">var</span> regExpStr2 = <span class="string">"abc;"</span>;</span><br><span class="line"><span class="comment">// 根据光标定位点来决定返回的数量</span></span><br><span class="line"><span class="built_in">console</span>.log(regExpStr2.match(regExp2));<span class="comment">// ["", "", "", "", ""]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>n?  从0到1 {0，1}</p>
+</li>
+<li><p>n{X} 表示匹配X个字符</p>
+</li>
+<li><p>n{x,y} 从x到y {x,y}，先判断是否有y个数的值再依次看向x个数的值（贪婪匹配原则）</p>
+</li>
+<li><p>n{x, } 从x到infinity正无穷 {x, }</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> regExp3 = <span class="regexp">/\w?/g</span>;</span><br><span class="line"><span class="keyword">var</span> regExpStr3 = <span class="string">"abc;"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(regExpStr3.match(regExp3));<span class="comment">// ["a", "b", "c", "", ""]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> regExp4 = <span class="regexp">/\w&#123;3&#125;/g</span>;</span><br><span class="line"><span class="keyword">var</span> regExpStr4 = <span class="string">"abc;"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(regExpStr4.match(regExp4));<span class="comment">// ["abc"]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> regExp5 = <span class="regexp">/\w&#123;3,5&#125;/g</span>;</span><br><span class="line"><span class="keyword">var</span> regExpStr5 = <span class="string">"aaaaaaaaaaaaaaaaa"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(regExpStr5.match(regExp5));<span class="comment">// ["aaaa    a", "aaaaa", "aaaaa"]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="结尾符和开头符"><a href="#结尾符和开头符" class="headerlink" title="结尾符和开头符"></a>结尾符和开头符</h3><ul>
+<li>$ 匹配以$前的字符为结尾的字符，受属性m的影响可以多行匹配</li>
+<li>^ 匹配以^后的字符为开始的字符，与$一起使用时，有限制字符的作用  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> regExp6 = <span class="regexp">/ef$/g</span>;</span><br><span class="line"><span class="keyword">var</span> regExpStr6 = <span class="string">"abcdef"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(regExpStr6.match(regExp6));<span class="comment">// ["ef"]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> regExp7 = <span class="regexp">/^abc$/g</span>;</span><br><span class="line"><span class="keyword">var</span> regExpStr7 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(regExpStr7.match(regExp7));<span class="comment">// ["abc"]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><p>写一个正则表达式，检验字符串首尾是否含有数字(首部或者尾部有数字即可)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> testReg = <span class="regexp">/^\d|\d$/g</span>;</span><br><span class="line"><span class="keyword">var</span> testReg = <span class="regexp">/^\d[\s\S]*\d$/g</span>; --&gt; 首尾都有数字，通过[\s\S]*来匹配所有字符</span><br><span class="line"><span class="keyword">var</span> testStr = <span class="string">"12lkj0984lk3423 j3"</span>;</span><br><span class="line"><span class="comment">// 返回第一个查到的结果</span></span><br><span class="line"><span class="built_in">console</span>.log(testStr.match(testReg));<span class="comment">// ["1", index: 0, input: "12lkj0984lk3423 j3", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(testReg.test(testStr));<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="RegExp-对象属性"><a href="#RegExp-对象属性" class="headerlink" title="RegExp 对象属性"></a>RegExp 对象属性</h3><ul>
+<li>global 是否全局</li>
+<li>ignoreCase 是否忽略大小写</li>
+<li>lastIndex 获取到字符后的下标位置</li>
+<li>multiline  是否多行匹配</li>
+<li>source 表达式的内容<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(testReg.global);<span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(testReg.ignoreCase);<span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(testReg.lastIndex);<span class="comment">// 18</span></span><br><span class="line"><span class="built_in">console</span>.log(testReg.multiline);<span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(testReg.source);<span class="comment">// 正则表达式的内容：^\d[\s\S]*\d$</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="RegExp-对象方法"><a href="#RegExp-对象方法" class="headerlink" title="RegExp 对象方法"></a>RegExp 对象方法</h3><ul>
+<li><p>test</p>
+</li>
+<li><p><strong>exec</strong> 执行的意思</p>
+<ol>
+<li><p>在有全局g属性时，多次执行打印结果会依次将结果打印出来，且lastIndex随每次打印而移动光标位置</p>
+</li>
+<li><p>在没有全局属性时，只执行一次</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> execReg = <span class="regexp">/ab/g</span>;</span><br><span class="line"><span class="keyword">var</span> execStr = <span class="string">"abababab"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(execReg.lastIndex);<span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(execReg.exec(execStr));<span class="comment">// ["ab", index: 0, input: "abababab", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(execReg.lastIndex);<span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(execReg.exec(execStr));<span class="comment">// ["ab", index: 2, input: "abababab", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(execReg.exec(execStr));<span class="comment">// ["ab", index: 4, input: "abababab", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(execReg.exec(execStr));<span class="comment">// ["ab", index: 6, input: "abababab", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(execReg.exec(execStr));<span class="comment">// null</span></span><br><span class="line"><span class="built_in">console</span>.log(execReg.exec(execStr));<span class="comment">// ["ab", index: 0, input: "abababab", groups: undefined]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>符号”()+数字”表示反向引用数字位的子表达式( )内的内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> execReg1 = <span class="regexp">/(\w)\1(\w)\2/g</span>;<span class="comment">// 第一位表达式和第二位</span></span><br><span class="line"><span class="keyword">var</span> execStr1 = <span class="string">"aabb"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(execStr1.match(execReg1));<span class="comment">// ["aabb"]</span></span><br><span class="line"><span class="built_in">console</span>.log(execReg1.exec(execStr1));<span class="comment">// ["aabb", "a", "b", index: 0, input: "aabb", groups: undefined]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用exec方法时，得到的类数组中的"a", "b"这两个值分别是第一个表达式和第二个表达式匹配的值</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>compile</p>
+</li>
+</ul>
+<h3 id="支持正则表达式的-String-对象的方法"><a href="#支持正则表达式的-String-对象的方法" class="headerlink" title="支持正则表达式的 String 对象的方法"></a>支持正则表达式的 String 对象的方法</h3><ul>
+<li><p>兼容所有浏览器，FireFox from v1，IE from v4</p>
+</li>
+<li><p>match</p>
+<ol>
+<li>进行全局搜索不带有属性g时，相当于exec方法，返回类数组</li>
+<li>进行全局搜索带有属性g时，只返回匹配到的值按数组格式返回<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> execReg1 = <span class="regexp">/(\w)\1(\w)\2/</span>;</span><br><span class="line"><span class="keyword">var</span> execStr1 = <span class="string">"aabb"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(execStr1.match(execReg1));<span class="comment">// ["aabb", "a", "b", index: 0, input: "aabb", groups: undefined]</span></span><br><span class="line"><span class="keyword">var</span> execReg1 = <span class="regexp">/(\w)\1(\w)\2/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(execStr1.match(execReg1));<span class="comment">// ["aabb"]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>search 返回匹配到的位置</p>
+<ol>
+<li><p>匹配成功</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> execStr2 = <span class="string">"elkdaabba"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(execStr2.search(execReg1));<span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>未匹配到字符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> execStr3 = <span class="string">"elkdacabba"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(execStr3.search(execReg1));<span class="comment">// -1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>split 按照正则表达式将字符串拆分为<strong>字符串数组</strong></p>
+<ol>
+<li><p>子表达式：按照子表达式所匹配到的字符分割字符串，并返回分割后的数组。数组内包含子表达式所匹配到的第一个字符，并且子表达式内的元字符无论是字符串还是数字都会匹配到第一个字符。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> splitReg = <span class="regexp">/(\w)\1/g</span>;</span><br><span class="line"><span class="keyword">var</span> splitStr = <span class="string">"sldkffjalaskddjflkflaasjsajjfkd"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(splitStr.split(splitReg));<span class="comment">// ["sldk", "f", "jalask", "d", "jflkfl", "a", "sjsa", "j", "fkd"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他表达式<br>表达式内不包含子表达式时，会以所匹配的字符将字符串分割为数组，并且是全局匹配，所以不需要写上<strong>属性g</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> splitReg1 = <span class="regexp">/\d/</span>;</span><br><span class="line"><span class="keyword">var</span> splitStr1 = <span class="string">"sldk0jalask0jflkfl0sjsa0fkd"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(splitStr1.split(splitReg1));<span class="comment">// ["sldk", "jalask", "jflkfl", "sjsa", "fkd"]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>replace 替换与正则表达式匹配的字符串</p>
+<ol>
+<li><p>非正则表达式形式使用replace<br> 注意：只能匹配到第一个字符换并且替换，无法全局匹配(非正式表达式的缺陷)</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> replaceStr = <span class="string">'aa'</span>;</span><br><span class="line"><span class="keyword">var</span> newR = replaceStr.replace(<span class="string">'a'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newR);<span class="comment">// ba</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>正则表达式的形式<br> replace的第二个参数可以反向引用正则表达式内的子表达式的内容，通过符号”$+数字”的形式来表示引用的第几个子表达式，一个符号表示一个字符</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> replaceStr = <span class="string">'aabb'</span>;</span><br><span class="line"><span class="keyword">var</span> replaceReg = <span class="regexp">/(\w)\1(\w)\2/g</span>;</span><br><span class="line"><span class="keyword">var</span> newR = replaceStr.replace(replaceReg, <span class="string">'$2$2$1$1'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newR);<span class="comment">// bbaa</span></span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// xyxy的格式改为yxyx的形式</span></span><br><span class="line"><span class="keyword">var</span> replaceStr1 = <span class="string">'abab'</span>;</span><br><span class="line"><span class="keyword">var</span> replaceReg1 = <span class="regexp">/(\w)(\w)\1\2/g</span>;</span><br><span class="line"><span class="keyword">var</span> newString1 = replaceStr1.replace(replaceReg1, <span class="string">'$1$2$1$2'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newString1);<span class="comment">// baba</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>正则表达式的形式<br>replace的第二个参数可以是一个匿名函数，函数内将匹配到的结果返回。系统会自动向函数传递参数，传递的第一个参数是正则表达式匹配的全局(结果)$，第二个参数是第一个子表达的内容$1，$2…依次类推。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newString2 = replaceStr.replace(replaceReg, <span class="function"><span class="keyword">function</span>(<span class="params">$, $<span class="number">1</span>, $<span class="number">2</span></span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> $<span class="number">2</span> + $<span class="number">2</span> + $<span class="number">1</span> + $<span class="number">1</span>;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(newString2);<span class="comment">// bbaa</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> replaceStr2 = <span class="string">"the-first-name"</span>;</span><br><span class="line"><span class="keyword">var</span> replaceReg2 = <span class="regexp">/-(\w)/g</span>;</span><br><span class="line"><span class="keyword">var</span> newString3 = replaceStr2.replace(replaceReg2, <span class="function"><span class="keyword">function</span>(<span class="params">$, $<span class="number">1</span></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 每匹配到一个结果就执行一次函数</span></span><br><span class="line"><span class="keyword">return</span> $<span class="number">1.</span>toUpperCase();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(newString3);<span class="comment">// theFirstName</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>替换字符是”$”时，不能直接将字符”$”作为第二个参数写入，因为它代表”$1、$2”在此处是有语法意义的，代表正则表达式内的子表达式。如果想要强行替换为”$”，可以在符号”$”前再加上”$”，具有转义的作用。</p>
+<p>疑惑：不转义也OK啊</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string3 = <span class="string">"hao kun"</span>;</span><br><span class="line"><span class="keyword">var</span> regexp5 = <span class="regexp">/(\w+)\s(\w+)/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(string3.replace(regexp5, <span class="string">"$ $"</span>));<span class="comment">// $ $</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="正向预查-正向断言-：选择后边带有特定字符的表达式，其中后边跟随的字符不参与选择，只起到限定的作用。"><a href="#正向预查-正向断言-：选择后边带有特定字符的表达式，其中后边跟随的字符不参与选择，只起到限定的作用。" class="headerlink" title="正向预查(正向断言)：选择后边带有特定字符的表达式，其中后边跟随的字符不参与选择，只起到限定的作用。"></a>正向预查(正向断言)：选择后边带有特定字符的表达式，其中后边跟随的字符不参与选择，只起到限定的作用。</h3><ul>
+<li>写法：?=n<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配后边仅是b的a</span></span><br><span class="line"><span class="keyword">var</span> string1 = <span class="string">"abaaaa"</span>;</span><br><span class="line"><span class="keyword">var</span> regexp1 = <span class="regexp">/a(?=b)/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(string1.match(regexp1)); <span class="comment">// ["a"]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="非正向预查"><a href="#非正向预查" class="headerlink" title="非正向预查"></a>非正向预查</h3><ul>
+<li>写法：?!<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配后边不是b的所有a</span></span><br><span class="line"><span class="keyword">var</span> string1 = <span class="string">"abaaaa"</span>;</span><br><span class="line"><span class="keyword">var</span> regexp2 = <span class="regexp">/a(?!b)/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(string1.match(regexp2)); <span class="comment">// ["a", "a", "a", "a"]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="贪婪匹配与非贪婪匹配"><a href="#贪婪匹配与非贪婪匹配" class="headerlink" title="贪婪匹配与非贪婪匹配"></a>贪婪匹配与非贪婪匹配</h3><ul>
+<li><p>默认正则表达式是贪婪匹配模式，尽可能多的匹配</p>
+</li>
+<li><p>非贪婪匹配：尽可能少的匹配(无论取值范围是多少，所取值都是最小值)<br>  格式：在量词后加上符号”?”</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string2 = <span class="string">"aaaa"</span>;</span><br><span class="line"><span class="keyword">var</span> regexp3 = <span class="regexp">/a+?/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(string2.match(regexp3));<span class="comment">// ["a", "a", "a", "a"]</span></span><br></pre></td></tr></table></figure>
+
+<p>  ??格式：第一个”?”表示量词{0, 1}，第二个”?”表示取消贪婪匹配。这样量词就只会取到数值0，不会取1</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string2 = <span class="string">"aaaa"</span>;</span><br><span class="line"><span class="keyword">var</span> regexp4 = <span class="regexp">/a??/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(string2.match(regexp4));<span class="comment">//  ["", "", "", "", ""]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="特殊符号不能直接匹配，需要进行转义"><a href="#特殊符号不能直接匹配，需要进行转义" class="headerlink" title="特殊符号不能直接匹配，需要进行转义"></a>特殊符号不能直接匹配，需要进行转义</h3><h3 id="最难面试题"><a href="#最难面试题" class="headerlink" title="最难面试题"></a>最难面试题</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 科学技术法：从后向前查，每隔三位加一个符号</span></span><br><span class="line"><span class="keyword">var</span> string5 = <span class="string">"100000000000"</span>;</span><br><span class="line"><span class="keyword">var</span> regexp7 = <span class="regexp">/(?=(\B)(\d&#123;3&#125;)+$)/g</span>;</span><br><span class="line"><span class="keyword">var</span> newArr = string5.replace(regexp7, <span class="string">"."</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newArr);<span class="comment">// 100.000.000.000</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JSON/" rel="next" title="前端之路的基石-JSON">
+                <i class="fa fa-chevron-left"></i> 前端之路的基石-JSON
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/18/前端攻城狮的必备项--微信小程序/" rel="prev" title="前端攻城狮的必备项--微信小程序">
+                前端攻城狮的必备项--微信小程序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符"><span class="nav-number">1.</span> <span class="nav-text">转义字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转义字符串"><span class="nav-number">1.1.</span> <span class="nav-text">转义字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊字符"><span class="nav-number">1.2.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行字符串"><span class="nav-number">1.3.</span> <span class="nav-text">多行字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式-RegExp"><span class="nav-number">2.</span> <span class="nav-text">正则表达式 RegExp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式的作用"><span class="nav-number">2.1.</span> <span class="nav-text">正则表达式的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建方式"><span class="nav-number">2.2.</span> <span class="nav-text">创建方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字面量-（推荐！）"><span class="nav-number">2.2.1.</span> <span class="nav-text">字面量 （推荐！）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new-RegExp-规则，属性"><span class="nav-number">2.2.2.</span> <span class="nav-text">new RegExp(规则，属性)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两种方法的区别"><span class="nav-number">2.2.3.</span> <span class="nav-text">两种方法的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式"><span class="nav-number">2.3.</span> <span class="nav-text">表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一个字符代表一位，内容就是取值范围"><span class="nav-number">2.3.1.</span> <span class="nav-text">[ ] 一个字符代表一位，内容就是取值范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#：括号-内的值表示特定的字符区间"><span class="nav-number">2.3.2.</span> <span class="nav-text">( )：括号( )内的值表示特定的字符区间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符"><span class="nav-number">2.4.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#量词"><span class="nav-number">2.5.</span> <span class="nav-text">量词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾符和开头符"><span class="nav-number">2.6.</span> <span class="nav-text">结尾符和开头符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面试题"><span class="nav-number">2.7.</span> <span class="nav-text">面试题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-对象属性"><span class="nav-number">2.8.</span> <span class="nav-text">RegExp 对象属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-对象方法"><span class="nav-number">2.9.</span> <span class="nav-text">RegExp 对象方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持正则表达式的-String-对象的方法"><span class="nav-number">2.10.</span> <span class="nav-text">支持正则表达式的 String 对象的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正向预查-正向断言-：选择后边带有特定字符的表达式，其中后边跟随的字符不参与选择，只起到限定的作用。"><span class="nav-number">2.11.</span> <span class="nav-text">正向预查(正向断言)：选择后边带有特定字符的表达式，其中后边跟随的字符不参与选择，只起到限定的作用。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非正向预查"><span class="nav-number">2.12.</span> <span class="nav-text">非正向预查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪婪匹配与非贪婪匹配"><span class="nav-number">2.13.</span> <span class="nav-text">贪婪匹配与非贪婪匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊符号不能直接匹配，需要进行转义"><span class="nav-number">2.14.</span> <span class="nav-text">特殊符号不能直接匹配，需要进行转义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最难面试题"><span class="nav-number">2.15.</span> <span class="nav-text">最难面试题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

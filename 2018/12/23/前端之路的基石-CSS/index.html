@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ego-blog (1).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ego-blog.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="主流浏览器及其内核主流浏览器的特点 在市场上占有一定份额 必须有独立研发的内核  浏览器由shell(浏览器的操作类的展示部分，也就是外壳：菜单及展示页面的部分)和内核(浏览器的快慢、识别代码路径、优化问题)组成 内核 IE：内核 trident（1996年发布IE1.0） FireFox：内核 Gecko Google Chrome：内核 Webkit 与苹果工程师共同研发/内核 blink 0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端之路的基石-CSS">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/前端之路的基石-CSS/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="主流浏览器及其内核主流浏览器的特点 在市场上占有一定份额 必须有独立研发的内核  浏览器由shell(浏览器的操作类的展示部分，也就是外壳：菜单及展示页面的部分)和内核(浏览器的快慢、识别代码路径、优化问题)组成 内核 IE：内核 trident（1996年发布IE1.0） FireFox：内核 Gecko Google Chrome：内核 Webkit 与苹果工程师共同研发/内核 blink 0">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B1%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B2%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B3%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B4%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B5%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B6%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B7%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B8%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B9%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B10%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B11%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B12%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B13%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B14%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B15%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B16%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20060601/CSS_files/Image%5B17%5D.png">
+<meta property="og:updated_time" content="2020-06-22T08:29:41.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端之路的基石-CSS">
+<meta name="twitter:description" content="主流浏览器及其内核主流浏览器的特点 在市场上占有一定份额 必须有独立研发的内核  浏览器由shell(浏览器的操作类的展示部分，也就是外壳：菜单及展示页面的部分)和内核(浏览器的快慢、识别代码路径、优化问题)组成 内核 IE：内核 trident（1996年发布IE1.0） FireFox：内核 Gecko Google Chrome：内核 Webkit 与苹果工程师共同研发/内核 blink 0">
+<meta name="twitter:image" content="http://yoursite.com/images/20060601/CSS_files/Image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/前端之路的基石-CSS/">
+
+
+
+
+
+  <title>前端之路的基石-CSS | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/前端之路的基石-CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端之路的基石-CSS</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T09:49:48+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="主流浏览器及其内核"><a href="#主流浏览器及其内核" class="headerlink" title="主流浏览器及其内核"></a>主流浏览器及其内核</h2><h3 id="主流浏览器的特点"><a href="#主流浏览器的特点" class="headerlink" title="主流浏览器的特点"></a>主流浏览器的特点</h3><ol>
+<li>在市场上占有一定份额</li>
+<li>必须有独立研发的内核</li>
+</ol>
+<p>浏览器由shell(浏览器的操作类的展示部分，也就是外壳：菜单及展示页面的部分)和内核(浏览器的快慢、识别代码路径、优化问题)组成</p>
+<h3 id="内核"><a href="#内核" class="headerlink" title="内核"></a>内核</h3><ol>
+<li>IE：内核 trident（1996年发布IE1.0）</li>
+<li>FireFox：内核 Gecko</li>
+<li>Google Chrome：内核 Webkit 与苹果工程师共同研发/内核 blink 08年自主研发 2014年投入市场（全球市场份额第一，在2016年年终超越了IE）</li>
+<li>Safari：内核  Webkit</li>
+<li>Opera（份额5%~3%）：内核 presto</li>
+</ol>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ol>
+<li>给代码做备注</li>
+<li>调试：将代码按照区块注释来找到错误位置<br>HTML：<img src="/images/20060601/CSS_files/Image.png" alt></li>
+</ol>
+<h2 id="CSS-cascading-style-sheet-层叠样式表"><a href="#CSS-cascading-style-sheet-层叠样式表" class="headerlink" title="CSS(cascading style sheet) 层叠样式表"></a>CSS(cascading style sheet) 层叠样式表</h2><p>CSS的作用：修改HTML的样式</p>
+<h3 id="引入CSS"><a href="#引入CSS" class="headerlink" title="引入CSS"></a>引入CSS</h3><ol>
+<li>行间样式：在标签内通过style属性设置元素样式 </li>
+<li>页面级css：在head标签内写样式</li>
+<li>外部css文件：新建一个.css文件并在head标签内通过link标签引入<br><img src="/images/20060601/CSS_files/Image%5B1%5D.png" alt></li>
+</ol>
+<blockquote>
+<p>html文件是怎样引入到页面的？<br>将网页(HTML、css、js)的文件打包后放在服务器(也是电脑)上，用户通过访问网站，拿到服务器的地址后，获取网页文件下载到自己的电脑的浏览器上执行。例如访问百度，是将百度的网页下载到自己的手机上，而不是所有人访问同一个文件，访问的是服务器文件的副本。</p>
+</blockquote>
+<blockquote>
+<p>浏览器是怎么执行下载的文件的？<br>从上至下，下载一行就执行一行代码。<br>在下载的时候，head标签内引入一个css文件，此时浏览器如何执行？<br>异步加载，此时浏览器会开启一个新的线程来下载css文件，原线程会继续下载HTML，所以是同时进行的。</p>
+</blockquote>
+<blockquote>
+<p>补充知识点：<br>异步与同步：异步是指同时执行多个事件；同步是指完成当前事件后才可执行下一个事件；</p>
+</blockquote>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p>用来选择一个html元素，从而来改变其样式</p>
+<ol>
+<li><p>id选择器：identity(身份) 一对一的关系，一个元素只能有一个id值</p>
+</li>
+<li><p>class选择器：多对多的关系，一个元素可以有多个class，一个class也可以作用于多个元素</p>
+</li>
+<li><p>标签选择器：会选中当前文件内所有的标签元素</p>
+</li>
+<li><p>通配符选择器：所有标签，整个文档的标签</p>
+</li>
+<li><p>父子选择器/派生选择器：父子结构即可</p>
+</li>
+<li><p>直接子元素选择器：用符号’&gt;’连接父子级选择器即可</p>
+<p> 一个多层级的父子结构样式的元素，浏览器是如何找到的呢？<br> <img src="/images/20060601/CSS_files/Image%5B2%5D.png" alt><br> dom是树状结构，按照上图从右向左的顺序查找元素，先在整个DOM结构中找到em元素，确定em元素后再向上找到相应的元素，这样以最快的速度找到元素。如果从左向右查找，需要先在整个dom树中的所有元素中查找第一个元素section，然后在找到的每个元素section下再查找其余所有元素来找到第二个元素div，这种方式更加繁琐。</p>
+</li>
+<li><p>并列选择器：两个选择器选择的同一个元素</p>
+</li>
+<li><p>分组选择器：<br><img src="/images/20060601/CSS_files/Image%5B3%5D.png" alt></p>
+</li>
+</ol>
+<h3 id="选择器优先级"><a href="#选择器优先级" class="headerlink" title="选择器优先级"></a>选择器优先级</h3><p><img src="/images/20060601/CSS_files/Image%5B4%5D.png" alt></p>
+<h2 id="css权重"><a href="#css权重" class="headerlink" title="css权重"></a>css权重</h2><p>256进制(IE7.0版本测试出来的数据)<br>当两个元素的权重相同时，后渲染的元素css生效</p>
+<h3 id="权重的应用：复杂选择器的计算"><a href="#权重的应用：复杂选择器的计算" class="headerlink" title="权重的应用：复杂选择器的计算"></a>权重的应用：复杂选择器的计算</h3><p><img src="/images/20060601/CSS_files/Image%5B5%5D.png" alt></p>
+<p>在计算机中，正无穷计算时，可以相加减来比较大小。</p>
+<h2 id="css属性"><a href="#css属性" class="headerlink" title="css属性"></a>css属性</h2><p>css代码都是由属性组成的，结构为：”属性名: 属性值;”，属性和属性之间通过”;”分号来分隔</p>
+<ol>
+<li><p>font-size：字体大小，浏览器由默认的字体大小16px，字体大小设置的是字体的高（仿宋字体宽高相等）</p>
+</li>
+<li><p>font-weight：字体加粗，可选值： lighter、normal、bold、bolder、数值(100 ~ 900 从细到粗)</p>
+<blockquote>
+<p>浏览器有相应的字体包才能展示相应的样式</p>
+</blockquote>
+</li>
+<li><p>font-style：斜体，值：italic</p>
+</li>
+<li><p>font-family：字体，值： arial(通用字体，乔布斯在苹果发明第一个就是字体)</p>
+</li>
+<li><p>color：字体颜色，值：英文单词(red)、颜色代码(#ff0000)、颜色函数(rgb(255,0,0))</p>
+<blockquote>
+<p>人类可以识别三种颜色(三原色: 红绿蓝)<br>颜色代码从00-ff代表颜色的饱和度，若颜色代码的每两位都是重复的就可以简写为三位</p>
+</blockquote>
+</li>
+<li><p>border：元素的边框<br>复合属性：border-width粗细、border-style虚实样式、border-color颜色<br>border-style：solid 实线、dotted 点状虚线、dashed 条状虚线</p>
+<p>将宽高设置为0，为border设置宽度和颜色，利用斜线即可画出三角形</p>
+<p>border-radius：圆角度，当值为50%时， 正方形会变成一个圆形</p>
+</li>
+<li><p>text-align：文字对齐方式，属性值：left(默认值)、center、right</p>
+</li>
+<li><p>line-height：单行文本所占高度</p>
+<blockquote>
+<p>行高：文字所占高度（在word中叫做行间距）<br>单行文字水平垂直居中：文本所占高度等于容器高度时，文本在容器内垂直居中</p>
+</blockquote>
+</li>
+<li><p>text-indent：文本缩进</p>
+<blockquote>
+<p>单位分为绝对单位和相对单位，例如像素px、em是相对单位</p>
+</blockquote>
+<blockquote>
+<p>px：一个像素只能展示一个颜色；电子屏幕由无数个很小很小的像素格组成的，一个屏幕的清晰与否关键在于像素的多少。屏幕分辨率在国际上的标准定义是每英寸所能容纳的垂直像素点数，也就是像素的个数决定了屏幕分辨率。一个像素的大小是可以改变的，同等大小的屏幕，像素越多，成像约清晰，分辨率也越高。</p>
+</blockquote>
+<blockquote>
+<p>em：相对于font-size的大小<br>   公式：1em = 1 * 该标签的font-size（1em等于1font-size，在设置文字(中文)缩进时，1em就相当于一个字的大小）<br>   文字的行高是1.2倍行高(1.2倍文字大小)，也就是 line-height：1.2em;</p>
+</blockquote>
+</li>
+<li><p>text-decoration：文字修饰线<br>属性值：<br>line-through 中划线(删除线)，功能等同于标签del<br>none 没有线，去掉标签自带的线<br>underline 下划线，类似a标签自带样式<br>overline 上划线，不常用</p>
+</li>
+<li><p>cursor：光标，鼠标在标签上的样式<br>属性值：pointer：小手<br>鼠标上的光标的定位值，好的鼠标不需要在黑色位置也可以使用</p>
+</li>
+</ol>
+<p>查看其他更多属性：<a href="https://www.html.cn/doc/css3/quicksearch/" target="_blank" rel="noopener">https://www.html.cn/doc/css3/quicksearch/</a></p>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><blockquote>
+<p>当在行间样式设置后，无法在伪类选择器中改变样式(原因是权重是10，小于行间样式1000)</p>
+</blockquote>
+<ol>
+<li>:hover 鼠标移动到标签上后展示所设置的样式</li>
+</ol>
+<h2 id="企业级开发思路"><a href="#企业级开发思路" class="headerlink" title="企业级开发思路"></a>企业级开发思路</h2><ol>
+<li><p>点定义功能，后选定功能：先写出需要的CSS样式，就相当于写了一个工具库，需要的样式拿出来用<br>优点：先定义好功能样式，也可以封装好一个css文件，其他人就可以直接引用<br><img src="/images/20060601/CSS_files/Image%5B6%5D.png" alt></p>
+</li>
+<li><p>自定义标签(初始化样式)：通过改变标签的默认样式，也就是标签初始化<br>下图列举了改变标签默认样式的实例：<br><img src="/images/20060601/CSS_files/Image%5B7%5D.png" alt></p>
+<p> 通配符选择器* 可以用来初始化所有标签的margin和padding的值，并且其权重值为0，所以在初始化后，也可以通过其他选择器来随意改变初始化的值，不需要考虑权重问题。</p>
+</li>
+</ol>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p>盒子的宽度/高度 = 边框 +内边距 + 宽度/高度</p>
+<p>内边距padding是不可以放内容的(例如文字)，也就是说内容不会占padding的位置，但是背景色或背景图片可以<br><img src="/images/20060601/CSS_files/Image%5B8%5D.png" alt></p>
+<p>在浏览器中展示的盒子模型，如下图：<br><img src="/images/20060601/CSS_files/Image%5B9%5D.png" alt></p>
+<p>padding、margin、border的值：<br>一个值：上下左右相同<br>四个值：值的方向为上 右 下 左，为顺时针方向<br>三个值：值为上 左右 下，其中左右相等为中间的值<br>两个值：值为上下 左右，第一个是上下的值，第二个是左右的值</p>
+<h2 id="层模型"><a href="#层模型" class="headerlink" title="层模型"></a>层模型</h2><p>定位positon：让特定的元素在特定的位置出现，也叫作层模型<br>定位需要参照物，relative作为参照物，absolute来进行定位，从而减少对后边元素的影响。</p>
+<ol>
+<li><p>absolute 绝对定位，脱离原来位置进行定位，</p>
+<p> 相对于最近的有定位的父级进行定位，如果没有，则相对于文档进行定位</p>
+<p> 当一个元素变成绝对定位的元素时，它就脱离了原来的层级，跑到上面的层级上了，原来的位置被释放。这样，这个元素后面的元素就可以来到它之前的位置，这样就会形成同一位置的层级关系，也就是层模型。</p>
+</li>
+<li><p>relative 相对定位 ，保留原来位置进行定位</p>
+<p> 相对于自己原来的位置进行定位</p>
+<blockquote>
+<p>浏览器中默认的body的margin值是多少？<br> 答：8px</p>
+</blockquote>
+<p> opacity：不透明度，取值为0~1 值越小越透明</p>
+</li>
+<li><p>fixed 固定定位</p>
+<p> z-index：设置定位元素的层级，默认为0。z也就是z轴，指向与屏幕方向相垂直。</p>
+</li>
+</ol>
+<h2 id="居中布局问题"><a href="#居中布局问题" class="headerlink" title="居中布局问题"></a>居中布局问题</h2><p>一个元素已知宽高，在视窗口中水平垂直居中<br><img src="/images/20060601/CSS_files/Image%5B10%5D.png" alt></p>
+<h3 id="两栏布局：一个固定宽度，另一个自适应宽度"><a href="#两栏布局：一个固定宽度，另一个自适应宽度" class="headerlink" title="两栏布局：一个固定宽度，另一个自适应宽度"></a>两栏布局：一个固定宽度，另一个自适应宽度</h3><p><img src="/images/20060601/CSS_files/Image%5B11%5D.png" alt></p>
+<h3 id="margin两个经典bug"><a href="#margin两个经典bug" class="headerlink" title="margin两个经典bug"></a>margin两个经典bug</h3><p>① margin-top塌陷问题：父子层级的两个元素的垂直方向margin会重叠再取最大的值，给子元素设置margin-top后，父级会随同子元素移动，这个问题就是margin塌陷问题，可以看做父级没有顶造成的。</p>
+<p>解决办法：</p>
+<ol>
+<li>给父级设置border-top 可以解决问题，但是在语法和编程手法上不可取，并且不符合设计图</li>
+<li>BFC (block format context 块级格式化上下文)  并非真正解决问题，只是一个弥补问题的手段<br> 如何触发一个盒子的bfc：<pre><code>a. 给元素设置定位 position: absolute
+b. display: inline-block
+c. float: left/right
+d. overflow: hidden(自身意义：溢出盒子部分不展示) 给父级添加该属性，实际是改变了父级的渲染规则，父级变为bfc后，即可解决塌陷问题</code></pre>上述问题，需要给父级添加css样式即可解决问题  </li>
+</ol>
+<p>② 左右相邻的兄弟元素的margin是相累加的，这叫做区域不能共用，这是正常的语法规则</p>
+<p>上下两个相邻的兄弟元素的margin值是相叠加的，且取最大值</p>
+<p>上述问题，解决的办法是给元素外层加一层父级，但是不建议这种解决办法。最好的解决办法是只给一个元素设置margin-top或margin-bottom的值</p>
+<h3 id="浮动模型"><a href="#浮动模型" class="headerlink" title="浮动模型"></a>浮动模型</h3><p>无论元素是什么样的陈列方式(inline、block、inline-block)，都可以使元素站队，并且站队的边界是父级的边界</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">   float: left/right;</span><br></pre></td></tr></table></figure>
+
+<p>   原理：浮动元素产生了浮动流，所有产生了浮动流的元素，块级元素都看不到(也就是会分层)，但是产生了bfc的元素和文本类元素(带有Inline属性的元素)以及文本都可以看到(也就是紧挨着元素而不分层)。  </p>
+<p>   <strong>清除浮动的方法</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear: left/right/both 注意：清除浮动的元素必须是块级元素</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>伪元素：存在于每个元素中，一般有::before、::after可以同时使用，可以当做正常元素来使用<br>伪元素是行级元素，设置宽高需要设置display: inline-block</p>
+</blockquote>
+<p>   <strong>通过给父级添加伪元素清除浮动</strong>：<br><img src="/images/20060601/CSS_files/Image%5B12%5D.png" alt>  </p>
+<blockquote>
+<p>position: absolute、float: left/right 将元素内部转化为inline-block属性，内容撑开宽高<br>   例如：span元素设置了上述属性后，就可以设置宽高了  </p>
+</blockquote>
+<h2 id="文字溢出处理"><a href="#文字溢出处理" class="headerlink" title="文字溢出处理"></a>文字溢出处理</h2><p>文字超出容器后，用省略号…展示</p>
+<ol>
+<li>单行文本  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">white-space: nowrap; 强制文字不换行  </span><br><span class="line">text-overflow: ellipsis; 文字超出后用...展示</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><img src="/images/20060601/CSS_files/Image%5B13%5D.png" alt></p>
+<ol start="2">
+<li>多行文本：不做文字省略，只做文本截断(只展示固定行数，剩下字数隐藏不展示)<br><img src="/images/20060601/CSS_files/Image%5B14%5D.png" alt>  </li>
+</ol>
+<h2 id="背景图片处理"><a href="#背景图片处理" class="headerlink" title="背景图片处理"></a>背景图片处理</h2><p>background:<br><img src="/images/20060601/CSS_files/Image%5B15%5D.png" alt></p>
+<h3 id="企业级开发问题"><a href="#企业级开发问题" class="headerlink" title="企业级开发问题"></a>企业级开发问题</h3><p>图片如何代替文字：  </p>
+<p>一旦浏览器采取了默认加载策略(当前网络不好时，css和js会自动屏蔽掉)，还得让网站可用。<br><img src="/images/20060601/CSS_files/Image%5B16%5D.png" alt><br><img src="/images/20060601/CSS_files/Image%5B17%5D.png" alt>  </p>
+<p><strong>行级元素可以嵌套行级元素 span只能嵌套行级元素，a标签内不可以嵌套a标签</strong><br><strong>块级元素可以嵌套任何元素，div可以嵌套任何元素，但是p标签不可以嵌套块级元素</strong>  </p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>margin: 0 auto; 可以使设置了宽度的元素居中展示，并且浏览器宽度变化时随之改变</p>
+<p>带有inline的元素属于文本类元素，span、img标签等 删除标签间的空格，可以去掉空白间隙</p>
+<p>vertical-align: 数值/middle等值; 调节文本对齐的属性。文本默认与文本类元素内的文字底部对齐</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-HTML/" rel="next" title="前端之路的基石-HTML">
+                <i class="fa fa-chevron-left"></i> 前端之路的基石-HTML
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript①/" rel="prev" title="前端之路的基石-JavaScript①">
+                前端之路的基石-JavaScript① <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主流浏览器及其内核"><span class="nav-number">1.</span> <span class="nav-text">主流浏览器及其内核</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主流浏览器的特点"><span class="nav-number">1.1.</span> <span class="nav-text">主流浏览器的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核"><span class="nav-number">1.2.</span> <span class="nav-text">内核</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-cascading-style-sheet-层叠样式表"><span class="nav-number">3.</span> <span class="nav-text">CSS(cascading style sheet) 层叠样式表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引入CSS"><span class="nav-number">3.1.</span> <span class="nav-text">引入CSS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器"><span class="nav-number">4.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器优先级"><span class="nav-number">4.1.</span> <span class="nav-text">选择器优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css权重"><span class="nav-number">5.</span> <span class="nav-text">css权重</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#权重的应用：复杂选择器的计算"><span class="nav-number">5.1.</span> <span class="nav-text">权重的应用：复杂选择器的计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css属性"><span class="nav-number">6.</span> <span class="nav-text">css属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪类选择器"><span class="nav-number">7.</span> <span class="nav-text">伪类选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#企业级开发思路"><span class="nav-number">8.</span> <span class="nav-text">企业级开发思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子模型"><span class="nav-number">9.</span> <span class="nav-text">盒子模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#层模型"><span class="nav-number">10.</span> <span class="nav-text">层模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#居中布局问题"><span class="nav-number">11.</span> <span class="nav-text">居中布局问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两栏布局：一个固定宽度，另一个自适应宽度"><span class="nav-number">11.1.</span> <span class="nav-text">两栏布局：一个固定宽度，另一个自适应宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin两个经典bug"><span class="nav-number">11.2.</span> <span class="nav-text">margin两个经典bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动模型"><span class="nav-number">11.3.</span> <span class="nav-text">浮动模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字溢出处理"><span class="nav-number">12.</span> <span class="nav-text">文字溢出处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景图片处理"><span class="nav-number">13.</span> <span class="nav-text">背景图片处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#企业级开发问题"><span class="nav-number">13.1.</span> <span class="nav-text">企业级开发问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">14.</span> <span class="nav-text">补充</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

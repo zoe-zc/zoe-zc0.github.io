@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ego-blog (1).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ego-blog.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Js基本语法继承继承发展史原型是prototype，是Function函数的一个属性，并不是只有构造函数才有原型，只要是函数就具有这个属性 原型是构造函数构造出对象的公有祖先 继承的方式 传统形式 –&amp;gt; 原型链 实现途径：一个对象继承一个原型，通过原型链。 问题：过多的继承了没用的属性  通过原型也可以产生继承关系，但原型只是实现继承关系的一种方法，但它提升不到工业化的程度，这个也会产生很多">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端之路的基石-JavaScript⑦">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑦/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="Js基本语法继承继承发展史原型是prototype，是Function函数的一个属性，并不是只有构造函数才有原型，只要是函数就具有这个属性 原型是构造函数构造出对象的公有祖先 继承的方式 传统形式 –&amp;gt; 原型链 实现途径：一个对象继承一个原型，通过原型链。 问题：过多的继承了没用的属性  通过原型也可以产生继承关系，但原型只是实现继承关系的一种方法，但它提升不到工业化的程度，这个也会产生很多">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B1%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B2%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B3%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B4%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B5%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B6%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B7%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B8%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B9%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B10%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B11%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B12%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B13%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B14%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B15%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B16%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B17%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B18%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B19%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B20%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B21%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js7/Image%5B22%5D.png">
+<meta property="og:updated_time" content="2020-07-02T08:02:15.423Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端之路的基石-JavaScript⑦">
+<meta name="twitter:description" content="Js基本语法继承继承发展史原型是prototype，是Function函数的一个属性，并不是只有构造函数才有原型，只要是函数就具有这个属性 原型是构造函数构造出对象的公有祖先 继承的方式 传统形式 –&amp;gt; 原型链 实现途径：一个对象继承一个原型，通过原型链。 问题：过多的继承了没用的属性  通过原型也可以产生继承关系，但原型只是实现继承关系的一种方法，但它提升不到工业化的程度，这个也会产生很多">
+<meta name="twitter:image" content="http://yoursite.com/images/20062601/js7/Image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑦/">
+
+
+
+
+
+  <title>前端之路的基石-JavaScript⑦ | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑦/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端之路的基石-JavaScript⑦</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T12:32:45+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Js基本语法"><a href="#Js基本语法" class="headerlink" title="Js基本语法"></a>Js基本语法</h2><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><h4 id="继承发展史"><a href="#继承发展史" class="headerlink" title="继承发展史"></a>继承发展史</h4><p>原型是prototype，是Function函数的一个属性，并不是只有构造函数才有原型，只要是函数就具有这个属性</p>
+<p>原型是构造函数构造出对象的公有祖先</p>
+<h4 id="继承的方式"><a href="#继承的方式" class="headerlink" title="继承的方式"></a>继承的方式</h4><ol>
+<li><p>传统形式 –&gt; 原型链<br> 实现途径：一个对象继承一个原型，通过原型链。<br> 问题：<em>过多的继承了没用的属性</em></p>
+<p> 通过原型也可以产生继承关系，但原型只是实现继承关系的一种方法，但它提升不到工业化的程度，这个也会产生很多问题。<br> <img src="/images/20062601/js7/Image.png" alt><br> son最后会继承father和grand的原型链，即使这里有着不需要的值。</p>
+</li>
+<li><p>借用构造函数<br> 实现途径：call、apply</p>
+<blockquote>
+<p>问题：<br> &emsp;不能继承借用构造函数的原型<br> &emsp;每次构造函数都要多走一个函数</p>
+</blockquote>
+<p> 这个过程只是借用他人的函数来实现自己的功能，并不能算是真正的继承。<br> <img src="/images/20062601/js7/Image%5B1%5D.png" alt><br> 即使student调用Person生成了自己的对象，但是原型依然指向student.prototype。并且每调用一次构造函数，就会执行两个或多个方法(Student、Person)。视觉上是缩减了代码(减少了重复代码)，但事实上使代码变得复杂了，增加了函数的调用。减少了代码，但是浪费效率了</p>
+</li>
+<li><p>共享原型<br> 问题：不能随便改动自己的原型</p>
+<blockquote>
+<p>&emsp;inderit表示继承，是css的属性中的一个值， 也就是继承值的意思 。css属性中，但凡是文字类的属性font-size、font-weight、color、line-height，都有一个传递的特性，如果子元素没有设置文字类属性的话，它就默认继承父元素的文字类属性。给父级设置font-size: 20px;子元素的font-size也是20px，除非给子元素单独设置属性。<br>&emsp;子元素默认的值：font-size: inherit；</p>
+</blockquote>
+<p> 两个构造函数， 其中一个是原始的构造函数，这个函数的原型想被用到另一个构造函数上，实现两个构造函数共有一个原型的特点</p>
+<p> 注意：必须先继承再生成对象，否则不生效<br> <img src="/images/20062601/js7/Image%5B2%5D.png" alt></p>
+<p> 当其中一个构造函数修改了原型上的值的时候，另一个也会受到影响<br> <img src="/images/20062601/js7/Image%5B3%5D.png" alt></p>
+</li>
+<li><p>圣杯模式<br> Father.prototype是构造函数Father和F两方的共有原型，F充当了中间层，F.prototype = Father.prototype。Son和F通过原型链的方式形成关系，Son.prototype = new F();这样new F()的原型是F.prototype，也就能找到Father.prototype，这样就通过原型链形成了继承的关系。</p>
+<p> 由此得到的继承关系的优点是：即使修改Son.prototype，也不会影响到Father.prototype。Son的原型是new F，而构造函数F的原型才是Father.prototype。这是两层关系，没有相互连通。</p>
+<p> 通过图来表示：<br> <img src="/images/20062601/js7/Image%5B4%5D.png" alt></p>
+<p> 代码简化：<br> <img src="/images/20062601/js7/Image%5B5%5D.png" alt></p>
+<p> 这样写会有一个小小的问题：<br> <img src="/images/20062601/js7/Image%5B6%5D.png" alt></p>
+</li>
+<li><p>最终的”圣杯模式”<br> <img src="/images/20062601/js7/Image%5B7%5D.png" alt><br> 在继承inherit函数内的代码不可以改变顺序</p>
+</li>
+</ol>
+<h3 id="属性私有化"><a href="#属性私有化" class="headerlink" title="属性私有化"></a>属性私有化</h3><p><img src="/images/20062601/js7/Image%5B8%5D.png" alt></p>
+<p>多个函数和最外层构造函数分别形成了闭包，这些函数都共用同一个AO(外层函数的)。构造函数生成的对象可以随意更改共同变量，但是不能在外部获取这个变量的值。这个变量就是函数的<strong>私有属性</strong>。</p>
+<p><img src="/images/20062601/js7/Image%5B9%5D.png" alt><br>上述pWife就是私有变量，在函数外不可以访问，但是形成的闭包函数可以操作这个变量。</p>
+<blockquote>
+<p>人类的学习的本质方法不是在知道一个规律后，再明确对这个事物的认知。而是通过不断的学习、不断的经历，最后自己才总结出一个规律和方法。<br>人工智能，都是通过大数据识别的方法来实现人工智能，通过大数据来自动生成规律和算法，这也是一个深度学习的过程。</p>
+</blockquote>
+<h3 id="模块化开发，防止污染全局变量，解决命名冲突问题"><a href="#模块化开发，防止污染全局变量，解决命名冲突问题" class="headerlink" title="模块化开发，防止污染全局变量，解决命名冲突问题"></a>模块化开发，防止污染全局变量，解决命名冲突问题</h3><ol>
+<li><p><strong>命名空间</strong>：管理变量，防止污染全局，适用于模块化开发<br> 命名冲突是企业开发的一个困扰性的问题，开发一个项目时，特别是多人协作开发时，会有多个文件，最后要将所有的文件合一起，如果有多个文件内有重名的变量时，就会造成相互覆盖的问题。</p>
+<p> 在多人一起写代码时，通过写一个命名空间，存储所有的变量。但是现在已经废弃了这个方法。<br> <img src="/images/20062601/js7/Image%5B10%5D.png" alt><br> <img src="/images/20062601/js7/Image%5B11%5D.png" alt></p>
+</li>
+<li><p><strong>闭包</strong>：可以通过闭包来解决在同一个文件内，命名相互冲突的问题：<br> <img src="/images/20062601/js7/Image%5B12%5D.png" alt><br> 现在用工具webpack来解决这问题。</p>
+</li>
+</ol>
+<h3 id="实现链式调用方法-模仿jQuery"><a href="#实现链式调用方法-模仿jQuery" class="headerlink" title="实现链式调用方法(模仿jQuery)"></a>实现链式调用方法(模仿jQuery)</h3><p>在每个方法的函数内<code>return this;</code>，将当前这个对象返回后，就可以像链式操作一样继续执行<br><img src="/images/20062601/js7/Image%5B13%5D.png" alt></p>
+<h3 id="属性表示方法"><a href="#属性表示方法" class="headerlink" title="属性表示方法"></a>属性表示方法</h3><ol>
+<li>obj.prop</li>
+<li>obj[‘prop’]</li>
+</ol>
+<p>每当通过字符”.”来访问对象的属性时，系统内部会隐式的将”.”符号转化为中括号”[]”，在实现对象的增删改查时可以使用”[]”方法，这样不需要内部转化了运行会更快一些，但是第一种”.”来获取更加快捷一些。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name : <span class="string">"xiaohua"</span></span><br><span class="line">&#125;</span><br><span class="line">obj.name;--&gt;obj[<span class="string">'name'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>中括号”[]”内的值可以是字符串、字符串拼接变量、或者是字符串类型的变量，这种方式更加灵活</p>
+<h3 id="对象的枚举"><a href="#对象的枚举" class="headerlink" title="对象的枚举"></a>对象的枚举</h3><p>枚举：enumeration，遍历<br>一组数据内有多个值，一个一个获取每个值的内容的过程就叫做遍历，也就是枚举。</p>
+<ol>
+<li><p>for in循环，其实就是简化版的for循环<br> <strong>可以实现对象的遍历，通过对象循环属性的个数来控制循环圈数，在循环每一圈时，将对象的属性名赋值给var关键字声明的变量 prop ，每圈内 prop 的名字都不同。</strong></p>
+<p> <strong>不仅可以遍历对象，还可以遍历数组。</strong></p>
+<p> <img src="/images/20062601/js7/Image%5B14%5D.png" alt><br> 只会打印出对象自身以及原型上的属性，对象的原型的<strong>proto</strong>指向Object.prototype时，不会打印出Object.prototype上的属性值。不会遍历到系统最顶端自带的值</p>
+</li>
+<li><p>hasOwnProperty() 过滤性方法，判断是否是对象自己的属性<br> 在遍历一个对象的属性时，hasOwnProperty()会将对象的原型上的属性返回false，并且不会遍历到系统最顶端的属性。<br> <img src="/images/20062601/js7/Image%5B15%5D.png" alt></p>
+</li>
+<li><p>in 判断一个属性是不是一个对象的<br> 跟hasOwnProperty的区别：会获取对象所有的属性，包括原型上的属性<br> <img src="/images/20062601/js7/Image%5B16%5D.png" alt></p>
+</li>
+<li><p>instanceof<br> 官方定义：判断一个对象是否是instanceof后的构造函数构造出来的</p>
+<p> <em>A instanceof B</em><br> 实际定义：看对象 A 的原型链上有没有 B 的原型，有的话就返回true<br> <img src="/images/20062601/js7/Image%5B17%5D.png" alt></p>
+</li>
+<li><p>区分数组和对象的方法</p>
+<ul>
+<li>constructor</li>
+<li>instanceof</li>
+<li>Object.prototype.toString.call()<br><img src="/images/20062601/js7/Image%5B18%5D.png" alt></li>
+</ul>
+</li>
+</ol>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><h4 id="不同情况下，this的指向："><a href="#不同情况下，this的指向：" class="headerlink" title="不同情况下，this的指向："></a>不同情况下，this的指向：</h4><ol>
+<li><p>函数预编译过程(AO) this –&gt; window</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test3</span>(<span class="params">c</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 在执行new操作后，实际上内部隐式执行：</span></span><br><span class="line">    <span class="comment">// var this = Object.create(test3.prototype);</span></span><br><span class="line">    <span class="comment">// 之前表意的写法：</span></span><br><span class="line">    <span class="comment">// var this = &#123;</span></span><br><span class="line">    <span class="comment">//      __proto__: tese3.prototype</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// 原本代码</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AO &#123;</span><br><span class="line">    <span class="comment">// 实际预编译还包括arguments和this</span></span><br><span class="line">    <span class="built_in">arguments</span> : [<span class="number">1</span>],</span><br><span class="line">    <span class="keyword">this</span> : <span class="built_in">window</span>,</span><br><span class="line">    <span class="comment">// 之前了解的预编译</span></span><br><span class="line">    a: <span class="literal">undefined</span>,</span><br><span class="line">    c: <span class="literal">undefined</span> --&gt; <span class="number">1</span>,</span><br><span class="line">    b: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test3(<span class="number">1</span>);<span class="comment">// 默认调用方式 this指向window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行new操作</span></span><br><span class="line"><span class="keyword">new</span> test3(<span class="number">2</span>);<span class="comment">// 通过new关键字调用，this指向构造函数test3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全局作用域里(GO) this –&gt; window<br><img src="/images/20062601/js7/Image%5B19%5D.png" alt></p>
+</li>
+<li><p>call / apply 可以改变函数运行时this指向</p>
+</li>
+<li><p>obj.func(); func()里面的this指向obj<br> this指向调用函数的对象</p>
+</li>
+</ol>
+<h4 id="this指向题"><a href="#this指向题" class="headerlink" title="this指向题"></a>this指向题</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// **** 重点题</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"222"</span>;</span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name : <span class="string">"111"</span>,</span><br><span class="line">    say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.info(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fun = a.say;</span><br><span class="line">fun();<span class="comment">// 222 在全局执行</span></span><br><span class="line">a.say();<span class="comment">// 111</span></span><br><span class="line"><span class="keyword">var</span> b = &#123;</span><br><span class="line">    name : <span class="string">"333"</span>,</span><br><span class="line">    say:<span class="function"><span class="keyword">function</span>(<span class="params">fun</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// this.fun() --&gt; b</span></span><br><span class="line">        <span class="comment">// fun() --&gt; window</span></span><br><span class="line">        <span class="built_in">console</span>.log(fun);<span class="comment">// 传递进来的参数，不是全局的fun</span></span><br><span class="line">        fun();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">**b.say(a.say);**<span class="comment">// 222 在b的say函数内 谁都没调用fun，指向的是window</span></span><br><span class="line">b.say = a.say;</span><br><span class="line">b.say();<span class="comment">// 333</span></span><br></pre></td></tr></table></figure>
+
+<p>难点解析：<strong>b.say(a.say);</strong><br>这句话执行时，是将a.say这个匿名函数传了进来，在b.say函数内的this指向的是b，这里与b无关，只是在b.say的函数内执行fun()这个函数，所以fun内的this指向的是window<br>就像下图展示的一样，test()虽然在b.say内执行，但是test内的this指向与b无关<br><img src="/images/20062601/js7/Image%5B20%5D.png" alt></p>
+<h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><ol>
+<li><p>arguments.callee 指向函数自身的引用</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数声明时可以调用函数本身</span></span><br><span class="line"><span class="comment">// 匿名函数的话只能通过arguments.callee</span></span><br><span class="line"><span class="keyword">var</span> num = (<span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n * <span class="built_in">arguments</span>.callee(n - <span class="number">1</span>);</span><br><span class="line">&#125;(<span class="number">10</span>))</span><br><span class="line"><span class="comment">// 求n的阶乘</span></span><br><span class="line"><span class="built_in">console</span>.log(num);<span class="comment">// 628800</span></span><br></pre></td></tr></table></figure>
+
+<p> 即使是嵌套函数，答应内部函数的arguments.callee时，返回的也是当前函数<br> arguments只有callee和length两个属性</p>
+</li>
+<li><p>function.caller 函数当前被调用的环境<br>是函数自己的属性，就像prototype一样</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test4</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee); <span class="comment">// test4</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">demo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee); <span class="comment">// demo</span></span><br><span class="line">        <span class="built_in">console</span>.log(demo.caller); <span class="comment">// test4</span></span><br><span class="line">    &#125;</span><br><span class="line">    demo();</span><br><span class="line">&#125;</span><br><span class="line">test4();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h3><p>克隆：B是一个空对象，将A的属性克隆到A身上，并且修改B的值不会影响A</p>
+<ol>
+<li><p>浅层克隆<br>将A拷贝给B</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    name : <span class="string">'abc'</span>,</span><br><span class="line">    age : <span class="number">123</span>,</span><br><span class="line">    sex : <span class="string">'female'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">origin, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> target = target || &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> prop <span class="keyword">in</span> origin) &#123;</span><br><span class="line">        target[prop] = origin[prop];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> target;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> clone1 = clone(obj1);</span><br><span class="line"><span class="built_in">console</span>.log(clone1);<span class="comment">// &#123;name: "&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>深层克隆<br> 无论原始值还是引用值都是各自独立的，一个修改不会影响另一个</p>
+<p> 方法原理分析：<br> &emsp;&emsp;拷贝一个对象实际上就是拷贝对象内的属性，首先先将对象所有的属性遍历一遍，查看每个属性是引用值还是原始值，原始值需要特殊的拷贝方式，引用值需要再次执行下列过程。<br> &emsp;&emsp;引用值在判断是数组时， 先创建一个空数组，再将原来的数组和空数组当做一对要被拷贝的新对象，将数组循环遍历一遍，再按照下列拷贝过程，判断数组内的每一个值后再进行拷贝。<br> &emsp;&emsp;引用值判断是对象时，先创建空对象，再遍历看看每一位都是什么。</p>
+<p> 拷贝过程：<br> &emsp;&emsp;首先遍历对象，通过for…in循环<br> &emsp;&emsp;① 判断是不是原始值 typeof() 判断是否为object<br> &emsp;&emsp;② 判断是数组还是对象 instanceof、constructor、Object.prototype.toString.call()<br> &emsp;&emsp;③ 建立相应的数组或对象<br> &emsp;&emsp;④ 递归：循环建立的过程</p>
+<p> 因为对象和数组内的值也要通过循环遍历出来再赋值给被克隆对象，所以就要通过递归的形式来实现<br> <img src="/images/20062601/js7/Image%5B21%5D.png" alt></p>
+<p> 深度克隆应用：<br> <img src="/images/20062601/js7/Image%5B22%5D.png" alt></p>
+</li>
+</ol>
+<h3 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h3><p>条件判断 ? true : false，并且会返回结果的值<br>作用：节约操作，相当于简化版的if，除了判断条件外，还可以将结果的值返回</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript⑥/" rel="next" title="前端之路的基石-JavaScript⑥">
+                <i class="fa fa-chevron-left"></i> 前端之路的基石-JavaScript⑥
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript⑧/" rel="prev" title="前端之路的基石-JavaScript⑧">
+                前端之路的基石-JavaScript⑧ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Js基本语法"><span class="nav-number">1.</span> <span class="nav-text">Js基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">1.1.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#继承发展史"><span class="nav-number">1.1.1.</span> <span class="nav-text">继承发展史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承的方式"><span class="nav-number">1.1.2.</span> <span class="nav-text">继承的方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性私有化"><span class="nav-number">1.2.</span> <span class="nav-text">属性私有化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块化开发，防止污染全局变量，解决命名冲突问题"><span class="nav-number">1.3.</span> <span class="nav-text">模块化开发，防止污染全局变量，解决命名冲突问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现链式调用方法-模仿jQuery"><span class="nav-number">1.4.</span> <span class="nav-text">实现链式调用方法(模仿jQuery)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性表示方法"><span class="nav-number">1.5.</span> <span class="nav-text">属性表示方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的枚举"><span class="nav-number">1.6.</span> <span class="nav-text">对象的枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this"><span class="nav-number">1.7.</span> <span class="nav-text">this</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不同情况下，this的指向："><span class="nav-number">1.7.1.</span> <span class="nav-text">不同情况下，this的指向：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this指向题"><span class="nav-number">1.7.2.</span> <span class="nav-text">this指向题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments"><span class="nav-number">1.8.</span> <span class="nav-text">arguments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#克隆"><span class="nav-number">1.9.</span> <span class="nav-text">克隆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三目运算符"><span class="nav-number">1.10.</span> <span class="nav-text">三目运算符</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

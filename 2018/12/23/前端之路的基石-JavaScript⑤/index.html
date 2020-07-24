@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN.yml">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ego-blog (1).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ego-blog.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Js基本语法作用域精解大致的概念就是将函数所产生的一种空间叫做作用域 作用域是因为函数的产生而产生的独特的空间，作用域属于函数，一个函数产生一样的作用域，是一种互相绑定的关系。  对象有属性，一切为对象的东西就都可以有属性，那么这个东西是对象的话就一定有属性。(亚里士多德 – 三段论，属于古希腊哲学)   对象函数是一种特殊对象，它也有属性，叫做函数类对象。 函数包含两种属性：可访问属性、不可访问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端之路的基石-JavaScript⑤">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑤/index.html">
+<meta property="og:site_name" content="Zoe">
+<meta property="og:description" content="Js基本语法作用域精解大致的概念就是将函数所产生的一种空间叫做作用域 作用域是因为函数的产生而产生的独特的空间，作用域属于函数，一个函数产生一样的作用域，是一种互相绑定的关系。  对象有属性，一切为对象的东西就都可以有属性，那么这个东西是对象的话就一定有属性。(亚里士多德 – 三段论，属于古希腊哲学)   对象函数是一种特殊对象，它也有属性，叫做函数类对象。 函数包含两种属性：可访问属性、不可访问">
+<meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B1%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B2%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B3%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B4%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B5%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B6%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B7%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B8%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B9%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B10%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B11%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B12%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B13%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B14%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B15%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B16%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B17%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B18%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B19%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B20%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B21%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B22%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B23%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B24%5D.png">
+<meta property="og:image" content="http://yoursite.com/images/20062601/js5/Image%5B25%5D.png">
+<meta property="og:updated_time" content="2020-07-24T04:59:30.505Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端之路的基石-JavaScript⑤">
+<meta name="twitter:description" content="Js基本语法作用域精解大致的概念就是将函数所产生的一种空间叫做作用域 作用域是因为函数的产生而产生的独特的空间，作用域属于函数，一个函数产生一样的作用域，是一种互相绑定的关系。  对象有属性，一切为对象的东西就都可以有属性，那么这个东西是对象的话就一定有属性。(亚里士多德 – 三段论，属于古希腊哲学)   对象函数是一种特殊对象，它也有属性，叫做函数类对象。 函数包含两种属性：可访问属性、不可访问">
+<meta name="twitter:image" content="http://yoursite.com/images/20062601/js5/Image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'GTPA0JTL16',
+      apiKey: '6ebb6a1f333049dfcf3a7db1cb37f3ab',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑤/">
+
+
+
+
+
+  <title>前端之路的基石-JavaScript⑤ | Zoe</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zoe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">zoe's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/前端之路的基石-JavaScript⑤/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端之路的基石-JavaScript⑤</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-23T11:26:12+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Js基本语法"><a href="#Js基本语法" class="headerlink" title="Js基本语法"></a>Js基本语法</h2><h3 id="作用域精解"><a href="#作用域精解" class="headerlink" title="作用域精解"></a>作用域精解</h3><p>大致的概念就是将函数所产生的一种空间叫做作用域</p>
+<p>作用域是因为函数的产生而产生的独特的空间，作用域属于函数，一个函数产生一样的作用域，是一种互相绑定的关系。</p>
+<blockquote>
+<p>对象有属性，一切为对象的东西就都可以有属性，那么这个东西是对象的话就一定有属性。(亚里士多德 – 三段论，属于古希腊哲学)</p>
+</blockquote>
+<p><img src="/images/20062601/js5/Image.png" alt></p>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>函数是一种特殊对象，它也有属性，叫做函数类对象。</p>
+<p>函数包含两种属性：可访问属性、不可访问属性</p>
+<ol>
+<li>可访问属性；<br> a. 在函数自带的属性：例如函数a.name<br> b. prototype</li>
+<li>不可访问属性：<br> 也叫作隐式属性，仅供javascript引擎存取，我们不可以访问。其中就包括属性[[scope]]</li>
+</ol>
+<h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><p>[[scope]]：叫做域，这个属性内存储的就是由于函数产生而产生的作用域。作用域中存储了<strong>执行期上下文的集合</strong>(就是作用域链)。</p>
+<p>执行期上下文：当函数执行时(或者说执行前一刻)，会创建一个称为执行期上下文的内部对象。一个执行期上下文定义了一个函数执行时的环境(由于环境产生的变量/函数提升)，函数每次执行时对应的执行上下文都是独一无二的，所以多次调用一个函数会导致创建多个执行上下文(AO)，当函数执行完毕，它所产生的执行上下文被销毁。</p>
+<p>作用域链：[[scope]]中所存储的执行期上下文对象的集合，这个集合呈链式连接，我们把这种链式连接叫做作用域链。</p>
+<p>查找变量：在哪个函数内查找变量，就从哪个函数的作用域链的顶端依次向下查找。<br><img src="/images/20062601/js5/Image%5B1%5D.png" alt></p>
+<h4 id="理解【查找变量】的过程"><a href="#理解【查找变量】的过程" class="headerlink" title="理解【查找变量】的过程"></a>理解【查找变量】的过程</h4><p>&emsp;&emsp;<span style="color: #797979;font-size: 14px">a函数在刚被创建时，就具有自己的属性和方法，例如a.name。同理，也有属性a.[[scope]]。a.[[scope]]内存了一个作用域链(scope chain)，作用域链内装的是执行期上下文集合。但现在还不是”链”的状态，因为目前只存了一个数据，那就是第0位的Global Object(GO)。</span></p>
+<ol>
+<li><p>第一步：a函数刚刚被定义的时候，[[scope]]内只存了一位叫做GO，GO内存了this、window、document、a函数、glob变量。这个时候只有一位，还没有形成”链结构”。<br><img src="/images/20062601/js5/Image%5B2%5D.png" alt></p>
+</li>
+<li><p>第二步：这时函数a被定义完，接下来是函数a执行，一个函数执行时要产生执行期上下文(属于当前函数自己的AO)，产生的AO存在作用域链的顶端。</p>
+<blockquote>
+<p>引申问题：为什么在一个函数内访问变量值的时候，要先找自己的AO再向上找?</p>
+</blockquote>
+<blockquote>
+<p>猜想：先找自己的AO再找向上找，一定是因为他们之间是有联系的，这种联系就叫做作用域链。</p>
+</blockquote>
+<p> a在执行的时候，[[scope]]内存的是作用域链scope chain，一共有两位数据，第0位是a函数自己新建的AO，第1位就是GO。</p>
+<p> 这时如果想在a函数内访问一个变量的话，系统要去上a的[[scope]]中找这个变量，因为a的[[scope]]中存的作用域链，有顶端有底端，先去顶端找找到后返回值，顶端没有再依次向下去找</p>
+<blockquote>
+<p>之前说的找一个变量去AO、GO里找，这只是一个笼统的说法，真正的是去作用域链里找，然后捋着作用域链从顶端(0位开始)找到底端</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="/images/20062601/js5/Image%5B3%5D.png" alt></p>
+<ol start="3">
+<li><p>第三步：由于a函数的执行产生了一个过程，这个过程叫b函数的定义。所以b函数也会产生自己的[[scope]]属性，当函数b刚创建时，它处于的环境是a函数的AO。也就是说b函数的环境是a函数给予的，b函数在这个基础之上再增加自己的属性。<br><img src="/images/20062601/js5/Image%5B4%5D.png" alt></p>
+</li>
+<li><p>第四步：b函数在被定义后，就会被执行，生成自己的执行期上下文，放在作用域链的顶端。<br><img src="/images/20062601/js5/Image%5B5%5D.png" alt></p>
+</li>
+</ol>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ol>
+<li><p>函数b的作用域链中处于第1位的AO是函数b引用函数a的，还是就是只属于函数b的？<br>答：在函数b中给aa重新赋值，并在函数外打印aa的值，如果aa的值改变了，证明函数b中的处于第1位的AO就是函数a的。结果为0，证明是函数a的AO，指向的都是同一个地址。<br><img src="/images/20062601/js5/Image%5B6%5D.png" alt></p>
+<blockquote>
+<p>引申思考：AO是由于函数执行而产生的，如果不是引用外层函数的AO，那又是哪儿来的呢？再者，每个函数的末尾位都是全局的GO，由此可证是同一个。</p>
+</blockquote>
+</li>
+<li><p>从函数a开始到函数b生成的这一些列过程，什么时候是终点呢？一个函数执行完了会销毁执行期上下文，那么会不会消失呢？怎么消失的呢？<br>答：a定义 –&gt; a执行 –&gt; b定义 –&gt; b执行，<br> ① 函数b在执行完成后会销毁自己的执行期上下文，并回归到被定义的状态，等待下次被执行。销毁的方式：去掉scope chain与函数b自己的AO之间的连接(图上的连接线)，这个连接也就是指向AO的地址。如果下一次被执行的话，会产生新的AO。<br> ② 函数b执行完并销毁AO后，函数a也完成了函数执行，并销毁了AO，被销毁的AO内包含着函数b，但是也会被一同销毁，在函数a再次被执行时，会创建一个新的AO。</p>
+</li>
+</ol>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a函数被定义：a.[[scope]] --&gt; 0 : GO&#123;&#125;</span><br><span class="line">a函数被执行：a.[[scope]] --&gt; 0 : AO&#123;&#125; // 首位</span><br><span class="line">                            1 : GO&#123;&#125; // 末尾位</span><br><span class="line">b函数被执行：b.[[scope]] --&gt; 0 : AO&#123;&#125; // 首位</span><br><span class="line">                            1 : AO&#123;&#125; // a函数的AO</span><br><span class="line">                            2 : GO&#123;&#125; // 末尾位</span><br><span class="line">b函数执行完成被销毁：b.[[scope]] --&gt; 0 : 空</span><br><span class="line">                                   1 : AO&#123;&#125; // a函数的AO</span><br><span class="line">                                   2 : GO&#123;&#125; // 末尾位</span><br><span class="line">a函数执行完成被销毁：a.[[scope]] --&gt; 0 : 空</span><br><span class="line">                                   1 : GO&#123;&#125; // 末尾位</span><br></pre></td></tr></table></figure>
+
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><strong>每一个函数都有自己的执行期上下文的集合，叫做作用域链。在函数内访问一个变量时，要遵循这个函数所产生的作用域链去访问。</strong></p>
+<p><strong>外层函数的执行，才能导致内部函数的定义</strong></p>
+<h3 id="闭包！！！"><a href="#闭包！！！" class="headerlink" title="闭包！！！"></a>闭包！！！</h3><p>定义：当内部函数被保存到外部时，将会生成闭包。闭包会导致原有作用域链不释放，造成内存泄漏。<br><img src="/images/20062601/js5/Image%5B7%5D.png" alt></p>
+<p>函数解析：在全局范围内定义了一个函数a、变量glob和变量demo。demo等于函数a执行，并将执行的结果赋值给demo。</p>
+<h4 id="理解过程："><a href="#理解过程：" class="headerlink" title="理解过程："></a>理解过程：</h4><ol>
+<li>第一步：在执行函数a的时候，函数b被定义并且声明了变量aaa，最后返回b。这时的函数b被定义，获取了函数a的作用域链，但是没有被执行，一直处于等待执行的状态。所以，b.[[scope]]==a.[[scope]]。</li>
+</ol>
+<p><img src="/images/20062601/js5/Image%5B8%5D.png" alt></p>
+<ol start="2">
+<li>第二步：当return b执行完成后，函数a即执行完成，需要销毁执行期上下文。a的AO内保存了b函数，正常情况下如果a的AO被销毁，那么b函数也会一同被销毁。但是，在销毁之前通过return b，将b函数保存出来并赋值给了变量demo。</li>
+</ol>
+<p><img src="/images/20062601/js5/Image%5B9%5D.png" alt></p>
+<ol start="3">
+<li>第三步：执行demo();，函数b在函数a的内部被创建在外部被执行，依然是先创建自己的AO，并将AO添加到作用域链上，这个作用域链是引用自函数a所创建的链。虽然之前函数a已经销毁了它的AO，但是并不影响函数b，b依然保存着a函数的作用域链的地址。当函数b执行的时候，顺着作用域链查找变量aaa，自己的AO内没有aaa，然后在函数a的AO里找到了变量aaa，所以变量的值打印出来是123。</li>
+</ol>
+<p>上述的这个过程就叫做闭包。</p>
+<p><strong>但凡是内部的函数被保存到了外部，它一定生成闭包</strong>。例如上面的例子，函数b是内部函数，通过return的方式被保存到了外部，这种情况就一定会生成闭包。a函数内的b函数没有执行被保存到了外部，因为函数a和函数b都指向同一个AO。所以函数a不能完全的删除自己的AO，函数b依然保留了a的AO，依然可以访问。</p>
+<p><strong>函数内的内容只有在函数执行时才能被读取到，只有当函数内的所有内容执行完成，才算执行完。</strong></p>
+<p><strong>多层函数嵌套时，在外层函数内调用内层函数的话，等内层函数执行完成后外层函数才算执行完。</strong></p>
+<h4 id="闭包的危害"><a href="#闭包的危害" class="headerlink" title="闭包的危害"></a>闭包的危害</h4><p>闭包会导致原有作用域链不释放，造成内存泄漏。</p>
+<blockquote>
+<p>内存泄漏实际上就是内存被占用。举例邓哥抓一捧沙子，握得越紧，沙子漏的越多，手里的沙子就越少。内存也是一样，占用的空间越多，能使用的空间就越少，就像内存泄漏了一样。orz(神理解)</p>
+</blockquote>
+<h4 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h4><ol>
+<li><p>实现共有变量<br> 例如：函数累加器，不依赖于外部变量并且能反复执行的函数累加器<br> <img src="/images/20062601/js5/Image%5B10%5D.png" alt><br> 优点是：代码更加模块化</p>
+</li>
+<li><p>可以做缓存(存储结构)<br> 多个函数被保存在外部，每个函数所保存的test函数的AO是同一个。有一个修改了，另一个也跟着变。</p>
+<p> 每个函数的作用域链都是父子关系，一个子级(eat)修改了父级(eater)的值，其他子级(push)再获取的就是修改后的结果</p>
+<p> <img src="/images/20062601/js5/Image%5B11%5D.png" alt></p>
+</li>
+<li><p>可以实现封装，属性私有化</p>
+</li>
+<li><p>模块化开发，防止污染全局变量(三堂课之后会讲)</p>
+</li>
+</ol>
+<p>只要将内部函数保存到外部并在外部执行，这样的过程就叫做闭包。或者理解为，”外部函数(test)”在执行完并销毁后，被保存到外部的”内部函数(a)”依然保留”外部函数(test)”的AO，并在”内部函数(a)”执行时获取到”外部函数(test)”的”变量abc”。</p>
+<h4 id="闭包的其他形式"><a href="#闭包的其他形式" class="headerlink" title="闭包的其他形式"></a>闭包的其他形式</h4><p>定义一个全局变量demo，并用来接收函数a，就相当于将函数a保存在外部。<br><img src="/images/20062601/js5/Image%5B12%5D.png" alt></p>
+<h3 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h3><p>此类函数没有声明，在一次执行过后即释放。适合做初始化工作。</p>
+<h4 id="基本应用"><a href="#基本应用" class="headerlink" title="基本应用"></a>基本应用</h4><p>只被执行一次，处理完数据返回结果后，直接被销毁的函数，叫做初始化函数。</p>
+<p>针对初始化功能的函数，在执行完成后就销毁，否则占用内存空间，这时候就用立即执行函数。</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>执行完成后，就将这个函数立即释放。</p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ol>
+<li><p>( 匿名函数 + ( ) )     <strong>W3C建议使用</strong></p>
+</li>
+<li><p>( function () { } ) ( )</p>
+</li>
+<li><p>立即执行函数形式的引申：<br> <strong>只有表达式才能被 执行符号”()” 执行.</strong><br> <em>能被执行符号执行的表达式，这个函数的名字就会被忽略。</em></p>
+<ul>
+<li><p>不能执行的例子：<br><img src="/images/20062601/js5/Image%5B13%5D.png" alt><br><img src="/images/20062601/js5/Image%5B14%5D.png" alt><br>不能执行是因为上述例子是”函数声明”，不是”表达式”</p>
+</li>
+<li><p>函数表达式可以执行：<br>函数被执行之后就被释放了<br><img src="/images/20062601/js5/Image%5B15%5D.png" alt></p>
+<blockquote>
+<p>打印出来的结果是undefined的原因，等号后的叫做表达式，但是表达式也是立即执行函数，所以当函数被释放了之后，就剩下<code>var test3;</code>相当于声明变量但是未赋值</p>
+</blockquote>
+</li>
+<li><p>写匿名函数的原因：<br>如下图给立即执行函数加上了函数名，在控制台打印函数名时，报了找不到的错，所以起不起名字都一样.<br><img src="/images/20062601/js5/Image%5B16%5D.png" alt><br><img src="/images/20062601/js5/Image%5B17%5D.png" alt></p>
+</li>
+<li><p>与普通函数的区别：<br>除了执行完立即被释放，别的都一样。可以传参，有返回值，有预编译.<br>返回的值通过定义一个变量来接收：<br><img src="/images/20062601/js5/Image%5B18%5D.png" alt></p>
+</li>
+</ul>
+</li>
+</ol>
+<p>立即执行函数的机制不是语法定义的，是后来有人设计出来的。就像css中的属性float一样，一开始是用来做文字环绕的，浮动的效果是后来研究出来的。</p>
+<h3 id="闭包的深入理解"><a href="#闭包的深入理解" class="headerlink" title="闭包的深入理解"></a>闭包的深入理解</h3><p>例题：<br><img src="/images/20062601/js5/Image%5B19%5D.png" alt></p>
+<p>理解过程：<br>&emsp;&emsp;定义一个空数组arr，通过for循环向数组内添加数据，每条数据都是一个函数，并且将arr返回到外部。在外部分别执行数组内的函数体，执行时会打印出”i”的语句。最后得到的结果是10个数字10;</p>
+<p>&emsp;&emsp;在执行for循环时，arr[i]被赋值的是一个函数，在这时候函数内的内容是不执行的，系统只将其识别为一个函数引用。在外部执行的时候，才会去找test的AO内 i 的值，此时 i 已经完成了循环变成了10。</p>
+<p>&emsp;&emsp;数组arr内的值是十个不同、相互独立、但是内容一样的函数。</p>
+<p>&emsp;&emsp;函数在定义时，不会去看内容，只有在执行的时候才会关注内容。</p>
+<p>自我分析：<br>&emsp;&emsp;这个问题的迷惑点是在结果，按照猜想认为应该是1-9的数字，但是得到了10个数字10。首先不明白为什么是数字10而不是数字9，i 的值从0到9执行十次，按理说最后一个值应该是9。为什么是10呢？又为什么打印出来的值不是从0-9的值，反而都是10呢？<br>&emsp;&emsp;答：这道题主要的考点就是形成闭包的数组内每个函数的 i 值。<br>&emsp;&emsp;① for循环执行至 i 为9时，先判断是否 i&lt;10，结果为true，执行循环体，然后 i ++，这时的 i 为10。再次判断是否 i&lt;10，结果为false，结束循环，返回数组arr。在test的AO内保存的 i 的值就是10。<br>&emsp;&emsp;② 在执行for循环时，数组的每 i 位被赋值一个函数，这个时候的函数是不被执行的，系统认为这是一个函数引用，不会关注匿名函数内部的变量，所以这时候的 i 的值是未知的。在外部执行数组内的函数时，遵循作用域链，在test的AO内找到 i 的值，因为所有执行函数都共享同一个test函数的AO，所以打印出的所有值都是一样的10。</p>
+<p>上面问题的解决办法：将内部函数写成”立即执行函数”的函数<br><img src="/images/20062601/js5/Image%5B20%5D.png" alt><br>解决思路：在for循环内每循环一次都生成一个立即执行函数，立即执行函数在执行完成后就立即销毁，但立即执行函数的AO依然保存在arr[i]的作用域链中。每次循环内的立即执行函数都是不同的个体，所以在每个立即执行函数的AO内保存的 i 值都不同。arr[i]的函数执行时，会到立即执行函数的AO中获取 i 的值。<br>&emsp;&emsp;多对一的闭包就要用多对多的方式解决，让for循环内的变量直接变现，就是将当前循环的 i 值直接保存起来。</p>
+<h3 id="相关习题"><a href="#相关习题" class="headerlink" title="相关习题"></a>相关习题</h3><p><img src="/images/20062601/js5/Image%5B21%5D.png" alt><br>考点：addEventListener的使用，for循环内绑定事件会形成闭包</p>
+<p><img src="/images/20062601/js5/Image%5B22%5D.png" alt><br>考点：GO、AO</p>
+<p><img src="/images/20062601/js5/Image%5B23%5D.png" alt><br>考点：str.charCodeAt( index )返回字符编码</p>
+<p><img src="/images/20062601/js5/Image%5B24%5D.png" alt></p>
+<blockquote>
+<p>逗号操作符”,”：含义是先看逗号前面的表达式是否需要计算，计算完成后再看后面的表达式，都计算完成后，将后面计算表达式的结果返回。</p>
+</blockquote>
+<p><img src="/images/20062601/js5/Image%5B25%5D.png" alt></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript④/" rel="next" title="前端之路的基石-JavaScript④">
+                <i class="fa fa-chevron-left"></i> 前端之路的基石-JavaScript④
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/前端之路的基石-JavaScript⑥/" rel="prev" title="前端之路的基石-JavaScript⑥">
+                前端之路的基石-JavaScript⑥ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tvax2.sinaimg.cn/crop.0.0.960.960.180/b4866dcfly8fp6p33spu1j20qo0qomz2.jpg?Expires=1564549093&ssig=e3yJPxIPmx&KID=imgbed,tva" alt="zoe">
+            
+              <p class="site-author-name" itemprop="name">zoe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zoe-zc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Js基本语法"><span class="nav-number">1.</span> <span class="nav-text">Js基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域精解"><span class="nav-number">1.1.</span> <span class="nav-text">作用域精解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对象"><span class="nav-number">1.1.1.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">1.1.2.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#理解【查找变量】的过程"><span class="nav-number">1.1.3.</span> <span class="nav-text">理解【查找变量】的过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.1.4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例："><span class="nav-number">1.1.5.</span> <span class="nav-text">示例：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.1.6.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包！！！"><span class="nav-number">1.2.</span> <span class="nav-text">闭包！！！</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#理解过程："><span class="nav-number">1.2.1.</span> <span class="nav-text">理解过程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包的危害"><span class="nav-number">1.2.2.</span> <span class="nav-text">闭包的危害</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包的作用"><span class="nav-number">1.2.3.</span> <span class="nav-text">闭包的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包的其他形式"><span class="nav-number">1.2.4.</span> <span class="nav-text">闭包的其他形式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#立即执行函数"><span class="nav-number">1.3.</span> <span class="nav-text">立即执行函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本应用"><span class="nav-number">1.3.1.</span> <span class="nav-text">基本应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">1.3.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.3.3.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包的深入理解"><span class="nav-number">1.4.</span> <span class="nav-text">闭包的深入理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关习题"><span class="nav-number">1.5.</span> <span class="nav-text">相关习题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
